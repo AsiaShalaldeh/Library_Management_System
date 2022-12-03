@@ -3,12 +3,12 @@
     partial class LibraryForm
     {
         /// <summary>
-        ///  Required designer variable.
+        /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
-        ///  Clean up any resources being used.
+        /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
@@ -23,132 +23,413 @@
         #region Windows Form Designer generated code
 
         /// <summary>
-        ///  Required method for Designer support - do not modify
-        ///  the contents of this method with the code editor.
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LibraryForm));
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.AdminPanel = new System.Windows.Forms.Panel();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.createPatronBtn = new System.Windows.Forms.Button();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.createLibraryBtn = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.createLibrarianBtn = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.createCatalogBtn = new System.Windows.Forms.Button();
+            this.catalogPanel = new System.Windows.Forms.Panel();
+            this.cancelCatalog = new System.Windows.Forms.Button();
+            this.createCatalog = new System.Windows.Forms.Button();
+            this.catalogNameBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.libraryPanel = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.libraryAddressBox = new System.Windows.Forms.TextBox();
+            this.cancelLibrary = new System.Windows.Forms.Button();
+            this.createLibrary = new System.Windows.Forms.Button();
+            this.libraryNameBox = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.AdminPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.tabControl1.SuspendLayout();
+            this.catalogPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            this.libraryPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.SuspendLayout();
             // 
-            // tabPage1
+            // AdminPanel
             // 
-            this.tabPage1.BackColor = System.Drawing.Color.Transparent;
-            this.tabPage1.BackgroundImage = global::LibraryManagementSystem.Properties.Resources.library;
-            this.tabPage1.Controls.Add(this.panel1);
-            this.tabPage1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.tabPage1.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.tabPage1.Location = new System.Drawing.Point(4, 30);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(794, 419);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Library";
+            this.AdminPanel.Controls.Add(this.pictureBox5);
+            this.AdminPanel.Controls.Add(this.libraryPanel);
+            this.AdminPanel.Controls.Add(this.pictureBox4);
+            this.AdminPanel.Controls.Add(this.createPatronBtn);
+            this.AdminPanel.Controls.Add(this.pictureBox3);
+            this.AdminPanel.Controls.Add(this.createLibraryBtn);
+            this.AdminPanel.Controls.Add(this.pictureBox2);
+            this.AdminPanel.Controls.Add(this.createLibrarianBtn);
+            this.AdminPanel.Controls.Add(this.pictureBox1);
+            this.AdminPanel.Controls.Add(this.createCatalogBtn);
+            this.AdminPanel.Location = new System.Drawing.Point(116, 93);
+            this.AdminPanel.Name = "AdminPanel";
+            this.AdminPanel.Size = new System.Drawing.Size(933, 471);
+            this.AdminPanel.TabIndex = 0;
+            this.AdminPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.AdminPanel_Paint);
             // 
-            // panel1
+            // pictureBox5
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(127, 42);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(515, 322);
-            this.panel1.TabIndex = 0;
+            this.pictureBox5.BackgroundImage = global::LibraryManagementSystem.Properties.Resources.center;
+            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox5.Location = new System.Drawing.Point(340, 153);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(252, 186);
+            this.pictureBox5.TabIndex = 8;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackgroundImage = global::LibraryManagementSystem.Properties.Resources.patron__2_;
+            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox4.Location = new System.Drawing.Point(642, 259);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(211, 130);
+            this.pictureBox4.TabIndex = 7;
+            this.pictureBox4.TabStop = false;
+            // 
+            // createPatronBtn
+            // 
+            this.createPatronBtn.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.createPatronBtn.Location = new System.Drawing.Point(642, 258);
+            this.createPatronBtn.Name = "createPatronBtn";
+            this.createPatronBtn.Size = new System.Drawing.Size(211, 176);
+            this.createPatronBtn.TabIndex = 6;
+            this.createPatronBtn.Text = "Create Patron";
+            this.createPatronBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.createPatronBtn.UseVisualStyleBackColor = true;
+            this.createPatronBtn.Click += new System.EventHandler(this.createPatronBtn_Click);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackgroundImage = global::LibraryManagementSystem.Properties.Resources.library5;
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox3.Location = new System.Drawing.Point(642, 58);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(211, 119);
+            this.pictureBox3.TabIndex = 5;
+            this.pictureBox3.TabStop = false;
+            // 
+            // createLibraryBtn
+            // 
+            this.createLibraryBtn.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.createLibraryBtn.Location = new System.Drawing.Point(642, 58);
+            this.createLibraryBtn.Name = "createLibraryBtn";
+            this.createLibraryBtn.Size = new System.Drawing.Size(211, 165);
+            this.createLibraryBtn.TabIndex = 4;
+            this.createLibraryBtn.Text = "Create Library";
+            this.createLibraryBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.createLibraryBtn.UseVisualStyleBackColor = true;
+            this.createLibraryBtn.Click += new System.EventHandler(this.createLibraryBtn_Click_1);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = global::LibraryManagementSystem.Properties.Resources.librarian;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox2.Location = new System.Drawing.Point(83, 269);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(210, 120);
+            this.pictureBox2.TabIndex = 3;
+            this.pictureBox2.TabStop = false;
+            // 
+            // createLibrarianBtn
+            // 
+            this.createLibrarianBtn.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.createLibrarianBtn.Location = new System.Drawing.Point(82, 269);
+            this.createLibrarianBtn.Name = "createLibrarianBtn";
+            this.createLibrarianBtn.Size = new System.Drawing.Size(211, 165);
+            this.createLibrarianBtn.TabIndex = 2;
+            this.createLibrarianBtn.Text = "Create Librarian";
+            this.createLibrarianBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.createLibrarianBtn.UseVisualStyleBackColor = true;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::LibraryManagementSystem.Properties.Resources.books3;
-            this.pictureBox1.Location = new System.Drawing.Point(18, 18);
+            this.pictureBox1.BackgroundImage = global::LibraryManagementSystem.Properties.Resources.catalog__1_;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox1.Location = new System.Drawing.Point(83, 58);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(479, 291);
-            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.Size = new System.Drawing.Size(211, 119);
+            this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // label1
+            // createCatalogBtn
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(35, 149);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(114, 21);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Library Name";
+            this.createCatalogBtn.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.createCatalogBtn.Location = new System.Drawing.Point(82, 58);
+            this.createCatalogBtn.Name = "createCatalogBtn";
+            this.createCatalogBtn.Size = new System.Drawing.Size(211, 165);
+            this.createCatalogBtn.TabIndex = 0;
+            this.createCatalogBtn.Text = "Create Catalog";
+            this.createCatalogBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.createCatalogBtn.UseVisualStyleBackColor = true;
+            this.createCatalogBtn.Click += new System.EventHandler(this.createCatalogBtn_Click);
+            // 
+            // catalogPanel
+            // 
+            this.catalogPanel.Controls.Add(this.cancelCatalog);
+            this.catalogPanel.Controls.Add(this.createCatalog);
+            this.catalogPanel.Controls.Add(this.catalogNameBox);
+            this.catalogPanel.Controls.Add(this.label2);
+            this.catalogPanel.Controls.Add(this.label1);
+            this.catalogPanel.Controls.Add(this.pictureBox6);
+            this.catalogPanel.Location = new System.Drawing.Point(58, 151);
+            this.catalogPanel.Name = "catalogPanel";
+            this.catalogPanel.Size = new System.Drawing.Size(926, 468);
+            this.catalogPanel.TabIndex = 9;
+            this.catalogPanel.Visible = false;
+            // 
+            // cancelCatalog
+            // 
+            this.cancelCatalog.BackColor = System.Drawing.Color.DarkOrange;
+            this.cancelCatalog.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cancelCatalog.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cancelCatalog.Font = new System.Drawing.Font("Segoe UI", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.cancelCatalog.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.cancelCatalog.Location = new System.Drawing.Point(265, 335);
+            this.cancelCatalog.Name = "cancelCatalog";
+            this.cancelCatalog.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.cancelCatalog.Size = new System.Drawing.Size(147, 51);
+            this.cancelCatalog.TabIndex = 11;
+            this.cancelCatalog.Text = "Cancel";
+            this.cancelCatalog.UseVisualStyleBackColor = false;
+            this.cancelCatalog.Click += new System.EventHandler(this.cancelCatalog_Click);
+            // 
+            // createCatalog
+            // 
+            this.createCatalog.BackColor = System.Drawing.Color.DarkOrange;
+            this.createCatalog.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.createCatalog.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.createCatalog.Font = new System.Drawing.Font("Segoe UI", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.createCatalog.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.createCatalog.Location = new System.Drawing.Point(80, 335);
+            this.createCatalog.Name = "createCatalog";
+            this.createCatalog.Size = new System.Drawing.Size(140, 51);
+            this.createCatalog.TabIndex = 10;
+            this.createCatalog.Text = "Create";
+            this.createCatalog.UseVisualStyleBackColor = false;
+            this.createCatalog.Click += new System.EventHandler(this.createCatalog_Click);
+            // 
+            // catalogNameBox
+            // 
+            this.catalogNameBox.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.catalogNameBox.Location = new System.Drawing.Point(80, 226);
+            this.catalogNameBox.Multiline = true;
+            this.catalogNameBox.Name = "catalogNameBox";
+            this.catalogNameBox.Size = new System.Drawing.Size(332, 41);
+            this.catalogNameBox.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(35, 196);
+            this.label2.Font = new System.Drawing.Font("Comic Sans MS", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(80, 166);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(128, 21);
+            this.label2.Size = new System.Drawing.Size(197, 38);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Library Address";
+            this.label2.Text = "Catalog Name";
             // 
-            // textBox1
+            // label1
             // 
-            this.textBox1.Location = new System.Drawing.Point(195, 149);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(198, 29);
-            this.textBox1.TabIndex = 3;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Impact", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.DarkOrange;
+            this.label1.Location = new System.Drawing.Point(79, 31);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(333, 45);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Create New Catalog";
             // 
-            // textBox2
+            // pictureBox6
             // 
-            this.textBox2.Location = new System.Drawing.Point(195, 193);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(198, 29);
-            this.textBox2.TabIndex = 4;
+            this.pictureBox6.BackgroundImage = global::LibraryManagementSystem.Properties.Resources.books4;
+            this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox6.Location = new System.Drawing.Point(542, 3);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(382, 462);
+            this.pictureBox6.TabIndex = 0;
+            this.pictureBox6.TabStop = false;
             // 
-            // tabControl1
+            // libraryPanel
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.tabControl1.Location = new System.Drawing.Point(-1, -2);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(802, 453);
-            this.tabControl1.TabIndex = 0;
+            this.libraryPanel.Controls.Add(this.label5);
+            this.libraryPanel.Controls.Add(this.libraryAddressBox);
+            this.libraryPanel.Controls.Add(this.cancelLibrary);
+            this.libraryPanel.Controls.Add(this.createLibrary);
+            this.libraryPanel.Controls.Add(this.libraryNameBox);
+            this.libraryPanel.Controls.Add(this.label3);
+            this.libraryPanel.Controls.Add(this.label4);
+            this.libraryPanel.Controls.Add(this.pictureBox7);
+            this.libraryPanel.Location = new System.Drawing.Point(3, 17);
+            this.libraryPanel.Name = "libraryPanel";
+            this.libraryPanel.Size = new System.Drawing.Size(979, 468);
+            this.libraryPanel.TabIndex = 12;
+            this.libraryPanel.Visible = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Comic Sans MS", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(88, 211);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(123, 38);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Address";
+            // 
+            // libraryAddressBox
+            // 
+            this.libraryAddressBox.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.libraryAddressBox.Location = new System.Drawing.Point(217, 211);
+            this.libraryAddressBox.Multiline = true;
+            this.libraryAddressBox.Name = "libraryAddressBox";
+            this.libraryAddressBox.Size = new System.Drawing.Size(279, 41);
+            this.libraryAddressBox.TabIndex = 12;
+            // 
+            // cancelLibrary
+            // 
+            this.cancelLibrary.BackColor = System.Drawing.Color.DarkOrange;
+            this.cancelLibrary.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cancelLibrary.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cancelLibrary.Font = new System.Drawing.Font("Segoe UI", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.cancelLibrary.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.cancelLibrary.Location = new System.Drawing.Point(265, 335);
+            this.cancelLibrary.Name = "cancelLibrary";
+            this.cancelLibrary.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.cancelLibrary.Size = new System.Drawing.Size(147, 51);
+            this.cancelLibrary.TabIndex = 11;
+            this.cancelLibrary.Text = "Cancel";
+            this.cancelLibrary.UseVisualStyleBackColor = false;
+            this.cancelLibrary.Click += new System.EventHandler(this.cancelLibrary_Click);
+            // 
+            // createLibrary
+            // 
+            this.createLibrary.BackColor = System.Drawing.Color.DarkOrange;
+            this.createLibrary.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.createLibrary.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.createLibrary.Font = new System.Drawing.Font("Segoe UI", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.createLibrary.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.createLibrary.Location = new System.Drawing.Point(80, 335);
+            this.createLibrary.Name = "createLibrary";
+            this.createLibrary.Size = new System.Drawing.Size(140, 51);
+            this.createLibrary.TabIndex = 10;
+            this.createLibrary.Text = "Create";
+            this.createLibrary.UseVisualStyleBackColor = false;
+            this.createLibrary.Click += new System.EventHandler(this.createLibrary_Click);
+            // 
+            // libraryNameBox
+            // 
+            this.libraryNameBox.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.libraryNameBox.Location = new System.Drawing.Point(217, 131);
+            this.libraryNameBox.Multiline = true;
+            this.libraryNameBox.Name = "libraryNameBox";
+            this.libraryNameBox.Size = new System.Drawing.Size(279, 41);
+            this.libraryNameBox.TabIndex = 3;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Comic Sans MS", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(88, 131);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(90, 38);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Name";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Impact", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.Color.DarkOrange;
+            this.label4.Location = new System.Drawing.Point(79, 31);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(322, 45);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Create New Library";
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.BackgroundImage = global::LibraryManagementSystem.Properties.Resources.books4;
+            this.pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox7.Location = new System.Drawing.Point(588, 0);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(385, 462);
+            this.pictureBox7.TabIndex = 0;
+            this.pictureBox7.TabStop = false;
             // 
             // LibraryForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 31F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.tabControl1);
-            this.Font = new System.Drawing.Font("Segoe UI Light", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BackgroundImage = global::LibraryManagementSystem.Properties.Resources.library;
+            this.ClientSize = new System.Drawing.Size(1284, 667);
+            this.Controls.Add(this.catalogPanel);
+            this.Controls.Add(this.AdminPanel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LibraryForm";
             this.Text = "Library Management System";
-            this.tabPage1.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.AdminPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.tabControl1.ResumeLayout(false);
+            this.catalogPanel.ResumeLayout(false);
+            this.catalogPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            this.libraryPanel.ResumeLayout(false);
+            this.libraryPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private TabPage tabPage1;
-        private Panel panel1;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private Panel AdminPanel;
+        private PictureBox pictureBox5;
+        private PictureBox pictureBox4;
+        private Button createPatronBtn;
+        private PictureBox pictureBox3;
+        private Button createLibraryBtn;
+        private PictureBox pictureBox2;
+        private Button createLibrarianBtn;
+        private PictureBox pictureBox1;
+        private Button createCatalogBtn;
+        private Panel catalogPanel;
+        private TextBox catalogNameBox;
         private Label label2;
         private Label label1;
-        private PictureBox pictureBox1;
-        private TabControl tabControl1;
+        private PictureBox pictureBox6;
+        private Button cancelCatalog;
+        private Button createCatalog;
+        private Panel libraryPanel;
+        private Label label5;
+        private TextBox libraryAddressBox;
+        private Button cancelLibrary;
+        private Button createLibrary;
+        private TextBox libraryNameBox;
+        private Label label3;
+        private Label label4;
+        private PictureBox pictureBox7;
     }
 }

@@ -15,6 +15,8 @@ namespace LibraryManagementSystem
         public LoginForm()
         {
             InitializeComponent();
+            panel1.BackColor = Color.FromArgb(100, 0, 0, 0);
+           
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
@@ -44,6 +46,16 @@ namespace LibraryManagementSystem
             {
                 MessageBox.Show("Password Is Worng, Try Again ");
             }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

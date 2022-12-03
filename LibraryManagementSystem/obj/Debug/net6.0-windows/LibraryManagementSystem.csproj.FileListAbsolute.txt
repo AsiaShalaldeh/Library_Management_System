@@ -50,3 +50,4 @@ C:\Users\Done\Desktop\Programming\CSharp\VisualProgrammingProject\LibraryManagem
 C:\Users\Done\Desktop\Programming\CSharp\VisualProgrammingProject\LibraryManagementSystem\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\Done\Desktop\Programming\CSharp\VisualProgrammingProject\LibraryManagementSystem\obj\Debug\net6.0-windows\LibraryManagementSystem.LibraryForm.resources
 C:\Users\Done\Desktop\Programming\CSharp\VisualProgrammingProject\LibraryManagementSystem\obj\Debug\net6.0-windows\LibraryManagementSystem.LoginForm.resources
+C:\Users\Done\Desktop\Programming\CSharp\VisualProgrammingProject\LibraryManagementSystem\bin\Debug\net6.0-windows\LibraryForm.cs
