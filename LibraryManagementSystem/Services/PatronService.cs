@@ -14,13 +14,32 @@ namespace LibraryManagementSystem.Services
         {
             _context = new LibraryContext();
         }
-        public void CreatePatron(string name,string address)
+        public int CreatePatron(string name,string address)
         {
             Patron patron = new Patron();
             patron.Name = name;
             patron.Address = address;
             _context.Add<Patron>(patron);
             _context.SaveChanges();
+            return patron.PatronID;
+        }
+        public void CreateAccount(int patronID, DateTime opened, AccountState state, int libraryID, string history)
+        {
+            try
+            {
+                Account account = new Account();
+                account.PatronID = patronID;
+                account.Opened = opened;
+                account.State = state;
+                account.History = history;
+                account.LibraryID = libraryID;
+                _context.Add<Account>(account);
+                _context.SaveChanges();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         public Patron SearchPatronByID(int patronID)
         {

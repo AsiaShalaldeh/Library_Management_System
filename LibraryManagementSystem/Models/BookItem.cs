@@ -12,13 +12,12 @@ namespace LibraryManagementSystem.Models
         public string Barcode { get; set; }
         public bool IsReferenceOnly { get; set; }
         public string RFID { get; set; }
+        public int CatalogID { get; set; }
         public Catalog Catalog { get; set; }
+        public int LibraryID { get; set; }
         public Library Library { get; set; }
-        public int HomeTeamId { get; set; }
-        public int? ReservedAccountID { get; set; }
-        [ForeignKey("ReservedAccountID")]
-        public Account ReservedAccount { get; set; }
-
+        public int LibrarianID { get; set; }
+        public Librarian Librarian { get; set; }
         public int? BorrowedAccountID { get; set; }
         [ForeignKey("BorrowedAccountID")]
         public Account BorrowedAccount { get; set; }

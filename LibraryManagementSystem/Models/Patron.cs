@@ -13,7 +13,7 @@ namespace LibraryManagementSystem.Models
         public string Address { get; set; }
         //public int? AccountID { get; set; }
 
-        //public Account Account { get; set; }
+        public Account Account { get; set; }
 
 
     }

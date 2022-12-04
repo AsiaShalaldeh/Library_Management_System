@@ -13,10 +13,8 @@ namespace LibraryManagementSystem.Models
         public string History { get; set; }
         public DateTime Opened { get; set; }
         public AccountState State { get; set; }
+        public int LibraryID { get; set; }
         public Library Library { get; set; }
-
-        [InverseProperty("ReservedAccount")]
-        public IList<BookItem> ReservedBook { get; set; }
 
         [InverseProperty("BorrowedAccount")]
         public IList<BookItem> BorrowedBook{ get; set; }

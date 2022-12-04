@@ -19,7 +19,8 @@ namespace LibraryManagementSystem.Models
         public DbSet<Library> Libraries { get; set; }
         public DbSet<Patron> Patrons { get; set; }
         public DbSet<Librarian> Librarian { get; set; }
-        public IList<BookAuthor> BookAuthors { get; set; }
+        public DbSet<BookAuthor> BookAuthors { get; set; }
+        public DbSet<Catalog> Catalog { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

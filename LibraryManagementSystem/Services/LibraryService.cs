@@ -9,18 +9,42 @@ namespace LibraryManagementSystem.Services
 {
     public class LibraryService
     {
-        private LibraryContext _context;
+        private readonly LibraryContext _context;
         public LibraryService()
         {
             _context = new LibraryContext();
         }
-        public void CreateLibrary(string name,string address)
+        public void CreateLibrary(string name, string address)
         {
-            Library library = new Library();
-            library.Name = name;
-            library.Address = address;
-            _context.Add<Library>(library);
-            _context.SaveChanges();
+            try
+            {
+                Library library = new Library();
+                library.Name = name;
+                library.Address = address;
+                _context.Libraries.Add(library);
+                _context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        public IList<int> GetLibrariesIDs()
+        {
+            IList<int> ids = new List<int>();
+            try
+            {
+                var list = _context.Libraries.Select(l => l.LibraryID);
+                foreach (var id in list)
+                {
+                    ids.Add(id);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return ids;
         }
     }
 }

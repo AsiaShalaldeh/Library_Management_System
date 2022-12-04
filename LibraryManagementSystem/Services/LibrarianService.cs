@@ -10,13 +10,18 @@ namespace LibraryManagementSystem.Services
     public class LibrarianService
     {
         private LibraryContext _context;
-        public LibrarianService(LibraryContext context)
+        public LibrarianService()
         {
-            _context = context;
+            _context =new LibraryContext();
         }
-        public void CreateLibrarian(Librarian librarian)
+        public void CreateLibrarian(string name,string password,string position,string address)
         {
-            _context.Add<Librarian>(librarian);
+            Librarian librarian = new Librarian();
+            librarian.Name = name;
+            librarian.Password = password;
+            librarian.Position = position;
+            librarian.Address = address;
+            _context.Librarian.Add(librarian);
             _context.SaveChanges();
         }
     }
