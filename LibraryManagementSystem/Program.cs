@@ -11,8 +11,8 @@ namespace LibraryManagementSystem
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            LoginForm loginForm = new LoginForm();
-            Application.Run(loginForm);
+            //LoginForm loginForm = new LoginForm();
+            Application.Run(new LibrarianForm());
         }
     }
 }

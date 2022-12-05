@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LibraryManagementSystem.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,10 +13,12 @@ namespace LibraryManagementSystem
 {
     public partial class LoginForm : Form
     {
+        LibrarianService _librarianService;
         public LoginForm()
         {
             InitializeComponent();
             panel1.BackColor = Color.FromArgb(100, 0, 0, 0);
+            _librarianService = new LibrarianService();
            
         }
 
@@ -38,14 +41,25 @@ namespace LibraryManagementSystem
                 libraryForm.Show();
                 this.Hide();
             }
-            else if (userName != "admin")
+            else
             {
-                MessageBox.Show("User Name Is Worng, Try Again ");
+                bool isFound = false ;
+                var librarians = _librarianService.GetAllLibrarians();
+                foreach (var lib in librarians)
+                {
+                    if (userName.Equals(lib.userName) && password.Equals(lib.password))
+                    {
+                        LibrarianForm librarianForm = new LibrarianForm();
+                        librarianForm.Show();
+                        this.Hide();
+                        isFound = true;
+                    }
+                }
+                if(!isFound)
+                    MessageBox.Show("Wrong UserName And Password");
             }
-            else if (password != "admin")
-            {
-                MessageBox.Show("Password Is Worng, Try Again ");
-            }
+            userNameBox.Text= "";
+            passwordBox.Text = "";
         }
 
         private void label2_Click(object sender, EventArgs e)

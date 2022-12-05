@@ -103,9 +103,9 @@ namespace LibraryManagementSystem.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ISBN"), 1L, 1);
 
-                    b.Property<string>("Discriminator")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    //b.Property<string>("Discriminator")
+                    //    .IsRequired()
+                    //    .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Language")
                         .IsRequired()
@@ -133,7 +133,7 @@ namespace LibraryManagementSystem.Migrations
 
                     b.ToTable("Books");
 
-                    b.HasDiscriminator<string>("Discriminator").HasValue("Book");
+                    //b.HasDiscriminator<string>("Discriminator").HasValue("Book");
                 });
 
             modelBuilder.Entity("LibraryManagementSystem.Models.BookAuthor", b =>

@@ -11,14 +11,33 @@ namespace LibraryManagementSystem.Services
     public class BookService
     {
         private LibraryContext _context;
-        public BookService(LibraryContext context)
+        public BookService()
         {
-            _context = context;
+            _context = new LibraryContext();
         }
-        public void CreateBook(BookItem bookItem)
+        public void CreateBook(string title, string barcode, string publisher, int pages, bool isRef, string langauge, string RFID, DateTime date, string summary, int libraryID, int catalogID)
         {
-            _context.Add<BookItem>(bookItem);
-            _context.SaveChanges();
+            try
+            {
+                BookItem bookItem = new BookItem();
+                bookItem.Title = title;
+                bookItem.Barcode = barcode;
+                bookItem.Publisher = publisher;
+                bookItem.LibraryID = libraryID;
+                bookItem.CatalogID = catalogID;
+                bookItem.Summary = summary;
+                bookItem.NumberOfPages = pages;
+                bookItem.Language = langauge;
+                bookItem.IsReferenceOnly = isRef;
+                bookItem.RFID = RFID;
+                bookItem.PublicationDate = date;
+                _context.Books.Add(bookItem);
+                _context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         public BookItem SearchBookByID(int bookId)
         {
@@ -33,7 +52,7 @@ namespace LibraryManagementSystem.Services
             }
             return bookItem;
         }
-        public string UpdateBook(BookItem book)
+        public void UpdateBook(BookItem book)
         {
             try
             {
@@ -51,19 +70,19 @@ namespace LibraryManagementSystem.Services
                     bookItem.IsReferenceOnly = book.IsReferenceOnly;
                     _context.Update<BookItem>(bookItem);
                     _context.SaveChanges();
-                    return "Book Updated Successfully";
+                    MessageBox.Show("Book Updated Successfully");
                 }
                 else
                 {
-                    return "Book Not Found";
+                    MessageBox.Show("Book Not Found");
                 }
             }
             catch (Exception ex)
             {
-                return "Error : " + ex.Message;
+                MessageBox.Show("Error : " + ex.Message);
             }
         }
-        public string DeleteUser(int ISBN)
+        public void DeleteBook(int ISBN)
         {
             try
             {
@@ -72,16 +91,16 @@ namespace LibraryManagementSystem.Services
                 {
                     _context.Remove<BookItem>(bookItem);
                     _context.SaveChanges();
-                    return "Book Deleted Successfully";
+                    MessageBox.Show("Book Deleted Successfully");
                 }
                 else
                 {
-                    return "Book Not Found";
+                    MessageBox.Show("Book Not Found");
                 }
             }
             catch (Exception ex)
             {
-                return "Error : " + ex.Message;
+                MessageBox.Show("Error : " + ex.Message);
             }
         }
         public IList<string> GetAllBookAuthors(int ISBN)

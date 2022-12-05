@@ -161,8 +161,9 @@
             this.BackgroundImage = global::LibraryManagementSystem.Properties.Resources.library;
             this.ClientSize = new System.Drawing.Size(739, 515);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LoginForm";
-            this.Text = "LoginForm";
+            this.Text = "Library Management System";
             this.Load += new System.EventHandler(this.LoginForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

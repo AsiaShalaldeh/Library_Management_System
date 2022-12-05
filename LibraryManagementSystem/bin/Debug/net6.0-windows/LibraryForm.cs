@@ -181,6 +181,8 @@ namespace LibraryManagementSystem
             string history = "anything";
             AccountState state = (AccountState)accountStateBox.SelectedValue;
             int libraryID= Convert.ToInt32(libraryIDForPatron.SelectedItem.ToString());
+            patronNameBox.Text = "";
+            patronAddressBox.Text = "";
             int patronID=_patronService.CreatePatron(name, address);
             _patronService.CreateAccount(patronID, opened, state, libraryID,history);
          

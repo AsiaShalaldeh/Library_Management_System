@@ -228,9 +228,9 @@
             this.libraryPanel.Controls.Add(this.label3);
             this.libraryPanel.Controls.Add(this.label4);
             this.libraryPanel.Controls.Add(this.pictureBox7);
-            this.libraryPanel.Location = new System.Drawing.Point(342, 114);
+            this.libraryPanel.Location = new System.Drawing.Point(101, 114);
             this.libraryPanel.Name = "libraryPanel";
-            this.libraryPanel.Size = new System.Drawing.Size(742, 468);
+            this.libraryPanel.Size = new System.Drawing.Size(983, 468);
             this.libraryPanel.TabIndex = 12;
             this.libraryPanel.Visible = false;
             // 
