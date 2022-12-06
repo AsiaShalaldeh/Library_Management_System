@@ -16,8 +16,7 @@ namespace LibraryManagementSystem.Models
         public int LibraryID { get; set; }
         public Library Library { get; set; }
 
-        [InverseProperty("BorrowedAccount")]
-        public IList<BookItem> BorrowedBook{ get; set; }
+        public IList<BookItem> BookItems{ get; set; }
         public int? PatronID { get; set; }
         public Patron Patron { get; set; }
 

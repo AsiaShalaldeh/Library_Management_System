@@ -41,6 +41,23 @@ namespace LibraryManagementSystem.Services
                 MessageBox.Show(ex.Message);
             }
         }
+        public IList<int> GetAllAccountIDs()
+        {
+            IList<int> ids = new List<int>();
+            try
+            {
+                var accounts = _context.Accounts.Select(a => a.AccountID);
+                foreach(var a in accounts)
+                {
+                    ids.Add(a);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return ids;
+        }
         public Patron SearchPatronByID(int patronID)
         {
             Patron patron = null;

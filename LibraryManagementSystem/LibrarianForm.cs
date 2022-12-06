@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static LibraryManagementSystem.Services.BookService;
 
 namespace LibraryManagementSystem
 {
@@ -17,17 +18,26 @@ namespace LibraryManagementSystem
         CatalogService _catalogService;
         LibraryService _libraryService;
         BookService _bookService;
+        AuthorService _authorService;
+        IList<Author> authors;
         public LibrarianForm()
         {
             InitializeComponent();
             bookPanel.BackColor = Color.FromArgb(100, 0, 0, 70);
             createPanel.BackColor = Color.FromArgb(100, 0, 0, 70);
-            _catalogService=new CatalogService();
+            updateBookPanel.BackColor = Color.FromArgb(100, 0, 0, 70);
+            serachBookPanel.BackColor = Color.FromArgb(100, 0, 0, 70);
+            deleteBookPanel.BackColor = Color.FromArgb(100, 0, 0, 70);
+            authorPanel.BackColor = Color.FromArgb(100, 0, 0, 70);
+            retrievePanel.BackColor = Color.FromArgb(100, 0, 0, 70);
+            retrievePatronPanel.BackColor = Color.FromArgb(100, 0, 0, 70);
+            _catalogService = new CatalogService();
             _libraryService=new LibraryService();
             _bookService = new BookService();
+            _authorService = new AuthorService();
+            authors = new List<Author>();
             GetDataFromDB();
         }
-
         public void GetDataFromDB()
         {
             IList<int> catalogIDList = _catalogService.GetCatalogsIDs();
@@ -39,6 +49,12 @@ namespace LibraryManagementSystem
             bookLibraryIDBox.DataSource = null;
             bookLibraryIDBox.DisplayMember = "LibraryID";
             bookLibraryIDBox.DataSource = libraryIDList;
+
+            //IList<int> authorIDs = _authorService.GetAuthorIDs();
+            //authorsIDsBox.DataSource = null;
+            //authorsIDsBox.DisplayMember = "AuthorID";
+            //authorsIDsBox.DataSource = authorIDs;
+
         }
         private void createBookBtn_Click(object sender, EventArgs e)
         {
@@ -63,13 +79,17 @@ namespace LibraryManagementSystem
             int pages = Convert.ToInt32(bookPagesBox.Text);
             bool isRef = bookRefBox.SelectedText == "True" ? true : false ;
             string langauge = bookLanguageBox.Text;
-            string RFID = bookRFIDBox.SelectedText;
+            string RFID = bookRFIDBox.Text;
             DateTime date = bookPubDate.Value;
             string summary = bookSummaryBox.Text;
             int libraryID = Convert.ToInt32(bookLibraryIDBox.SelectedValue.ToString());
             int catalogID = Convert.ToInt32(bookCatalogIDBox.SelectedValue.ToString());
-
-            _bookService.CreateBook(title, barcode, publisher, pages, isRef, langauge, RFID, date, summary, libraryID, catalogID);
+            //int librarianID=Convert.ToInt32()
+            IList<Author> _authors = authors;
+            authors.Clear();
+            _bookService.CreateBook(title, barcode, publisher, pages,
+                isRef, langauge, RFID, date, summary, libraryID, catalogID,_authors);
+            
 
             bookTitleBox.Text = "";
             bookBarcodeBox.Text = "";
@@ -84,7 +104,14 @@ namespace LibraryManagementSystem
         private void updateBook_Click(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(bookIDToUpdateBox.Text);
-            //_bookService.UpdateBook(id);
+            int pages = Convert.ToInt32(bookPagesToUpdate.Text);
+            string title = bookTitleToUpdate.Text;
+            string summary = bookSummaryToUdate.Text;
+            bookIDToUpdateBox.Text = "";
+            bookPagesToUpdate.Text = "";
+            bookTitleToUpdate.Text = "";
+            bookSummaryToUdate.Text = "";
+            _bookService.UpdateBook(id, title, summary, pages);
         }
 
         private void cancelBookUpdatePanel_Click(object sender, EventArgs e)
@@ -94,7 +121,7 @@ namespace LibraryManagementSystem
 
         private void updateBookBtn_Click(object sender, EventArgs e)
         {
-            updateBook.Visible = true;
+            updateBookPanel.Visible = true;
         }
 
         private void deleteBookBtn_Click(object sender, EventArgs e)
@@ -136,20 +163,126 @@ namespace LibraryManagementSystem
                 else if (bookISBNSearch.Text.Trim()!="")
                 {
                     int ISBN = Convert.ToInt32(bookISBNSearch.Text);
-                    BookItem book = _bookService.SearchBookByID(ISBN);
+                    _bookService.SearchBookByID(ISBN);
+                    bookISBNSearch.Text = "";
                 }
                 else if (bookTitleSearch.Text.Trim() != "")
                 {
                     string title = bookTitleSearch.Text;
-                    BookItem book = _bookService.SearchBookByTitle(title);
+                    _bookService.SearchBookByTitle(title);
+                    bookTitleSearch.Text = "";
                 }
-                // show book data
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
 
+        }
+
+        private void updateBookPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void deleteBookPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void addAuthor_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cancelAuthorPanel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void createAuthor_Click(object sender, EventArgs e)
+        {
+            
+
+
+        }
+
+        private void createAuthorBtn_Click(object sender, EventArgs e)
+        {
+            authorPanel.Visible = true;
+        }
+
+        private void cancelAuthorPanel_Click_1(object sender, EventArgs e)
+        {
+            authorPanel.Visible = false;
+        }
+
+        private void createAuthor_Click_1(object sender, EventArgs e)
+        {
+            string name = authorNameBox.Text;
+            string biography = authorBiographyBox.Text;
+            DateTime birthdate = authorBirthDate.Value;
+            Author author = _authorService.CreateAuthor(name, biography, birthdate);
+            authors.Add(author);
+            authorNameBox.Text = "";
+            authorBiographyBox.Text = "";
+        }
+
+        private void authorPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void addAuthor_Click_1(object sender, EventArgs e)
+        {
+            authorPanel.Visible = true;
+        }
+
+        private void retrieveBookBtn_Click(object sender, EventArgs e)
+        {
+            retrievePanel.Visible = true;
+        }
+
+        private void cancelRtrievePanel_Click(object sender, EventArgs e)
+        {
+            retrievePanel.Visible = false;
+        }
+
+        private void frenchBooksBtn_Click(object sender, EventArgs e)
+        {
+            IList<string> names = _bookService.getFrenchBooks();
+            showFrenchBooks.Text = "";
+            foreach(string name in names)
+            {
+                showFrenchBooks.Text += name + "\n";
+            }
+        }
+
+        private void maxPagesBtn_Click(object sender, EventArgs e)
+        {
+            string name = _bookService.getBookWithMaxNumberOfPages();
+            maxPagesList.Text = name;
+        }
+
+        private void showAuthorsNames_Click(object sender, EventArgs e)
+        {
+            int bookISBN = Convert.ToInt32(bookIDBox.Text);
+            IList<string> names = _bookService.GetAllBookAuthors(bookISBN);
+            showAuthorsNamesList.Text = "";
+            foreach (string name in names)
+            {
+                showAuthorsNamesList.Text += name + "\n";
+            }
+        }
+
+        private void retrievePatronBtn_Click(object sender, EventArgs e)
+        {
+            retrievePatronPanel.Visible = true;
+        }
+
+        private void cancelRetrievePatronPanel_Click(object sender, EventArgs e)
+        {
+            retrievePatronPanel.Visible = false;
         }
     }
 }

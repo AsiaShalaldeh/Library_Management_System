@@ -16,11 +16,10 @@ namespace LibraryManagementSystem.Models
         public Catalog Catalog { get; set; }
         public int LibraryID { get; set; }
         public Library Library { get; set; }
-        public int LibrarianID { get; set; }
+        public int? AccountID { get; set; }
+        public Account Account { get; set; }
+        public int? LibrarianID { get; set; }
         public Librarian Librarian { get; set; }
-        public int? BorrowedAccountID { get; set; }
-        [ForeignKey("BorrowedAccountID")]
-        public Account BorrowedAccount { get; set; }
 
 
     }

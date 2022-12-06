@@ -136,7 +136,8 @@ namespace LibraryManagementSystem.Migrations
                     RFID = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CatalogID = table.Column<int>(type: "int", nullable: true),
                     LibraryID = table.Column<int>(type: "int", nullable: true),
-                    AccountID = table.Column<int>(type: "int", nullable: true)
+                    AccountID = table.Column<int>(type: "int", nullable: true),
+                    LibrarianID= table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -159,34 +160,40 @@ namespace LibraryManagementSystem.Migrations
                         principalTable: "Libraries",
                         principalColumn: "LibraryID",
                         onDelete: ReferentialAction.NoAction);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "AuthorBook",
-                columns: table => new
-                {
-                    AuthorsAuthorID = table.Column<int>(type: "int", nullable: false),
-                    BooksISBN = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_AuthorBook", x => new { x.AuthorsAuthorID, x.BooksISBN });
                     table.ForeignKey(
-                        name: "FK_AuthorBook_Authors_AuthorsAuthorID",
-                        column: x => x.AuthorsAuthorID,
-                        principalTable: "Authors",
-                        principalColumn: "AuthorID",
-                        onDelete: ReferentialAction.NoAction);
-                    table.ForeignKey(
-                        name: "FK_AuthorBook_Books_BooksISBN",
-                        column: x => x.BooksISBN,
-                        principalTable: "Books",
-                        principalColumn: "ISBN",
+                        name: "FK_Books_Librarian_LibrarianID",
+                        column: x => x.LibrarianID,
+                        principalTable: "Librarian",
+                        principalColumn: "LibrarianID",
                         onDelete: ReferentialAction.NoAction);
                 });
 
+            //migrationBuilder.CreateTable(
+            //    name: "AuthorBook",
+            //    columns: table => new
+            //    {
+            //        AuthorsAuthorID = table.Column<int>(type: "int", nullable: false),
+            //        BooksISBN = table.Column<int>(type: "int", nullable: false)
+            //    },
+            //    constraints: table =>
+            //    {
+            //        table.PrimaryKey("PK_AuthorBook", x => new { x.AuthorsAuthorID, x.BooksISBN });
+            //        table.ForeignKey(
+            //            name: "FK_AuthorBook_Authors_AuthorsAuthorID",
+            //            column: x => x.AuthorsAuthorID,
+            //            principalTable: "Authors",
+            //            principalColumn: "AuthorID",
+            //            onDelete: ReferentialAction.NoAction);
+            //        table.ForeignKey(
+            //            name: "FK_AuthorBook_Books_BooksISBN",
+            //            column: x => x.BooksISBN,
+            //            principalTable: "Books",
+            //            principalColumn: "ISBN",
+            //            onDelete: ReferentialAction.NoAction);
+            //    });
+
             migrationBuilder.CreateTable(
-                name: "BookAuthor",
+                name: "BookAuthors",
                 columns: table => new
                 {
                     BookID = table.Column<int>(type: "int", nullable: false),

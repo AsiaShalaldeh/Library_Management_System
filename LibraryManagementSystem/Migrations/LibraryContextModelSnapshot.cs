@@ -22,20 +22,20 @@ namespace LibraryManagementSystem.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("AuthorBook", b =>
-                {
-                    b.Property<int>("AuthorsAuthorID")
-                        .HasColumnType("int");
+            //modelBuilder.Entity("AuthorBook", b =>
+            //    {
+            //        b.Property<int>("AuthorsAuthorID")
+            //            .HasColumnType("int");
 
-                    b.Property<int>("BooksISBN")
-                        .HasColumnType("int");
+            //        b.Property<int>("BooksISBN")
+            //            .HasColumnType("int");
 
-                    b.HasKey("AuthorsAuthorID", "BooksISBN");
+            //        b.HasKey("AuthorsAuthorID", "BooksISBN");
 
-                    b.HasIndex("BooksISBN");
+            //        b.HasIndex("BooksISBN");
 
-                    b.ToTable("AuthorBook");
-                });
+            //        b.ToTable("AuthorBook");
+            //    });
 
             modelBuilder.Entity("LibraryManagementSystem.Models.Account", b =>
                 {
@@ -103,9 +103,9 @@ namespace LibraryManagementSystem.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ISBN"), 1L, 1);
 
-                    //b.Property<string>("Discriminator")
-                    //    .IsRequired()
-                    //    .HasColumnType("nvarchar(max)");
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Language")
                         .IsRequired()
@@ -133,7 +133,7 @@ namespace LibraryManagementSystem.Migrations
 
                     b.ToTable("Books");
 
-                    //b.HasDiscriminator<string>("Discriminator").HasValue("Book");
+                    b.HasDiscriminator<string>("Discriminator").HasValue("Book");
                 });
 
             modelBuilder.Entity("LibraryManagementSystem.Models.BookAuthor", b =>
@@ -148,7 +148,7 @@ namespace LibraryManagementSystem.Migrations
 
                     b.HasIndex("AuthorID");
 
-                    b.ToTable("BookAuthor");
+                    b.ToTable("BookAuthors");
                 });
 
             modelBuilder.Entity("LibraryManagementSystem.Models.Catalog", b =>
@@ -268,6 +268,9 @@ namespace LibraryManagementSystem.Migrations
                     b.Property<int>("LibraryID")
                         .HasColumnType("int");
 
+                    b.Property<int>("LibrarianID")
+                        .HasColumnType("int");
+
                     b.Property<string>("RFID")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -278,21 +281,23 @@ namespace LibraryManagementSystem.Migrations
 
                     b.HasIndex("LibraryID");
 
+                    b.HasIndex("LibrarianID");
+
                     b.HasDiscriminator().HasValue("BookItem");
                 });
 
-            modelBuilder.Entity("AuthorBook", b =>
-                {
-                    b.HasOne("LibraryManagementSystem.Models.Author", null)
-                        .WithMany()
-                        .HasForeignKey("AuthorsAuthorID")
-                        .IsRequired();
+            //modelBuilder.Entity("AuthorBook", b =>
+            //    {
+            //        b.HasOne("LibraryManagementSystem.Models.Author", null)
+            //            .WithMany()
+            //            .HasForeignKey("AuthorsAuthorID")
+            //            .IsRequired();
 
-                    b.HasOne("LibraryManagementSystem.Models.Book", null)
-                        .WithMany()
-                        .HasForeignKey("BooksISBN")
-                        .IsRequired();
-                });
+            //        b.HasOne("LibraryManagementSystem.Models.Book", null)
+            //            .WithMany()
+            //            .HasForeignKey("BooksISBN")
+            //            .IsRequired();
+            //    });
 
             modelBuilder.Entity("LibraryManagementSystem.Models.Account", b =>
                 {

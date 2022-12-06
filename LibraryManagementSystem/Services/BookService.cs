@@ -15,7 +15,9 @@ namespace LibraryManagementSystem.Services
         {
             _context = new LibraryContext();
         }
-        public void CreateBook(string title, string barcode, string publisher, int pages, bool isRef, string langauge, string RFID, DateTime date, string summary, int libraryID, int catalogID)
+        public void CreateBook(string title, string barcode, string publisher,
+            int pages, bool isRef, string langauge, string RFID, DateTime date,
+            string summary, int libraryID, int catalogID, IList<Author> authors)
         {
             try
             {
@@ -31,6 +33,12 @@ namespace LibraryManagementSystem.Services
                 bookItem.IsReferenceOnly = isRef;
                 bookItem.RFID = RFID;
                 bookItem.PublicationDate = date;
+                IList<BookAuthor> bookAuthors = new List<BookAuthor>();
+                foreach (Author author in authors)
+                {
+                    bookAuthors.Add(new BookAuthor() { Book = bookItem, Author = author });
+                }
+                bookItem.Authors = bookAuthors;
                 _context.Books.Add(bookItem);
                 _context.SaveChanges();
             }
@@ -45,6 +53,14 @@ namespace LibraryManagementSystem.Services
             try
             {
                 bookItem = _context.Find<BookItem>(bookId);
+                if (bookItem != null)
+                {
+                    MessageBox.Show("Book Found");
+                }
+                else
+                {
+                    MessageBox.Show("Book Not Found");
+                }
             }
             catch (Exception)
             {
@@ -52,22 +68,22 @@ namespace LibraryManagementSystem.Services
             }
             return bookItem;
         }
-        public void UpdateBook(BookItem book)
+        public void UpdateBook(int id, string title, string summary, int pages)
         {
             try
             {
-                BookItem bookItem = SearchBookByID(book.ISBN);
+                BookItem bookItem = SearchBookByID(id);
                 if (bookItem != null)
                 {
-                    bookItem.Title = book.Title;
-                    bookItem.Summary = book.Summary;
-                    bookItem.Publisher = book.Publisher;
-                    bookItem.PublicationDate = book.PublicationDate;
-                    bookItem.NumberOfPages = book.NumberOfPages;
-                    bookItem.Language = book.Language;
-                    bookItem.Barcode = book.Barcode;
-                    bookItem.RFID = book.RFID;
-                    bookItem.IsReferenceOnly = book.IsReferenceOnly;
+                    bookItem.Title =title;
+                    bookItem.Summary = summary;
+                    //bookItem.Publisher = book.Publisher;
+                    //bookItem.PublicationDate = book.PublicationDate;
+                    bookItem.NumberOfPages = pages;
+                    //bookItem.Language = book.Language;
+                    //bookItem.Barcode = book.Barcode;
+                    //bookItem.RFID = book.RFID;
+                    //bookItem.IsReferenceOnly = book.IsReferenceOnly;
                     _context.Update<BookItem>(bookItem);
                     _context.SaveChanges();
                     MessageBox.Show("Book Updated Successfully");
@@ -168,5 +184,8 @@ namespace LibraryManagementSystem.Services
             }
             return names;
         }
+
+        public record _BookItem(int id, string title, string summary, int pages);
+
     }
 }
