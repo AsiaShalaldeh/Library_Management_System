@@ -33,12 +33,20 @@
             System.Windows.Forms.Button frenchBooksBtn;
             System.Windows.Forms.Button maxPagesBtn;
             System.Windows.Forms.Button showAuthorsNames;
-            System.Windows.Forms.Button button2;
+            System.Windows.Forms.Button getFrozenAccountsNames;
             System.Windows.Forms.Button cancelRetrievePatronPanel;
+            System.Windows.Forms.Button cancelUpdatePanel;
+            System.Windows.Forms.Button canelBorrowPanel;
+            System.Windows.Forms.Button cancelUnBorrow;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LibrarianForm));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.retrievePanel = new System.Windows.Forms.Panel();
+            this.label27 = new System.Windows.Forms.Label();
+            this.bookIDBox = new System.Windows.Forms.TextBox();
+            this.showAuthorsNamesList = new System.Windows.Forms.RichTextBox();
+            this.maxPagesList = new System.Windows.Forms.RichTextBox();
+            this.label22 = new System.Windows.Forms.Label();
             this.showFrenchBooks = new System.Windows.Forms.RichTextBox();
             this.label29 = new System.Windows.Forms.Label();
             this.createPanel = new System.Windows.Forms.Panel();
@@ -111,27 +119,52 @@
             this.retrieveBookBtn = new System.Windows.Forms.Button();
             this.createBookBtn = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.maxPagesList = new System.Windows.Forms.RichTextBox();
-            this.label22 = new System.Windows.Forms.Label();
-            this.showAuthorsNamesList = new System.Windows.Forms.RichTextBox();
-            this.bookIDBox = new System.Windows.Forms.TextBox();
-            this.label27 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.updatePatronPanel = new System.Windows.Forms.Panel();
+            this.libraryIDCombo = new System.Windows.Forms.ComboBox();
+            this.accountStateCombo = new System.Windows.Forms.ComboBox();
+            this.label41 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.patronAddressToUpdate = new System.Windows.Forms.TextBox();
+            this.patronIDToUpdate = new System.Windows.Forms.TextBox();
+            this.patronNameToUpdate = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.updatePatron = new System.Windows.Forms.Button();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.unborrowPanel = new System.Windows.Forms.Panel();
+            this.bookISBNBox = new System.Windows.Forms.ComboBox();
+            this.makeUnBorrow = new System.Windows.Forms.Button();
+            this.label39 = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
+            this.makeBorrowPanel = new System.Windows.Forms.Panel();
+            this.bookTitleBorrow = new System.Windows.Forms.TextBox();
+            this.acountIDBorrow = new System.Windows.Forms.TextBox();
+            this.label35 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label37 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.retrievePatronPanel = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label33 = new System.Windows.Forms.Label();
+            this.patronPanel = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.updatePatronBtn = new System.Windows.Forms.Button();
             this.makeBorrowBtn = new System.Windows.Forms.Button();
             this.makeUnborrowBtn = new System.Windows.Forms.Button();
             this.retrievePatronBtn = new System.Windows.Forms.Button();
-            this.retrievePatronPanel = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label33 = new System.Windows.Forms.Label();
+            this.patronsNamesList = new System.Windows.Forms.RichTextBox();
+            this.PatronsNamesFrozenAccount = new System.Windows.Forms.RichTextBox();
             cancelAuthorPanel = new System.Windows.Forms.Button();
             cancelRtrievePanel = new System.Windows.Forms.Button();
             frenchBooksBtn = new System.Windows.Forms.Button();
             maxPagesBtn = new System.Windows.Forms.Button();
             showAuthorsNames = new System.Windows.Forms.Button();
-            button2 = new System.Windows.Forms.Button();
+            getFrozenAccountsNames = new System.Windows.Forms.Button();
             cancelRetrievePatronPanel = new System.Windows.Forms.Button();
+            cancelUpdatePanel = new System.Windows.Forms.Button();
+            canelBorrowPanel = new System.Windows.Forms.Button();
+            cancelUnBorrow = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.retrievePanel.SuspendLayout();
@@ -143,9 +176,12 @@
             this.bookPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPage2.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.updatePatronPanel.SuspendLayout();
+            this.unborrowPanel.SuspendLayout();
+            this.makeBorrowPanel.SuspendLayout();
             this.retrievePatronPanel.SuspendLayout();
+            this.patronPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // cancelAuthorPanel
@@ -196,6 +232,118 @@
             frenchBooksBtn.UseVisualStyleBackColor = false;
             frenchBooksBtn.Click += new System.EventHandler(this.frenchBooksBtn_Click);
             // 
+            // maxPagesBtn
+            // 
+            maxPagesBtn.BackColor = System.Drawing.Color.DarkOrange;
+            maxPagesBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            maxPagesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            maxPagesBtn.Font = new System.Drawing.Font("Segoe UI", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            maxPagesBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            maxPagesBtn.Location = new System.Drawing.Point(304, 289);
+            maxPagesBtn.Name = "maxPagesBtn";
+            maxPagesBtn.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            maxPagesBtn.Size = new System.Drawing.Size(236, 44);
+            maxPagesBtn.TabIndex = 17;
+            maxPagesBtn.Text = "Max Pages";
+            maxPagesBtn.UseVisualStyleBackColor = false;
+            maxPagesBtn.Click += new System.EventHandler(this.maxPagesBtn_Click);
+            // 
+            // showAuthorsNames
+            // 
+            showAuthorsNames.BackColor = System.Drawing.Color.DarkOrange;
+            showAuthorsNames.Cursor = System.Windows.Forms.Cursors.Hand;
+            showAuthorsNames.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            showAuthorsNames.Font = new System.Drawing.Font("Segoe UI", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            showAuthorsNames.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            showAuthorsNames.Location = new System.Drawing.Point(568, 289);
+            showAuthorsNames.Name = "showAuthorsNames";
+            showAuthorsNames.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            showAuthorsNames.Size = new System.Drawing.Size(271, 44);
+            showAuthorsNames.TabIndex = 19;
+            showAuthorsNames.Text = "Show Authors Names";
+            showAuthorsNames.UseVisualStyleBackColor = false;
+            showAuthorsNames.Click += new System.EventHandler(this.showAuthorsNames_Click);
+            // 
+            // getFrozenAccountsNames
+            // 
+            getFrozenAccountsNames.BackColor = System.Drawing.Color.DarkOrange;
+            getFrozenAccountsNames.Cursor = System.Windows.Forms.Cursors.Hand;
+            getFrozenAccountsNames.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            getFrozenAccountsNames.Font = new System.Drawing.Font("Segoe UI", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            getFrozenAccountsNames.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            getFrozenAccountsNames.Location = new System.Drawing.Point(374, 31);
+            getFrozenAccountsNames.Name = "getFrozenAccountsNames";
+            getFrozenAccountsNames.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            getFrozenAccountsNames.Size = new System.Drawing.Size(311, 44);
+            getFrozenAccountsNames.TabIndex = 12;
+            getFrozenAccountsNames.Text = "Frozen Account Patrons";
+            getFrozenAccountsNames.UseVisualStyleBackColor = false;
+            getFrozenAccountsNames.Click += new System.EventHandler(this.getFrozenAccountsNames_Click);
+            // 
+            // cancelRetrievePatronPanel
+            // 
+            cancelRetrievePatronPanel.BackColor = System.Drawing.Color.DarkOrange;
+            cancelRetrievePatronPanel.Cursor = System.Windows.Forms.Cursors.Hand;
+            cancelRetrievePatronPanel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            cancelRetrievePatronPanel.Font = new System.Drawing.Font("Segoe UI", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            cancelRetrievePatronPanel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            cancelRetrievePatronPanel.Location = new System.Drawing.Point(277, 357);
+            cancelRetrievePatronPanel.Name = "cancelRetrievePatronPanel";
+            cancelRetrievePatronPanel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            cancelRetrievePatronPanel.Size = new System.Drawing.Size(135, 44);
+            cancelRetrievePatronPanel.TabIndex = 13;
+            cancelRetrievePatronPanel.Text = "Cancel";
+            cancelRetrievePatronPanel.UseVisualStyleBackColor = false;
+            cancelRetrievePatronPanel.Click += new System.EventHandler(this.cancelRetrievePatronPanel_Click);
+            // 
+            // cancelUpdatePanel
+            // 
+            cancelUpdatePanel.BackColor = System.Drawing.Color.DarkOrange;
+            cancelUpdatePanel.Cursor = System.Windows.Forms.Cursors.Hand;
+            cancelUpdatePanel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            cancelUpdatePanel.Font = new System.Drawing.Font("Segoe UI", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            cancelUpdatePanel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            cancelUpdatePanel.Location = new System.Drawing.Point(399, 336);
+            cancelUpdatePanel.Name = "cancelUpdatePanel";
+            cancelUpdatePanel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            cancelUpdatePanel.Size = new System.Drawing.Size(147, 44);
+            cancelUpdatePanel.TabIndex = 12;
+            cancelUpdatePanel.Text = "Cancel";
+            cancelUpdatePanel.UseVisualStyleBackColor = false;
+            cancelUpdatePanel.Click += new System.EventHandler(this.cancelUpdatePanel_Click);
+            // 
+            // canelBorrowPanel
+            // 
+            canelBorrowPanel.BackColor = System.Drawing.Color.DarkOrange;
+            canelBorrowPanel.Cursor = System.Windows.Forms.Cursors.Hand;
+            canelBorrowPanel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            canelBorrowPanel.Font = new System.Drawing.Font("Segoe UI", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            canelBorrowPanel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            canelBorrowPanel.Location = new System.Drawing.Point(405, 229);
+            canelBorrowPanel.Name = "canelBorrowPanel";
+            canelBorrowPanel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            canelBorrowPanel.Size = new System.Drawing.Size(152, 44);
+            canelBorrowPanel.TabIndex = 12;
+            canelBorrowPanel.Text = "Cancel";
+            canelBorrowPanel.UseVisualStyleBackColor = false;
+            canelBorrowPanel.Click += new System.EventHandler(this.canelBorrowPanel_Click);
+            // 
+            // cancelUnBorrow
+            // 
+            cancelUnBorrow.BackColor = System.Drawing.Color.DarkOrange;
+            cancelUnBorrow.Cursor = System.Windows.Forms.Cursors.Hand;
+            cancelUnBorrow.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            cancelUnBorrow.Font = new System.Drawing.Font("Segoe UI", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            cancelUnBorrow.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            cancelUnBorrow.Location = new System.Drawing.Point(405, 229);
+            cancelUnBorrow.Name = "cancelUnBorrow";
+            cancelUnBorrow.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            cancelUnBorrow.Size = new System.Drawing.Size(152, 44);
+            cancelUnBorrow.TabIndex = 12;
+            cancelUnBorrow.Text = "Cancel";
+            cancelUnBorrow.UseVisualStyleBackColor = false;
+            cancelUnBorrow.Click += new System.EventHandler(this.cancelUnBorrow_Click);
+            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
@@ -244,6 +392,52 @@
             this.retrievePanel.Size = new System.Drawing.Size(851, 430);
             this.retrievePanel.TabIndex = 34;
             this.retrievePanel.Visible = false;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label27.ForeColor = System.Drawing.Color.White;
+            this.label27.Location = new System.Drawing.Point(568, 366);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(124, 30);
+            this.label27.TabIndex = 22;
+            this.label27.Text = "Book ISBN";
+            // 
+            // bookIDBox
+            // 
+            this.bookIDBox.Location = new System.Drawing.Point(708, 364);
+            this.bookIDBox.Name = "bookIDBox";
+            this.bookIDBox.Size = new System.Drawing.Size(131, 35);
+            this.bookIDBox.TabIndex = 21;
+            // 
+            // showAuthorsNamesList
+            // 
+            this.showAuthorsNamesList.Enabled = false;
+            this.showAuthorsNamesList.Location = new System.Drawing.Point(568, 17);
+            this.showAuthorsNamesList.Name = "showAuthorsNamesList";
+            this.showAuthorsNamesList.Size = new System.Drawing.Size(271, 262);
+            this.showAuthorsNamesList.TabIndex = 20;
+            this.showAuthorsNamesList.Text = "";
+            // 
+            // maxPagesList
+            // 
+            this.maxPagesList.Enabled = false;
+            this.maxPagesList.Location = new System.Drawing.Point(302, 17);
+            this.maxPagesList.Name = "maxPagesList";
+            this.maxPagesList.Size = new System.Drawing.Size(235, 257);
+            this.maxPagesList.TabIndex = 18;
+            this.maxPagesList.Text = "";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Impact", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label22.ForeColor = System.Drawing.Color.DarkOrange;
+            this.label22.Location = new System.Drawing.Point(521, 15);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(0, 45);
+            this.label22.TabIndex = 16;
             // 
             // showFrenchBooks
             // 
@@ -1065,7 +1259,10 @@
             // 
             this.tabPage2.BackgroundImage = global::LibraryManagementSystem.Properties.Resources.library;
             this.tabPage2.Controls.Add(this.retrievePatronPanel);
-            this.tabPage2.Controls.Add(this.panel1);
+            this.tabPage2.Controls.Add(this.updatePatronPanel);
+            this.tabPage2.Controls.Add(this.unborrowPanel);
+            this.tabPage2.Controls.Add(this.makeBorrowPanel);
+            this.tabPage2.Controls.Add(this.patronPanel);
             this.tabPage2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.tabPage2.Location = new System.Drawing.Point(4, 34);
             this.tabPage2.Name = "tabPage2";
@@ -1075,96 +1272,335 @@
             this.tabPage2.Text = "Patron";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // maxPagesList
+            // updatePatronPanel
             // 
-            this.maxPagesList.Enabled = false;
-            this.maxPagesList.Location = new System.Drawing.Point(302, 17);
-            this.maxPagesList.Name = "maxPagesList";
-            this.maxPagesList.Size = new System.Drawing.Size(235, 257);
-            this.maxPagesList.TabIndex = 18;
-            this.maxPagesList.Text = "";
+            this.updatePatronPanel.BackColor = System.Drawing.Color.LightGray;
+            this.updatePatronPanel.Controls.Add(this.libraryIDCombo);
+            this.updatePatronPanel.Controls.Add(this.accountStateCombo);
+            this.updatePatronPanel.Controls.Add(this.label41);
+            this.updatePatronPanel.Controls.Add(this.label36);
+            this.updatePatronPanel.Controls.Add(this.patronAddressToUpdate);
+            this.updatePatronPanel.Controls.Add(this.patronIDToUpdate);
+            this.updatePatronPanel.Controls.Add(this.patronNameToUpdate);
+            this.updatePatronPanel.Controls.Add(this.label28);
+            this.updatePatronPanel.Controls.Add(this.updatePatron);
+            this.updatePatronPanel.Controls.Add(cancelUpdatePanel);
+            this.updatePatronPanel.Controls.Add(this.label30);
+            this.updatePatronPanel.Controls.Add(this.label32);
+            this.updatePatronPanel.Controls.Add(this.label34);
+            this.updatePatronPanel.Location = new System.Drawing.Point(332, 20);
+            this.updatePatronPanel.Name = "updatePatronPanel";
+            this.updatePatronPanel.Size = new System.Drawing.Size(877, 416);
+            this.updatePatronPanel.TabIndex = 35;
+            this.updatePatronPanel.Visible = false;
             // 
-            // maxPagesBtn
+            // libraryIDCombo
             // 
-            maxPagesBtn.BackColor = System.Drawing.Color.DarkOrange;
-            maxPagesBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            maxPagesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            maxPagesBtn.Font = new System.Drawing.Font("Segoe UI", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            maxPagesBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            maxPagesBtn.Location = new System.Drawing.Point(304, 289);
-            maxPagesBtn.Name = "maxPagesBtn";
-            maxPagesBtn.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            maxPagesBtn.Size = new System.Drawing.Size(236, 44);
-            maxPagesBtn.TabIndex = 17;
-            maxPagesBtn.Text = "Max Pages";
-            maxPagesBtn.UseVisualStyleBackColor = false;
-            maxPagesBtn.Click += new System.EventHandler(this.maxPagesBtn_Click);
+            this.libraryIDCombo.FormattingEnabled = true;
+            this.libraryIDCombo.Location = new System.Drawing.Point(672, 145);
+            this.libraryIDCombo.Name = "libraryIDCombo";
+            this.libraryIDCombo.Size = new System.Drawing.Size(183, 38);
+            this.libraryIDCombo.TabIndex = 31;
             // 
-            // label22
+            // accountStateCombo
             // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Impact", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label22.ForeColor = System.Drawing.Color.DarkOrange;
-            this.label22.Location = new System.Drawing.Point(521, 15);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(0, 45);
-            this.label22.TabIndex = 16;
+            this.accountStateCombo.FormattingEnabled = true;
+            this.accountStateCombo.Location = new System.Drawing.Point(388, 239);
+            this.accountStateCombo.Name = "accountStateCombo";
+            this.accountStateCombo.Size = new System.Drawing.Size(227, 38);
+            this.accountStateCombo.TabIndex = 30;
             // 
-            // showAuthorsNames
+            // label41
             // 
-            showAuthorsNames.BackColor = System.Drawing.Color.DarkOrange;
-            showAuthorsNames.Cursor = System.Windows.Forms.Cursors.Hand;
-            showAuthorsNames.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            showAuthorsNames.Font = new System.Drawing.Font("Segoe UI", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            showAuthorsNames.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            showAuthorsNames.Location = new System.Drawing.Point(568, 289);
-            showAuthorsNames.Name = "showAuthorsNames";
-            showAuthorsNames.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            showAuthorsNames.Size = new System.Drawing.Size(271, 44);
-            showAuthorsNames.TabIndex = 19;
-            showAuthorsNames.Text = "Show Authors Names";
-            showAuthorsNames.UseVisualStyleBackColor = false;
-            showAuthorsNames.Click += new System.EventHandler(this.showAuthorsNames_Click);
+            this.label41.AutoSize = true;
+            this.label41.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label41.ForeColor = System.Drawing.Color.White;
+            this.label41.Location = new System.Drawing.Point(672, 112);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(122, 30);
+            this.label41.TabIndex = 29;
+            this.label41.Text = "Library ID";
             // 
-            // showAuthorsNamesList
+            // label36
             // 
-            this.showAuthorsNamesList.Enabled = false;
-            this.showAuthorsNamesList.Location = new System.Drawing.Point(568, 17);
-            this.showAuthorsNamesList.Name = "showAuthorsNamesList";
-            this.showAuthorsNamesList.Size = new System.Drawing.Size(271, 262);
-            this.showAuthorsNamesList.TabIndex = 20;
-            this.showAuthorsNamesList.Text = "";
+            this.label36.AutoSize = true;
+            this.label36.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label36.ForeColor = System.Drawing.Color.White;
+            this.label36.Location = new System.Drawing.Point(388, 205);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(72, 30);
+            this.label36.TabIndex = 28;
+            this.label36.Text = "State";
             // 
-            // bookIDBox
+            // patronAddressToUpdate
             // 
-            this.bookIDBox.Location = new System.Drawing.Point(708, 364);
-            this.bookIDBox.Name = "bookIDBox";
-            this.bookIDBox.Size = new System.Drawing.Size(131, 35);
-            this.bookIDBox.TabIndex = 21;
+            this.patronAddressToUpdate.Location = new System.Drawing.Point(85, 239);
+            this.patronAddressToUpdate.Name = "patronAddressToUpdate";
+            this.patronAddressToUpdate.Size = new System.Drawing.Size(230, 35);
+            this.patronAddressToUpdate.TabIndex = 27;
             // 
-            // label27
+            // patronIDToUpdate
             // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label27.ForeColor = System.Drawing.Color.White;
-            this.label27.Location = new System.Drawing.Point(568, 366);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(124, 30);
-            this.label27.TabIndex = 22;
-            this.label27.Text = "Book ISBN";
+            this.patronIDToUpdate.Location = new System.Drawing.Point(85, 141);
+            this.patronIDToUpdate.Name = "patronIDToUpdate";
+            this.patronIDToUpdate.Size = new System.Drawing.Size(230, 35);
+            this.patronIDToUpdate.TabIndex = 26;
             // 
-            // panel1
+            // patronNameToUpdate
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.updatePatronBtn);
-            this.panel1.Controls.Add(this.makeBorrowBtn);
-            this.panel1.Controls.Add(this.makeUnborrowBtn);
-            this.panel1.Controls.Add(this.retrievePatronBtn);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(302, 719);
-            this.panel1.TabIndex = 1;
+            this.patronNameToUpdate.Location = new System.Drawing.Point(388, 143);
+            this.patronNameToUpdate.Name = "patronNameToUpdate";
+            this.patronNameToUpdate.Size = new System.Drawing.Size(227, 35);
+            this.patronNameToUpdate.TabIndex = 23;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label28.ForeColor = System.Drawing.Color.White;
+            this.label28.Location = new System.Drawing.Point(388, 109);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(70, 30);
+            this.label28.TabIndex = 20;
+            this.label28.Text = "Name";
+            // 
+            // updatePatron
+            // 
+            this.updatePatron.BackColor = System.Drawing.Color.DarkOrange;
+            this.updatePatron.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.updatePatron.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.updatePatron.Font = new System.Drawing.Font("Segoe UI", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.updatePatron.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.updatePatron.Location = new System.Drawing.Point(202, 335);
+            this.updatePatron.Name = "updatePatron";
+            this.updatePatron.Size = new System.Drawing.Size(140, 44);
+            this.updatePatron.TabIndex = 11;
+            this.updatePatron.Text = "Update";
+            this.updatePatron.UseVisualStyleBackColor = false;
+            this.updatePatron.Click += new System.EventHandler(this.updatePatron_Click);
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label30.ForeColor = System.Drawing.Color.White;
+            this.label30.Location = new System.Drawing.Point(85, 205);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(94, 30);
+            this.label30.TabIndex = 21;
+            this.label30.Text = "Address";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label32.ForeColor = System.Drawing.Color.White;
+            this.label32.Location = new System.Drawing.Point(83, 107);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(39, 30);
+            this.label32.TabIndex = 13;
+            this.label32.Text = "ID";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Impact", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label34.ForeColor = System.Drawing.Color.DarkOrange;
+            this.label34.Location = new System.Drawing.Point(161, 24);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(385, 45);
+            this.label34.TabIndex = 6;
+            this.label34.Text = "Update Patron Account";
+            // 
+            // unborrowPanel
+            // 
+            this.unborrowPanel.BackColor = System.Drawing.Color.LightGray;
+            this.unborrowPanel.Controls.Add(this.bookISBNBox);
+            this.unborrowPanel.Controls.Add(this.makeUnBorrow);
+            this.unborrowPanel.Controls.Add(cancelUnBorrow);
+            this.unborrowPanel.Controls.Add(this.label39);
+            this.unborrowPanel.Controls.Add(this.label40);
+            this.unborrowPanel.Location = new System.Drawing.Point(460, 6);
+            this.unborrowPanel.Name = "unborrowPanel";
+            this.unborrowPanel.Size = new System.Drawing.Size(681, 360);
+            this.unborrowPanel.TabIndex = 37;
+            this.unborrowPanel.Visible = false;
+            // 
+            // bookISBNBox
+            // 
+            this.bookISBNBox.FormattingEnabled = true;
+            this.bookISBNBox.Location = new System.Drawing.Point(89, 149);
+            this.bookISBNBox.Name = "bookISBNBox";
+            this.bookISBNBox.Size = new System.Drawing.Size(257, 38);
+            this.bookISBNBox.TabIndex = 14;
+            // 
+            // makeUnBorrow
+            // 
+            this.makeUnBorrow.BackColor = System.Drawing.Color.DarkOrange;
+            this.makeUnBorrow.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.makeUnBorrow.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.makeUnBorrow.Font = new System.Drawing.Font("Segoe UI", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.makeUnBorrow.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.makeUnBorrow.Location = new System.Drawing.Point(85, 228);
+            this.makeUnBorrow.Name = "makeUnBorrow";
+            this.makeUnBorrow.Size = new System.Drawing.Size(262, 44);
+            this.makeUnBorrow.TabIndex = 11;
+            this.makeUnBorrow.Text = "Make An UnBorrow";
+            this.makeUnBorrow.UseVisualStyleBackColor = false;
+            this.makeUnBorrow.Click += new System.EventHandler(this.makeUnBorrow_Click);
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label39.ForeColor = System.Drawing.Color.White;
+            this.label39.Location = new System.Drawing.Point(83, 107);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(124, 30);
+            this.label39.TabIndex = 13;
+            this.label39.Text = "Book ISBN";
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Font = new System.Drawing.Font("Impact", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label40.ForeColor = System.Drawing.Color.DarkOrange;
+            this.label40.Location = new System.Drawing.Point(242, 17);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(270, 45);
+            this.label40.TabIndex = 6;
+            this.label40.Text = "Make UnBorrow";
+            // 
+            // makeBorrowPanel
+            // 
+            this.makeBorrowPanel.BackColor = System.Drawing.Color.LightGray;
+            this.makeBorrowPanel.Controls.Add(this.bookTitleBorrow);
+            this.makeBorrowPanel.Controls.Add(this.acountIDBorrow);
+            this.makeBorrowPanel.Controls.Add(this.label35);
+            this.makeBorrowPanel.Controls.Add(this.button2);
+            this.makeBorrowPanel.Controls.Add(canelBorrowPanel);
+            this.makeBorrowPanel.Controls.Add(this.label37);
+            this.makeBorrowPanel.Controls.Add(this.label38);
+            this.makeBorrowPanel.Location = new System.Drawing.Point(335, 52);
+            this.makeBorrowPanel.Name = "makeBorrowPanel";
+            this.makeBorrowPanel.Size = new System.Drawing.Size(681, 360);
+            this.makeBorrowPanel.TabIndex = 36;
+            this.makeBorrowPanel.Visible = false;
+            // 
+            // bookTitleBorrow
+            // 
+            this.bookTitleBorrow.Location = new System.Drawing.Point(85, 141);
+            this.bookTitleBorrow.Name = "bookTitleBorrow";
+            this.bookTitleBorrow.Size = new System.Drawing.Size(230, 35);
+            this.bookTitleBorrow.TabIndex = 26;
+            // 
+            // acountIDBorrow
+            // 
+            this.acountIDBorrow.Location = new System.Drawing.Point(388, 143);
+            this.acountIDBorrow.Name = "acountIDBorrow";
+            this.acountIDBorrow.Size = new System.Drawing.Size(227, 35);
+            this.acountIDBorrow.TabIndex = 23;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label35.ForeColor = System.Drawing.Color.White;
+            this.label35.Location = new System.Drawing.Point(388, 109);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(128, 30);
+            this.label35.TabIndex = 20;
+            this.label35.Text = "Account ID";
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.DarkOrange;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button2.Font = new System.Drawing.Font("Segoe UI", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button2.Location = new System.Drawing.Point(110, 229);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(216, 44);
+            this.button2.TabIndex = 11;
+            this.button2.Text = "Make A Borrow";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label37.ForeColor = System.Drawing.Color.White;
+            this.label37.Location = new System.Drawing.Point(83, 107);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(117, 30);
+            this.label37.TabIndex = 13;
+            this.label37.Text = "Book Title";
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Font = new System.Drawing.Font("Impact", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label38.ForeColor = System.Drawing.Color.DarkOrange;
+            this.label38.Location = new System.Drawing.Point(242, 17);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(229, 45);
+            this.label38.TabIndex = 6;
+            this.label38.Text = "Make Borrow";
+            // 
+            // retrievePatronPanel
+            // 
+            this.retrievePatronPanel.BackColor = System.Drawing.Color.LightGray;
+            this.retrievePatronPanel.Controls.Add(this.PatronsNamesFrozenAccount);
+            this.retrievePatronPanel.Controls.Add(this.patronsNamesList);
+            this.retrievePatronPanel.Controls.Add(cancelRetrievePatronPanel);
+            this.retrievePatronPanel.Controls.Add(this.button1);
+            this.retrievePatronPanel.Controls.Add(getFrozenAccountsNames);
+            this.retrievePatronPanel.Controls.Add(this.label33);
+            this.retrievePatronPanel.Location = new System.Drawing.Point(345, 61);
+            this.retrievePatronPanel.Name = "retrievePatronPanel";
+            this.retrievePatronPanel.Size = new System.Drawing.Size(716, 416);
+            this.retrievePatronPanel.TabIndex = 34;
+            this.retrievePatronPanel.Visible = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.DarkOrange;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button1.Location = new System.Drawing.Point(23, 31);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(302, 44);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Retrieve Patrons Names";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Impact", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label33.ForeColor = System.Drawing.Color.DarkOrange;
+            this.label33.Location = new System.Drawing.Point(242, 17);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(0, 45);
+            this.label33.TabIndex = 6;
+            // 
+            // patronPanel
+            // 
+            this.patronPanel.BackColor = System.Drawing.Color.White;
+            this.patronPanel.Controls.Add(this.pictureBox2);
+            this.patronPanel.Controls.Add(this.updatePatronBtn);
+            this.patronPanel.Controls.Add(this.makeBorrowBtn);
+            this.patronPanel.Controls.Add(this.makeUnborrowBtn);
+            this.patronPanel.Controls.Add(this.retrievePatronBtn);
+            this.patronPanel.Location = new System.Drawing.Point(0, 0);
+            this.patronPanel.Name = "patronPanel";
+            this.patronPanel.Size = new System.Drawing.Size(302, 719);
+            this.patronPanel.TabIndex = 1;
             // 
             // pictureBox2
             // 
@@ -1187,6 +1623,7 @@
             this.updatePatronBtn.TabIndex = 3;
             this.updatePatronBtn.Text = "Update Patron";
             this.updatePatronBtn.UseVisualStyleBackColor = false;
+            this.updatePatronBtn.Click += new System.EventHandler(this.updatePatronBtn_Click);
             // 
             // makeBorrowBtn
             // 
@@ -1199,6 +1636,7 @@
             this.makeBorrowBtn.TabIndex = 2;
             this.makeBorrowBtn.Text = "Make borrow";
             this.makeBorrowBtn.UseVisualStyleBackColor = false;
+            this.makeBorrowBtn.Click += new System.EventHandler(this.makeBorrowBtn_Click);
             // 
             // makeUnborrowBtn
             // 
@@ -1211,6 +1649,7 @@
             this.makeUnborrowBtn.TabIndex = 1;
             this.makeUnborrowBtn.Text = "make unborrow";
             this.makeUnborrowBtn.UseVisualStyleBackColor = false;
+            this.makeUnborrowBtn.Click += new System.EventHandler(this.makeUnborrowBtn_Click);
             // 
             // retrievePatronBtn
             // 
@@ -1221,77 +1660,27 @@
             this.retrievePatronBtn.Name = "retrievePatronBtn";
             this.retrievePatronBtn.Size = new System.Drawing.Size(302, 47);
             this.retrievePatronBtn.TabIndex = 0;
-            this.retrievePatronBtn.Text = "Retrieve";
+            this.retrievePatronBtn.Text = "Retrieve Patron";
             this.retrievePatronBtn.UseVisualStyleBackColor = false;
             this.retrievePatronBtn.Click += new System.EventHandler(this.retrievePatronBtn_Click);
             // 
-            // retrievePatronPanel
+            // patronsNamesList
             // 
-            this.retrievePatronPanel.BackColor = System.Drawing.Color.LightGray;
-            this.retrievePatronPanel.Controls.Add(cancelRetrievePatronPanel);
-            this.retrievePatronPanel.Controls.Add(this.button1);
-            this.retrievePatronPanel.Controls.Add(button2);
-            this.retrievePatronPanel.Controls.Add(this.label33);
-            this.retrievePatronPanel.Location = new System.Drawing.Point(345, 61);
-            this.retrievePatronPanel.Name = "retrievePatronPanel";
-            this.retrievePatronPanel.Size = new System.Drawing.Size(716, 416);
-            this.retrievePatronPanel.TabIndex = 34;
-            this.retrievePatronPanel.Visible = false;
+            this.patronsNamesList.Enabled = false;
+            this.patronsNamesList.Location = new System.Drawing.Point(23, 94);
+            this.patronsNamesList.Name = "patronsNamesList";
+            this.patronsNamesList.Size = new System.Drawing.Size(302, 228);
+            this.patronsNamesList.TabIndex = 16;
+            this.patronsNamesList.Text = "";
             // 
-            // button1
+            // PatronsNamesFrozenAccount
             // 
-            this.button1.BackColor = System.Drawing.Color.DarkOrange;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(23, 31);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(302, 44);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Retrieve Patrons Names";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            button2.BackColor = System.Drawing.Color.DarkOrange;
-            button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            button2.Font = new System.Drawing.Font("Segoe UI", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            button2.Location = new System.Drawing.Point(374, 31);
-            button2.Name = "button2";
-            button2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            button2.Size = new System.Drawing.Size(311, 44);
-            button2.TabIndex = 12;
-            button2.Text = "Frozen Account Patrons";
-            button2.UseVisualStyleBackColor = false;
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Font = new System.Drawing.Font("Impact", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label33.ForeColor = System.Drawing.Color.DarkOrange;
-            this.label33.Location = new System.Drawing.Point(242, 17);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(0, 45);
-            this.label33.TabIndex = 6;
-            // 
-            // cancelRetrievePatronPanel
-            // 
-            cancelRetrievePatronPanel.BackColor = System.Drawing.Color.DarkOrange;
-            cancelRetrievePatronPanel.Cursor = System.Windows.Forms.Cursors.Hand;
-            cancelRetrievePatronPanel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            cancelRetrievePatronPanel.Font = new System.Drawing.Font("Segoe UI", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            cancelRetrievePatronPanel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            cancelRetrievePatronPanel.Location = new System.Drawing.Point(288, 369);
-            cancelRetrievePatronPanel.Name = "cancelRetrievePatronPanel";
-            cancelRetrievePatronPanel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            cancelRetrievePatronPanel.Size = new System.Drawing.Size(135, 44);
-            cancelRetrievePatronPanel.TabIndex = 13;
-            cancelRetrievePatronPanel.Text = "Cancel";
-            cancelRetrievePatronPanel.UseVisualStyleBackColor = false;
-            cancelRetrievePatronPanel.Click += new System.EventHandler(this.cancelRetrievePatronPanel_Click);
+            this.PatronsNamesFrozenAccount.Enabled = false;
+            this.PatronsNamesFrozenAccount.Location = new System.Drawing.Point(374, 94);
+            this.PatronsNamesFrozenAccount.Name = "PatronsNamesFrozenAccount";
+            this.PatronsNamesFrozenAccount.Size = new System.Drawing.Size(302, 228);
+            this.PatronsNamesFrozenAccount.TabIndex = 17;
+            this.PatronsNamesFrozenAccount.Text = "";
             // 
             // LibrarianForm
             // 
@@ -1320,10 +1709,16 @@
             this.bookPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPage2.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.updatePatronPanel.ResumeLayout(false);
+            this.updatePatronPanel.PerformLayout();
+            this.unborrowPanel.ResumeLayout(false);
+            this.unborrowPanel.PerformLayout();
+            this.makeBorrowPanel.ResumeLayout(false);
+            this.makeBorrowPanel.PerformLayout();
             this.retrievePatronPanel.ResumeLayout(false);
             this.retrievePatronPanel.PerformLayout();
+            this.patronPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1413,11 +1808,38 @@
         private Panel retrievePatronPanel;
         private Button button1;
         private Label label33;
-        private Panel panel1;
+        private Panel patronPanel;
         private PictureBox pictureBox2;
         private Button updatePatronBtn;
         private Button makeBorrowBtn;
         private Button makeUnborrowBtn;
         private Button retrievePatronBtn;
+        private Panel updatePatronPanel;
+        private TextBox patronAddressToUpdate;
+        private TextBox patronIDToUpdate;
+        private TextBox patronNameToUpdate;
+        private Label label28;
+        private Button updatePatron;
+        private Label label30;
+        private Label label32;
+        private Label label34;
+        private Panel makeBorrowPanel;
+        private TextBox bookTitleBorrow;
+        private TextBox acountIDBorrow;
+        private Label label35;
+        private Button button2;
+        private Label label37;
+        private Label label38;
+        private Panel unborrowPanel;
+        private Button makeUnBorrow;
+        private Label label39;
+        private Label label40;
+        private ComboBox bookISBNBox;
+        private ComboBox libraryIDCombo;
+        private ComboBox accountStateCombo;
+        private Label label41;
+        private Label label36;
+        private RichTextBox PatronsNamesFrozenAccount;
+        private RichTextBox patronsNamesList;
     }
 }

@@ -201,15 +201,15 @@ namespace LibraryManagementSystem.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_BookAuthor", x => new { x.BookID, x.AuthorID });
+                    table.PrimaryKey("PK_BookAuthors", x => new { x.BookID, x.AuthorID });
                     table.ForeignKey(
-                        name: "FK_BookAuthor_Authors_AuthorID",
+                        name: "FK_BookAuthors_Authors_AuthorID",
                         column: x => x.AuthorID,
                         principalTable: "Authors",
                         principalColumn: "AuthorID",
                         onDelete: ReferentialAction.NoAction);
                     table.ForeignKey(
-                        name: "FK_BookAuthor_Books_BookID",
+                        name: "FK_BookAuthors_Books_BookID",
                         column: x => x.BookID,
                         principalTable: "Books",
                         principalColumn: "ISBN",
@@ -227,14 +227,14 @@ namespace LibraryManagementSystem.Migrations
                 column: "PatronID",
                 unique: true);
 
-            migrationBuilder.CreateIndex(
-                name: "IX_AuthorBook_BooksISBN",
-                table: "AuthorBook",
-                column: "BooksISBN");
+            //migrationBuilder.CreateIndex(
+            //    name: "IX_AuthorBook_BooksISBN",
+            //    table: "AuthorBook",
+            //    column: "BooksISBN");
 
             migrationBuilder.CreateIndex(
-                name: "IX_BookAuthor_AuthorID",
-                table: "BookAuthor",
+                name: "IX_BookAuthors_AuthorID",
+                table: "BookAuthors",
                 column: "AuthorID");
 
             migrationBuilder.CreateIndex(
@@ -260,11 +260,11 @@ namespace LibraryManagementSystem.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(
-                name: "AuthorBook");
+            //migrationBuilder.DropTable(
+            //    name: "AuthorBook");
 
             migrationBuilder.DropTable(
-                name: "BookAuthor");
+                name: "BookAuthors");
 
             migrationBuilder.DropTable(
                 name: "Librarian");

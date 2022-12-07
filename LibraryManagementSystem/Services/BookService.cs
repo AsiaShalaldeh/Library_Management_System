@@ -36,10 +36,14 @@ namespace LibraryManagementSystem.Services
                 IList<BookAuthor> bookAuthors = new List<BookAuthor>();
                 foreach (Author author in authors)
                 {
-                    bookAuthors.Add(new BookAuthor() { Book = bookItem, Author = author });
+                    BookAuthor bookAuthor = new BookAuthor();
+                    bookAuthor.AuthorID = author.AuthorID;
+                    bookAuthor.BookID = bookItem.ISBN;
+                    bookAuthors.Add(bookAuthor);
                 }
+                MessageBox.Show(bookAuthors.First().BookID.ToString());
                 bookItem.Authors = bookAuthors;
-                _context.Books.Add(bookItem);
+                _context.BookItems.Add(bookItem);
                 _context.SaveChanges();
             }
             catch (Exception ex)
@@ -127,17 +131,23 @@ namespace LibraryManagementSystem.Services
                 BookItem bookItem = SearchBookByID(ISBN);
                 if (bookItem != null)
                 {
-                    var book = _context.BookAuthors.Where(ba => ba.BookID == ISBN).Select(x => x.Author);                     
-
+                    var authors = _context.BookAuthors.Where(ba => ba.BookID == ISBN)
+                        .Select(a => a.AuthorID).ToList();
+                    foreach (int author in authors)
+                    {
+                        var name = _context.Authors.Where(a => a.AuthorID == author)
+                            .Select(n=>n.Name).Single().ToString();
+                        authorsNames.Add(name);
+                    }
                 }
                 else
                 {
-                    //"Book Not Found";
+                    MessageBox.Show("Book Not Found");
                 }
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show("Error : " + ex.Message);
             }
             return authorsNames;
         }
@@ -146,7 +156,9 @@ namespace LibraryManagementSystem.Services
             BookItem bookItem = null;
             try
             {
-                bookItem = _context.Find<BookItem>(title);
+                 bookItem = _context.BookItems.Where(b => b.Title == title)
+                    .FirstOrDefault<BookItem>();
+
             }
             catch (Exception)
             {
@@ -185,6 +197,54 @@ namespace LibraryManagementSystem.Services
             return names;
         }
 
+        public void MakeBorrow(int accountID, string bookTitle)
+        {
+            try
+            {
+                BookItem bookItem = SearchBookByTitle(bookTitle);
+                bookItem.AccountID = accountID;
+                //Account account = _context.Accounts.Where(a => a.AccountID == accountID)
+                //.FirstOrDefault<Account>();
+                _context.SaveChanges();
+                //string name = account.Patron.Name;
+                //MessageBox.Show("Book Successfully Borrowed To Patron " + name);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error : " + ex.Message);
+            }
+        }
+        public void MakeUnBorrow(int ISBN)
+        {
+            try
+            {
+                BookItem bookItem = SearchBookByID(ISBN);
+                bookItem.AccountID = null;
+                _context.SaveChanges();
+                MessageBox.Show("Book Rtrieved Successfully");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error : " + ex.Message);
+            }
+        }
+        public IList<int> GetAllBooksISBN()
+        {
+            IList<int> ids = new List<int>();
+            try
+            {
+                var books = _context.BookItems.Select(b => b.ISBN);
+                foreach (var b in books)
+                {
+                    ids.Add(b);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return ids;
+        }
         public record _BookItem(int id, string title, string summary, int pages);
 
     }

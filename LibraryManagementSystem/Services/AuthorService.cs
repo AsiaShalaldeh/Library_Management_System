@@ -22,6 +22,7 @@ namespace LibraryManagementSystem.Services
             author.BirthDate=birthDate;
             author.Biography=bioraphy;
             _context.Add<Author>(author);
+            //_context.Authors.Attach(author);
             _context.SaveChanges();
             return author;
         }

@@ -76,11 +76,16 @@ namespace LibraryManagementSystem.Services
             IList<string> patronsNames = new List<string>();
             try
             {
-                patronsNames = _context.Patrons.Select(p => p.Name).ToList();
+                var names = _context.Patrons.Select(p => p.Name).ToList();
+                foreach(var name in names)
+                {
+                    patronsNames.Add(name);
+                }
+                MessageBox.Show(patronsNames.Count().ToString());
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show("Error : " + ex.Message);
             }
             return patronsNames;
         }
@@ -89,9 +94,10 @@ namespace LibraryManagementSystem.Services
             IList<string> frozenPatronsNames = new List<string>();
             try
             {
-                var accounts = _context.Accounts.Where(a=>a.State==AccountState.Frozen).ToList();
-                var patrons = accounts.Select(p => p.Patron.Name);
-                foreach(var patron in patrons)
+                var accounts = _context.Accounts.Where(a => a.State == AccountState.Frozen).ToList();
+                int? id = accounts.Select(p => p.PatronID).Single();
+                IList<string> patrons = _context.Patrons.Where(a => a.PatronID == id).Select(p => p.Name).ToList();
+                foreach (var patron in patrons)
                 {
                     frozenPatronsNames.Add(patron);
                 }
@@ -102,28 +108,35 @@ namespace LibraryManagementSystem.Services
             }
             return frozenPatronsNames;
         }
-        public string UpdatePatron(Patron patron)
+        public void UpdatePatron(int id,string name,string address,AccountState state,int libraryID)
         {
             try
             {
-                Patron _patron = SearchPatronByID(patron.PatronID);
+                Patron _patron = SearchPatronByID(id);
                 if (_patron != null)
                 {
-                    _patron.Name=patron.Name;
-                    _patron.Address = patron.Address;
+                    _patron.Name=name;
+                    _patron.Address = address;
+                    Account account = _context.Accounts.Where(a => a.PatronID == id).FirstOrDefault<Account>();
+                    if (account != null)
+                    {
+                        account.LibraryID=libraryID;
+                        account.State = state;
+                    }
                     _context.Update<Patron>(_patron);
                     _context.SaveChanges();
-                    return "Patron Updated Successfully";
+                    MessageBox.Show("Patron Updated Successfully");
                 }
                 else
                 {
-                    return "Patron Not Found";
+                    MessageBox.Show("Patron Not Found");
                 }
             }
             catch (Exception ex)
             {
-                return "Error : " + ex.Message;
+                MessageBox.Show("Error : " + ex.Message);
             }
         }
+        
     }
 }

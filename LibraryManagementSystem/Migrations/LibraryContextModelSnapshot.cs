@@ -136,7 +136,7 @@ namespace LibraryManagementSystem.Migrations
                     b.HasDiscriminator<string>("Discriminator").HasValue("Book");
                 });
 
-            modelBuilder.Entity("LibraryManagementSystem.Models.BookAuthor", b =>
+            modelBuilder.Entity("LibraryManagementSystem.Models.BookAuthors", b =>
                 {
                     b.Property<int>("BookID")
                         .HasColumnType("int");
@@ -316,7 +316,7 @@ namespace LibraryManagementSystem.Migrations
                     b.Navigation("Patron");
                 });
 
-            modelBuilder.Entity("LibraryManagementSystem.Models.BookAuthor", b =>
+            modelBuilder.Entity("LibraryManagementSystem.Models.BookAuthors", b =>
                 {
                     b.HasOne("LibraryManagementSystem.Models.Author", "Author")
                         .WithMany()
