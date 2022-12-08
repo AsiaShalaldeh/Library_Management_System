@@ -122,6 +122,8 @@ namespace LibraryManagementSystem.Services
                     {
                         account.LibraryID=libraryID;
                         account.State = state;
+                        account.History = account.History + "Account Updated : "
+                            + DateTime.Now;
                     }
                     _context.Update<Patron>(_patron);
                     _context.SaveChanges();

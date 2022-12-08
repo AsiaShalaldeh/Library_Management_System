@@ -24,18 +24,19 @@ namespace LibraryManagementSystem
         public LibrarianForm()
         {
             InitializeComponent();
-            bookPanel.BackColor = Color.FromArgb(100, 0, 0, 70);
-            patronPanel.BackColor = Color.FromArgb(100, 0, 0, 70);
-            createPanel.BackColor = Color.FromArgb(100, 0, 0, 70);
-            updateBookPanel.BackColor = Color.FromArgb(100, 0, 0, 70);
-            serachBookPanel.BackColor = Color.FromArgb(100, 0, 0, 70);
-            deleteBookPanel.BackColor = Color.FromArgb(100, 0, 0, 70);
-            authorPanel.BackColor = Color.FromArgb(100, 0, 0, 70);
-            retrievePanel.BackColor = Color.FromArgb(100, 0, 0, 70);
-            retrievePatronPanel.BackColor = Color.FromArgb(100, 0, 0, 70);
-            updatePatronPanel.BackColor = Color.FromArgb(100, 0, 0, 70);
-            makeBorrowPanel.BackColor = Color.FromArgb(100, 0, 0, 70);
-            unborrowPanel.BackColor = Color.FromArgb(100, 0, 0, 70);
+            ChangeStyle();
+            //bookPanel.BackColor = Color.FromArgb(100, 0, 0, 70);
+            //patronPanel.BackColor = Color.FromArgb(100, 0, 0, 70);
+            //createPanel.BackColor = Color.FromArgb(100, 0, 0, 70);
+            //updateBookPanel.BackColor = Color.FromArgb(100, 0, 0, 70);
+            //serachBookPanel.BackColor = Color.FromArgb(100, 0, 0, 70);
+            //deleteBookPanel.BackColor = Color.FromArgb(100, 0, 0, 70);
+            //authorPanel.BackColor = Color.FromArgb(100, 0, 0, 70);
+            //retrievePanel.BackColor = Color.FromArgb(100, 0, 0, 70);
+            //retrievePatronPanel.BackColor = Color.FromArgb(100, 0, 0, 70);
+            //updatePatronPanel.BackColor = Color.FromArgb(100, 0, 0, 70);
+            //makeBorrowPanel.BackColor = Color.FromArgb(100, 0, 0, 70);
+            //unborrowPanel.BackColor = Color.FromArgb(100, 0, 0, 70);
             _catalogService = new CatalogService();
             _libraryService=new LibraryService();
             _bookService = new BookService();
@@ -75,6 +76,24 @@ namespace LibraryManagementSystem
 
 
         }
+        public void ChangeStyle()
+        {
+            foreach (Control con in this.Controls)
+            {
+                if (con is Button)
+                {
+                    Button but = con as Button;
+                    but.FlatAppearance.BorderSize = 0;
+                    but.FlatStyle = FlatStyle.Flat;
+                    but.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+                }
+                else if (con is Panel)
+                {
+                    Panel pan = con as Panel;
+                    pan.BackColor = Color.FromArgb(100, 0, 0, 30);
+                }
+            }
+        }
         private void createBookBtn_Click(object sender, EventArgs e)
         {
             createPanel.Visible = true;
@@ -92,44 +111,57 @@ namespace LibraryManagementSystem
 
         private void createBook_Click(object sender, EventArgs e)
         {
-            string title = bookTitleBox.Text;
-            string barcode = bookBarcodeBox.Text;
-            string publisher = bookPublisherBox.Text;
-            int pages = Convert.ToInt32(bookPagesBox.Text);
-            bool isRef = bookRefBox.SelectedText == "True" ? true : false ;
-            string langauge = bookLanguageBox.Text;
-            string RFID = bookRFIDBox.Text;
-            DateTime date = bookPubDate.Value;
-            string summary = bookSummaryBox.Text;
-            int libraryID = Convert.ToInt32(bookLibraryIDBox.SelectedValue.ToString());
-            int catalogID = Convert.ToInt32(bookCatalogIDBox.SelectedValue.ToString());
-            //int librarianID=Convert.ToInt32()
-            //MessageBox.Show(authors.First().ToString());
-            _bookService.CreateBook(title, barcode, publisher, pages,
-                isRef, langauge, RFID, date, summary, libraryID, catalogID,authors);
-            authors.Clear();
+            try
+            {
+                string title = bookTitleBox.Text;
+                string barcode = bookBarcodeBox.Text;
+                string publisher = bookPublisherBox.Text;
+                int pages = Convert.ToInt32(bookPagesBox.Text);
+                bool isRef = bookRefBox.SelectedText == "True" ? true : false;
+                string langauge = bookLanguageBox.Text;
+                string RFID = bookRFIDBox.Text;
+                DateTime date = bookPubDate.Value;
+                string summary = bookSummaryBox.Text;
+                int libraryID = Convert.ToInt32(bookLibraryIDBox.SelectedValue.ToString());
+                int catalogID = Convert.ToInt32(bookCatalogIDBox.SelectedValue.ToString());
+                //int librarianID=Convert.ToInt32()
+                _bookService.CreateBook(title, barcode, publisher, pages,
+                    isRef, langauge, RFID, date, summary, libraryID, catalogID, authors);
+                authors.Clear();
 
-            bookTitleBox.Text = "";
-            bookBarcodeBox.Text = "";
-            bookPublisherBox.Text = "";
-            bookPagesBox.Text = "";
-            bookLanguageBox.Text = "";
-            bookRFIDBox.SelectedText = "";
-            bookSummaryBox.Text = "";
+                bookTitleBox.Text = "";
+                bookBarcodeBox.Text = "";
+                bookPublisherBox.Text = "";
+                bookPagesBox.Text = "";
+                bookLanguageBox.Text = "";
+                bookRFIDBox.SelectedText = "";
+                bookSummaryBox.Text = "";
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error : " + ex.Message);
+            }
 
         }
 
         private void updateBook_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(bookIDToUpdateBox.Text);
-            int pages = Convert.ToInt32(bookPagesToUpdate.Text);
-            string title = bookTitleToUpdate.Text;
-            string summary = bookSummaryToUdate.Text;
-            bookIDToUpdateBox.Text = "";
-            bookPagesToUpdate.Text = "";
-            bookTitleToUpdate.Text = "";
-            bookSummaryToUdate.Text = "";
-            _bookService.UpdateBook(id, title, summary, pages);
+            try
+            {
+                int id = Convert.ToInt32(bookIDToUpdateBox.Text);
+                int pages = Convert.ToInt32(bookPagesToUpdate.Text);
+                string title = bookTitleToUpdate.Text;
+                string summary = bookSummaryToUdate.Text;
+                bookIDToUpdateBox.Text = "";
+                bookPagesToUpdate.Text = "";
+                bookTitleToUpdate.Text = "";
+                bookSummaryToUdate.Text = "";
+                _bookService.UpdateBook(id, title, summary, pages);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error : " + ex.Message);
+            }
         }
 
         private void cancelBookUpdatePanel_Click(object sender, EventArgs e)
@@ -193,7 +225,7 @@ namespace LibraryManagementSystem
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Error : "+ ex.Message);
             }
 
         }
@@ -237,13 +269,20 @@ namespace LibraryManagementSystem
 
         private void createAuthor_Click_1(object sender, EventArgs e)
         {
-            string name = authorNameBox.Text;
-            string biography = authorBiographyBox.Text;
-            DateTime birthdate = authorBirthDate.Value;
-            Author author = _authorService.CreateAuthor(name, biography, birthdate);
-            authors.Add(author);
-            authorNameBox.Text = "";
-            authorBiographyBox.Text = "";
+            try
+            {
+                string name = authorNameBox.Text;
+                string biography = authorBiographyBox.Text;
+                DateTime birthdate = authorBirthDate.Value;
+                Author author = _authorService.CreateAuthor(name, biography, birthdate);
+                authors.Add(author);
+                authorNameBox.Text = "";
+                authorBiographyBox.Text = "";
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error : " + ex.Message);
+            }
         }
 
         private void authorPanel_Paint(object sender, PaintEventArgs e)
@@ -268,11 +307,18 @@ namespace LibraryManagementSystem
 
         private void frenchBooksBtn_Click(object sender, EventArgs e)
         {
-            IList<string> names = _bookService.getFrenchBooks();
-            showFrenchBooks.Text = "";
-            foreach(string name in names)
+            try
             {
-                showFrenchBooks.Text += name + "\n";
+                IList<string> names = _bookService.getFrenchBooks();
+                showFrenchBooks.Text = "";
+                foreach (string name in names)
+                {
+                    showFrenchBooks.Text += name + "\n";
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error : " + ex.Message);
             }
         }
 
@@ -284,12 +330,19 @@ namespace LibraryManagementSystem
 
         private void showAuthorsNames_Click(object sender, EventArgs e)
         {
-            int bookISBN = Convert.ToInt32(bookIDBox.Text);
-            IList<string> names = _bookService.GetAllBookAuthors(bookISBN);
-            showAuthorsNamesList.Text = "";
-            foreach (string name in names)
+            try
             {
-                showAuthorsNamesList.Text += name + "\n";
+                int bookISBN = Convert.ToInt32(bookIDBox.Text);
+                IList<string> names = _bookService.GetAllBookAuthors(bookISBN);
+                showAuthorsNamesList.Text = "";
+                foreach (string name in names)
+                {
+                    showAuthorsNamesList.Text += name + "\n";
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error : " + ex.Message);
             }
         }
 
@@ -305,22 +358,36 @@ namespace LibraryManagementSystem
 
         private void button1_Click(object sender, EventArgs e)
         {
-            IList<string> names = _patronService.GetPatronsNames();
-            patronsNamesList.Text = "";
-            MessageBox.Show(names.Count().ToString());
-            foreach (string name in names)
+            try
             {
-                patronsNamesList.Text += "\n" + name;
+                IList<string> names = _patronService.GetPatronsNames();
+                patronsNamesList.Text = "";
+                MessageBox.Show(names.Count().ToString());
+                foreach (string name in names)
+                {
+                    patronsNamesList.Text += "\n" + name;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error : " + ex.Message);
             }
         }
 
         private void getFrozenAccountsNames_Click(object sender, EventArgs e)
         {
-            IList<string> names = _patronService.GetFrozenPatronsNames();
-            patronsNamesList.Text = "";
-            foreach (string name in names)
+            try
             {
-                PatronsNamesFrozenAccount.Text += "\n" + name;
+                IList<string> names = _patronService.GetFrozenPatronsNames();
+                patronsNamesList.Text = "";
+                foreach (string name in names)
+                {
+                    PatronsNamesFrozenAccount.Text += "\n" + name;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error : " + ex.Message);
             }
         }
 
@@ -336,15 +403,22 @@ namespace LibraryManagementSystem
 
         private void updatePatron_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(patronIDToUpdate.Text);
-            string name=patronNameToUpdate.Text;
-            string address=patronAddressToUpdate.Text;
-            int libraryID = Convert.ToInt32(libraryIDCombo.SelectedItem);
-            AccountState state = (AccountState)accountStateCombo.SelectedValue;
-            _patronService.UpdatePatron(id, name, address, state, libraryID);
-            patronIDToUpdate.Text = "";
-            patronAddressToUpdate.Text = "";
-            patronAddressToUpdate.Text = "";
+            try
+            {
+                int id = Convert.ToInt32(patronIDToUpdate.Text);
+                string name = patronNameToUpdate.Text;
+                string address = patronAddressToUpdate.Text;
+                int libraryID = Convert.ToInt32(libraryIDCombo.SelectedItem);
+                AccountState state = (AccountState)accountStateCombo.SelectedValue;
+                _patronService.UpdatePatron(id, name, address, state, libraryID);
+                patronIDToUpdate.Text = "";
+                patronAddressToUpdate.Text = "";
+                patronAddressToUpdate.Text = "";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error : " + ex.Message);
+            }
         }
 
         private void makeBorrowBtn_Click(object sender, EventArgs e)
@@ -360,11 +434,18 @@ namespace LibraryManagementSystem
 
         private void button2_Click(object sender, EventArgs e)
         {
-            int accountID = Convert.ToInt32(acountIDBorrow.Text);
-            string bookTitle = bookTitleBorrow.Text;
-            _bookService.MakeBorrow(accountID, bookTitle);
-            acountIDBorrow.Text = "";
-            bookTitleBorrow.Text = "";
+            try
+            {
+                int accountID = Convert.ToInt32(acountIDBorrow.Text);
+                string bookTitle = bookTitleBorrow.Text;
+                _bookService.MakeBorrow(accountID, bookTitle);
+                acountIDBorrow.Text = "";
+                bookTitleBorrow.Text = "";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error : " + ex.Message);
+            }
         }
 
         private void makeUnborrowBtn_Click(object sender, EventArgs e)
@@ -380,8 +461,15 @@ namespace LibraryManagementSystem
 
         private void makeUnBorrow_Click(object sender, EventArgs e)
         {
-            int ISBN = Convert.ToInt32(bookISBNBox.SelectedItem);
-            _bookService.MakeUnBorrow(ISBN);
+            try
+            {
+                int ISBN = Convert.ToInt32(bookISBNBox.SelectedItem);
+                _bookService.MakeUnBorrow(ISBN);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error : " + ex.Message);
+            }
         }
     }
 }

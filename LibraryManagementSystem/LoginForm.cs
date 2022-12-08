@@ -29,37 +29,44 @@ namespace LibraryManagementSystem
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string userName = userNameBox.Text.ToString().Trim();
-            string password = passwordBox.Text.ToString().Trim();
-            if (userName.Trim() == "" || password.Trim() == "")
+            try
             {
-                MessageBox.Show("Enter All Required Values, Try Again ");
-            }
-            else if (userName == "admin" && password == "admin")
-            {
-                LibraryForm libraryForm = new LibraryForm();
-                libraryForm.Show();
-                this.Hide();
-            }
-            else
-            {
-                bool isFound = false ;
-                var librarians = _librarianService.GetAllLibrarians();
-                foreach (var lib in librarians)
+                string userName = userNameBox.Text.ToString().Trim().ToLower();
+                string password = passwordBox.Text.ToString().Trim().ToLower();
+                if (userName.Trim() == "" || password.Trim() == "")
                 {
-                    if (userName.Equals(lib.userName) && password.Equals(lib.password))
-                    {
-                        LibrarianForm librarianForm = new LibrarianForm();
-                        librarianForm.Show();
-                        this.Hide();
-                        isFound = true;
-                    }
+                    MessageBox.Show("Enter All Required Values, Try Again ");
                 }
-                if(!isFound)
-                    MessageBox.Show("Wrong UserName And Password");
+                else if (userName == "admin" && password == "admin")
+                {
+                    LibraryForm libraryForm = new LibraryForm();
+                    libraryForm.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    bool isFound = false;
+                    var librarians = _librarianService.GetAllLibrarians();
+                    foreach (var lib in librarians)
+                    {
+                        if (userName.Equals(lib.userName.Trim().ToLower()) && password.Equals(lib.password.Trim().ToLower()))
+                        {
+                            LibrarianForm librarianForm = new LibrarianForm();
+                            librarianForm.Show();
+                            this.Hide();
+                            isFound = true;
+                        }
+                    }
+                    if (!isFound)
+                        MessageBox.Show("Wrong UserName And Password");
+                }
+                userNameBox.Text = "";
+                passwordBox.Text = "";
             }
-            userNameBox.Text= "";
-            passwordBox.Text = "";
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
         }
 
         private void label2_Click(object sender, EventArgs e)

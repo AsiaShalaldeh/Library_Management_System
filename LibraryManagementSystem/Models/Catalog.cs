@@ -10,7 +10,7 @@ namespace LibraryManagementSystem.Models
     {
         public int ID { get; set; }
         public string Name { get; set; }
-        public int LibraryID { get; set; }
+        //public int LibraryID { get; set; }
         public Library Library { get; set; }
         public IList<BookItem> bookItems { get; set; }
     }

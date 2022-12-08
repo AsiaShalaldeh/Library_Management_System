@@ -14,13 +14,14 @@ namespace LibraryManagementSystem.Services
         {
             _context = new LibraryContext();
         }
-        public void CreateLibrary(string name, string address)
+        public void CreateLibrary(string name, string address,int catalogID)
         {
             try
             {
                 Library library = new Library();
                 library.Name = name;
                 library.Address = address;
+                library.CatalogID = catalogID;
                 _context.Libraries.Add(library);
                 _context.SaveChanges();
             }

@@ -18,16 +18,16 @@ namespace LibraryManagementSystem
         PatronService _patronService;
         LibraryService _libraryService;
         LibrarianService _librarianService;
-        // CatalogService catalogService
+        
         public LibraryForm()
         {
             InitializeComponent();
             ChangeStyle();
-            AdminPanel.BackColor = Color.FromArgb(100, 0, 0, 30);
-            catalogPanel.BackColor = Color.FromArgb(100, 0, 0, 30);
-            libraryPanel.BackColor = Color.FromArgb(100, 0, 0, 30);
-            librarianPanel.BackColor = Color.FromArgb(100, 0, 0, 30);
-            patronPanel.BackColor = Color.FromArgb(100, 0, 0, 30);
+            //AdminPanel.BackColor = Color.FromArgb(100, 0, 0, 30);
+            //catalogPanel.BackColor = Color.FromArgb(100, 0, 0, 30);
+            //libraryPanel.BackColor = Color.FromArgb(100, 0, 0, 30);
+            //librarianPanel.BackColor = Color.FromArgb(100, 0, 0, 30);
+            //patronPanel.BackColor = Color.FromArgb(100, 0, 0, 30);
             _catalogService = new CatalogService();
             _patronService = new PatronService();
             _libraryService = new LibraryService();
@@ -60,6 +60,11 @@ namespace LibraryManagementSystem
                     but.FlatStyle = FlatStyle.Flat;
                     but.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
                 }
+                else if(con is Panel)
+                {
+                    Panel pan=con as Panel;
+                    pan.BackColor = Color.FromArgb(100, 0, 0, 30);
+                }
             }
         }
 
@@ -77,14 +82,21 @@ namespace LibraryManagementSystem
 
         private void createCatalog_Click(object sender, EventArgs e)
         {
-            string name = catalogNameBox.Text;
-            if (name.Trim() == "")
+            try
             {
-                MessageBox.Show("Please, Enter Catalog Name !");
+                string name = catalogNameBox.Text;
+                if (name.Trim() == "")
+                {
+                    MessageBox.Show("Please, Enter Catalog Name !");
+                }
+                _catalogService.CreateCatalog(name);
+                GetDataFromDB();
+                catalogNameBox.Text = "";
             }
-            _catalogService.CreateCatalog(name);
-            GetDataFromDB();
-            catalogNameBox.Text = "";
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error : " + ex.Message);
+            }
         }
 
         private void cancelCatalog_Click(object sender, EventArgs e)
@@ -102,17 +114,24 @@ namespace LibraryManagementSystem
 
         private void createLibrary_Click(object sender, EventArgs e)
         {
-            string name = libraryNameBox.Text;
-            string address = libraryAddressBox.Text;
-            //int catalogID = Convert.ToInt32(catalogIDForLibrary.SelectedItem.ToString());
-            if (name.Trim() == "" || address.Trim() == "")
+            try
             {
-                MessageBox.Show("Please, Enter All Library Information !");
+                string name = libraryNameBox.Text;
+                string address = libraryAddressBox.Text;
+                int catalogID = Convert.ToInt32(catalogIDForLibrary.SelectedItem.ToString());
+                if (name.Trim() == "" || address.Trim() == "")
+                {
+                    MessageBox.Show("Please, Enter All Library Information !");
+                }
+                _libraryService.CreateLibrary(name, address, catalogID);
+                GetDataFromDB();
+                libraryNameBox.Text = "";
+                libraryAddressBox.Text = "";
             }
-            _libraryService.CreateLibrary(name, address);
-            GetDataFromDB();
-            libraryNameBox.Text = "";
-            libraryAddressBox.Text = "";
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error : " + ex.Message);
+            }
         }
 
         private void createLibraryBtn_Click_1(object sender, EventArgs e)
@@ -136,19 +155,26 @@ namespace LibraryManagementSystem
 
         private void createLibrarian_Click(object sender, EventArgs e)
         {
-            string name = librarianNameBox.Text;
-            string address = librarianAddressBox.Text;
-            string password = librarianPassBox.Text;
-            string position = librarianPositionBox.Text;
-            if (name.Trim() == "" || address.Trim() == "" || position.Trim() == "" || password.Trim() == "")
+            try
             {
-                MessageBox.Show("Please, Enter All Librarian Information !");
+                string name = librarianNameBox.Text;
+                string address = librarianAddressBox.Text;
+                string password = librarianPassBox.Text;
+                string position = librarianPositionBox.Text;
+                if (name.Trim() == "" || address.Trim() == "" || position.Trim() == "" || password.Trim() == "")
+                {
+                    MessageBox.Show("Please, Enter All Librarian Information !");
+                }
+                _librarianService.CreateLibrarian(name, password, position, address);
+                librarianNameBox.Text = "";
+                librarianAddressBox.Text = "";
+                librarianPassBox.Text = "";
+                librarianPositionBox.Text = "";
             }
-            _librarianService.CreateLibrarian(name, password, position, address);
-            librarianNameBox.Text = "";
-            librarianAddressBox.Text = "";
-            librarianPassBox.Text = "";
-            librarianPositionBox.Text = "";
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error : " + ex.Message);
+            }
         }
 
         private void cancelLibrarian_Click(object sender, EventArgs e)
@@ -175,23 +201,49 @@ namespace LibraryManagementSystem
 
         private void createPatron_Click(object sender, EventArgs e)
         {
-            string name = patronNameBox.Text;
-            string address = patronAddressBox.Text;
-            DateTime opened = openedAccountDate.Value;
-            string history = "anything";
-            AccountState state = (AccountState)accountStateBox.SelectedValue;
-            int libraryID= Convert.ToInt32(libraryIDForPatron.SelectedItem.ToString());
-            patronNameBox.Text = "";
-            patronAddressBox.Text = "";
-            int patronID=_patronService.CreatePatron(name, address);
-            _patronService.CreateAccount(patronID, opened, state, libraryID,history);
-         
+            try
+            {
+                string name = patronNameBox.Text;
+                string address = patronAddressBox.Text;
+                DateTime opened = openedAccountDate.Value;
+                string history = "Account Created : " + DateTime.Now;
+                AccountState state = (AccountState)accountStateBox.SelectedValue;
+                int libraryID = Convert.ToInt32(libraryIDForPatron.SelectedItem.ToString());
+                patronNameBox.Text = "";
+                patronAddressBox.Text = "";
+                if (name.Trim() == "" || address.Trim() == "")
+                {
+                    MessageBox.Show("Please, Enter All Patron Information !");
+                }
+                int patronID = _patronService.CreatePatron(name, address);
+                _patronService.CreateAccount(patronID, opened, state, libraryID, history);
+            }
+            catch(FormatException ex)
+            {
+                MessageBox.Show("You Entered Number Instead Of String !!");   
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error : " + ex.Message);
+            }
         }
 
         private void cancelPatronPanel_Click(object sender, EventArgs e)
         {
             patronPanel.Visible = false;
             AdminPanel.Visible = true;
+        }
+
+        private void goToLoginPage_Click(object sender, EventArgs e)
+        {
+            LoginForm loginForm=new LoginForm();
+            loginForm.Show();
+            this.Hide();
+        }
+
+        private void exitAdminPage_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

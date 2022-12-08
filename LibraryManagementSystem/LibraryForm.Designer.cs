@@ -85,6 +85,8 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.goToLoginPage = new System.Windows.Forms.Button();
+            this.exitAdminPage = new System.Windows.Forms.Button();
             this.AdminPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -773,12 +775,44 @@
             this.pictureBox9.TabIndex = 0;
             this.pictureBox9.TabStop = false;
             // 
+            // goToLoginPage
+            // 
+            this.goToLoginPage.BackColor = System.Drawing.Color.DarkOrange;
+            this.goToLoginPage.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.goToLoginPage.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.goToLoginPage.Font = new System.Drawing.Font("Segoe UI", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.goToLoginPage.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.goToLoginPage.Location = new System.Drawing.Point(381, 611);
+            this.goToLoginPage.Name = "goToLoginPage";
+            this.goToLoginPage.Size = new System.Drawing.Size(245, 51);
+            this.goToLoginPage.TabIndex = 19;
+            this.goToLoginPage.Text = "Go To Login Page";
+            this.goToLoginPage.UseVisualStyleBackColor = false;
+            this.goToLoginPage.Click += new System.EventHandler(this.goToLoginPage_Click);
+            // 
+            // exitAdminPage
+            // 
+            this.exitAdminPage.BackColor = System.Drawing.Color.DarkOrange;
+            this.exitAdminPage.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.exitAdminPage.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.exitAdminPage.Font = new System.Drawing.Font("Segoe UI", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.exitAdminPage.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.exitAdminPage.Location = new System.Drawing.Point(666, 611);
+            this.exitAdminPage.Name = "exitAdminPage";
+            this.exitAdminPage.Size = new System.Drawing.Size(140, 51);
+            this.exitAdminPage.TabIndex = 20;
+            this.exitAdminPage.Text = "Exit";
+            this.exitAdminPage.UseVisualStyleBackColor = false;
+            this.exitAdminPage.Click += new System.EventHandler(this.exitAdminPage_Click);
+            // 
             // LibraryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::LibraryManagementSystem.Properties.Resources.library;
-            this.ClientSize = new System.Drawing.Size(1284, 667);
+            this.ClientSize = new System.Drawing.Size(1284, 695);
+            this.Controls.Add(this.exitAdminPage);
+            this.Controls.Add(this.goToLoginPage);
             this.Controls.Add(this.libraryPanel);
             this.Controls.Add(this.patronPanel);
             this.Controls.Add(this.librarianPanel);
@@ -867,5 +901,7 @@
         private Label label11;
         private ComboBox catalogIDForLibrary;
         private Label label17;
+        private Button goToLoginPage;
+        private Button exitAdminPage;
     }
 }
