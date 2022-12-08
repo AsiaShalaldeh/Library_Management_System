@@ -23,6 +23,24 @@ namespace LibraryManagementSystem.Services
             _context.SaveChanges();
             return patron.PatronID;
         }
+
+        public IList<int> GetAllPatronsID()
+        {
+            IList<int> ids = new List<int>();
+            try
+            {
+                var patrons = _context.Patrons.Select(p => p.PatronID);
+                foreach (var a in patrons)
+                {
+                    ids.Add(a);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return ids;
+        }
         public void CreateAccount(int patronID, DateTime opened, AccountState state, int libraryID, string history)
         {
             try

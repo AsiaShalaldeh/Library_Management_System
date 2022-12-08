@@ -24,6 +24,23 @@ namespace LibraryManagementSystem.Services
             _context.Librarian.Add(librarian);
             _context.SaveChanges();
         }
+        public IList<int> GetLibrariansIDs()
+        {
+            IList<int> ids = new List<int>();
+            try
+            {
+                var list = _context.Librarian.Select(l => l.LibrarianID);
+                foreach (var id in list)
+                {
+                    ids.Add(id);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return ids;
+        }
         public IList<_Librarian> GetAllLibrarians()
         {
             IList<_Librarian> librarians = new List<_Librarian>();

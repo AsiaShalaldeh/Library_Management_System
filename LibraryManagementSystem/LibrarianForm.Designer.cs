@@ -41,14 +41,47 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LibrarianForm));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.serachBookPanel = new System.Windows.Forms.Panel();
+            this.bookISBNSearch = new System.Windows.Forms.TextBox();
+            this.bookTitleSearch = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.searchBook = new System.Windows.Forms.Button();
+            this.cancelSearchbookPanel = new System.Windows.Forms.Button();
+            this.label17 = new System.Windows.Forms.Label();
+            this.updateBookPanel = new System.Windows.Forms.Panel();
+            this.bookIDToUpdateBox = new System.Windows.Forms.ComboBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.bookSummaryToUdate = new System.Windows.Forms.TextBox();
+            this.bookPagesToUpdate = new System.Windows.Forms.TextBox();
+            this.bookTitleToUpdate = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.updateBook = new System.Windows.Forms.Button();
+            this.cancelBookUpdatePanel = new System.Windows.Forms.Button();
+            this.label24 = new System.Windows.Forms.Label();
+            this.deleteBookPanel = new System.Windows.Forms.Panel();
+            this.bookIDToDelete = new System.Windows.Forms.ComboBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.deleteBook = new System.Windows.Forms.Button();
+            this.cencelBookDeletePanel = new System.Windows.Forms.Button();
+            this.label15 = new System.Windows.Forms.Label();
             this.retrievePanel = new System.Windows.Forms.Panel();
+            this.bookIDBox = new System.Windows.Forms.ComboBox();
             this.label27 = new System.Windows.Forms.Label();
-            this.bookIDBox = new System.Windows.Forms.TextBox();
             this.showAuthorsNamesList = new System.Windows.Forms.RichTextBox();
             this.maxPagesList = new System.Windows.Forms.RichTextBox();
             this.label22 = new System.Windows.Forms.Label();
             this.showFrenchBooks = new System.Windows.Forms.RichTextBox();
             this.label29 = new System.Windows.Forms.Label();
+            this.bookPanel = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.deleteBookBtn = new System.Windows.Forms.Button();
+            this.updateBookBtn = new System.Windows.Forms.Button();
+            this.searchBookBtn = new System.Windows.Forms.Button();
+            this.retrieveBookBtn = new System.Windows.Forms.Button();
+            this.createBookBtn = new System.Windows.Forms.Button();
             this.createPanel = new System.Windows.Forms.Panel();
             this.authorPanel = new System.Windows.Forms.Panel();
             this.authorNameBox = new System.Windows.Forms.TextBox();
@@ -59,6 +92,11 @@
             this.label23 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
+            this.label43 = new System.Windows.Forms.Label();
+            this.authorsBox = new System.Windows.Forms.ComboBox();
+            this.addExistAuthor = new System.Windows.Forms.Button();
+            this.label42 = new System.Windows.Forms.Label();
+            this.librarianIDBox = new System.Windows.Forms.ComboBox();
             this.addAuthor = new System.Windows.Forms.Button();
             this.bookSummaryBox = new System.Windows.Forms.RichTextBox();
             this.createBook = new System.Windows.Forms.Button();
@@ -85,76 +123,43 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.updateBookPanel = new System.Windows.Forms.Panel();
-            this.label21 = new System.Windows.Forms.Label();
-            this.bookSummaryToUdate = new System.Windows.Forms.TextBox();
-            this.bookPagesToUpdate = new System.Windows.Forms.TextBox();
-            this.bookTitleToUpdate = new System.Windows.Forms.TextBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.bookIDToUpdateBox = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.updateBook = new System.Windows.Forms.Button();
-            this.cancelBookUpdatePanel = new System.Windows.Forms.Button();
-            this.label24 = new System.Windows.Forms.Label();
-            this.serachBookPanel = new System.Windows.Forms.Panel();
-            this.bookTitleSearch = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.bookISBNSearch = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.searchBook = new System.Windows.Forms.Button();
-            this.cancelSearchbookPanel = new System.Windows.Forms.Button();
-            this.label17 = new System.Windows.Forms.Label();
-            this.deleteBookPanel = new System.Windows.Forms.Panel();
-            this.bookIDToDelete = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.deleteBook = new System.Windows.Forms.Button();
-            this.cencelBookDeletePanel = new System.Windows.Forms.Button();
-            this.label15 = new System.Windows.Forms.Label();
-            this.bookPanel = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.deleteBookBtn = new System.Windows.Forms.Button();
-            this.updateBookBtn = new System.Windows.Forms.Button();
-            this.searchBookBtn = new System.Windows.Forms.Button();
-            this.retrieveBookBtn = new System.Windows.Forms.Button();
-            this.createBookBtn = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.updatePatronPanel = new System.Windows.Forms.Panel();
-            this.libraryIDCombo = new System.Windows.Forms.ComboBox();
-            this.accountStateCombo = new System.Windows.Forms.ComboBox();
-            this.label41 = new System.Windows.Forms.Label();
-            this.label36 = new System.Windows.Forms.Label();
-            this.patronAddressToUpdate = new System.Windows.Forms.TextBox();
-            this.patronIDToUpdate = new System.Windows.Forms.TextBox();
-            this.patronNameToUpdate = new System.Windows.Forms.TextBox();
-            this.label28 = new System.Windows.Forms.Label();
-            this.updatePatron = new System.Windows.Forms.Button();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
-            this.unborrowPanel = new System.Windows.Forms.Panel();
-            this.bookISBNBox = new System.Windows.Forms.ComboBox();
-            this.makeUnBorrow = new System.Windows.Forms.Button();
-            this.label39 = new System.Windows.Forms.Label();
-            this.label40 = new System.Windows.Forms.Label();
             this.makeBorrowPanel = new System.Windows.Forms.Panel();
-            this.bookTitleBorrow = new System.Windows.Forms.TextBox();
-            this.acountIDBorrow = new System.Windows.Forms.TextBox();
+            this.bookISBNBorrowBox = new System.Windows.Forms.ComboBox();
             this.label35 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.label37 = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
-            this.retrievePatronPanel = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label33 = new System.Windows.Forms.Label();
             this.patronPanel = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.updatePatronBtn = new System.Windows.Forms.Button();
             this.makeBorrowBtn = new System.Windows.Forms.Button();
             this.makeUnborrowBtn = new System.Windows.Forms.Button();
             this.retrievePatronBtn = new System.Windows.Forms.Button();
-            this.patronsNamesList = new System.Windows.Forms.RichTextBox();
-            this.PatronsNamesFrozenAccount = new System.Windows.Forms.RichTextBox();
+            this.retrievePatronPanel = new System.Windows.Forms.Panel();
+            this.patronsNamesList = new System.Windows.Forms.ListBox();
+            this.PatronsNamesFrozenAccount = new System.Windows.Forms.ListBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label33 = new System.Windows.Forms.Label();
+            this.unborrowPanel = new System.Windows.Forms.Panel();
+            this.bookISBNBox = new System.Windows.Forms.ComboBox();
+            this.makeUnBorrow = new System.Windows.Forms.Button();
+            this.label39 = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
+            this.updatePatronPanel = new System.Windows.Forms.Panel();
+            this.patronIDToUpdate = new System.Windows.Forms.ComboBox();
+            this.libraryIDCombo = new System.Windows.Forms.ComboBox();
+            this.accountStateCombo = new System.Windows.Forms.ComboBox();
+            this.label41 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.patronAddressToUpdate = new System.Windows.Forms.TextBox();
+            this.patronNameToUpdate = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.updatePatron = new System.Windows.Forms.Button();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.acountIDBorrow = new System.Windows.Forms.ComboBox();
             cancelAuthorPanel = new System.Windows.Forms.Button();
             cancelRtrievePanel = new System.Windows.Forms.Button();
             frenchBooksBtn = new System.Windows.Forms.Button();
@@ -167,21 +172,21 @@
             cancelUnBorrow = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.retrievePanel.SuspendLayout();
-            this.createPanel.SuspendLayout();
-            this.authorPanel.SuspendLayout();
-            this.updateBookPanel.SuspendLayout();
             this.serachBookPanel.SuspendLayout();
+            this.updateBookPanel.SuspendLayout();
             this.deleteBookPanel.SuspendLayout();
+            this.retrievePanel.SuspendLayout();
             this.bookPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.createPanel.SuspendLayout();
+            this.authorPanel.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.updatePatronPanel.SuspendLayout();
-            this.unborrowPanel.SuspendLayout();
             this.makeBorrowPanel.SuspendLayout();
-            this.retrievePatronPanel.SuspendLayout();
             this.patronPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.retrievePatronPanel.SuspendLayout();
+            this.unborrowPanel.SuspendLayout();
+            this.updatePatronPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // cancelAuthorPanel
@@ -287,7 +292,7 @@
             cancelRetrievePatronPanel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             cancelRetrievePatronPanel.Font = new System.Drawing.Font("Segoe UI", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             cancelRetrievePatronPanel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            cancelRetrievePatronPanel.Location = new System.Drawing.Point(277, 357);
+            cancelRetrievePatronPanel.Location = new System.Drawing.Point(284, 529);
             cancelRetrievePatronPanel.Name = "cancelRetrievePatronPanel";
             cancelRetrievePatronPanel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             cancelRetrievePatronPanel.Size = new System.Drawing.Size(135, 44);
@@ -358,12 +363,12 @@
             // tabPage1
             // 
             this.tabPage1.BackgroundImage = global::LibraryManagementSystem.Properties.Resources.library;
-            this.tabPage1.Controls.Add(this.retrievePanel);
-            this.tabPage1.Controls.Add(this.createPanel);
-            this.tabPage1.Controls.Add(this.updateBookPanel);
             this.tabPage1.Controls.Add(this.serachBookPanel);
+            this.tabPage1.Controls.Add(this.updateBookPanel);
             this.tabPage1.Controls.Add(this.deleteBookPanel);
+            this.tabPage1.Controls.Add(this.retrievePanel);
             this.tabPage1.Controls.Add(this.bookPanel);
+            this.tabPage1.Controls.Add(this.createPanel);
             this.tabPage1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.tabPage1.Location = new System.Drawing.Point(4, 34);
             this.tabPage1.Name = "tabPage1";
@@ -373,11 +378,317 @@
             this.tabPage1.Text = "Book";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // serachBookPanel
+            // 
+            this.serachBookPanel.BackColor = System.Drawing.Color.LightGray;
+            this.serachBookPanel.Controls.Add(this.bookISBNSearch);
+            this.serachBookPanel.Controls.Add(this.bookTitleSearch);
+            this.serachBookPanel.Controls.Add(this.label18);
+            this.serachBookPanel.Controls.Add(this.label16);
+            this.serachBookPanel.Controls.Add(this.searchBook);
+            this.serachBookPanel.Controls.Add(this.cancelSearchbookPanel);
+            this.serachBookPanel.Controls.Add(this.label17);
+            this.serachBookPanel.Location = new System.Drawing.Point(321, 169);
+            this.serachBookPanel.Name = "serachBookPanel";
+            this.serachBookPanel.Size = new System.Drawing.Size(740, 332);
+            this.serachBookPanel.TabIndex = 4;
+            this.serachBookPanel.Visible = false;
+            // 
+            // bookISBNSearch
+            // 
+            this.bookISBNSearch.Location = new System.Drawing.Point(168, 117);
+            this.bookISBNSearch.Name = "bookISBNSearch";
+            this.bookISBNSearch.Size = new System.Drawing.Size(146, 35);
+            this.bookISBNSearch.TabIndex = 28;
+            // 
+            // bookTitleSearch
+            // 
+            this.bookTitleSearch.Location = new System.Drawing.Point(529, 117);
+            this.bookTitleSearch.Name = "bookTitleSearch";
+            this.bookTitleSearch.Size = new System.Drawing.Size(146, 35);
+            this.bookTitleSearch.TabIndex = 21;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label18.ForeColor = System.Drawing.Color.White;
+            this.label18.Location = new System.Drawing.Point(435, 120);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(62, 30);
+            this.label18.TabIndex = 20;
+            this.label18.Text = "Title";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label16.ForeColor = System.Drawing.Color.White;
+            this.label16.Location = new System.Drawing.Point(83, 117);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(69, 30);
+            this.label16.TabIndex = 13;
+            this.label16.Text = "ISBN";
+            // 
+            // searchBook
+            // 
+            this.searchBook.BackColor = System.Drawing.Color.DarkOrange;
+            this.searchBook.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.searchBook.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.searchBook.Font = new System.Drawing.Font("Segoe UI", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.searchBook.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.searchBook.Location = new System.Drawing.Point(190, 232);
+            this.searchBook.Name = "searchBook";
+            this.searchBook.Size = new System.Drawing.Size(140, 44);
+            this.searchBook.TabIndex = 11;
+            this.searchBook.Text = "Search";
+            this.searchBook.UseVisualStyleBackColor = false;
+            this.searchBook.Click += new System.EventHandler(this.searchBook_Click);
+            // 
+            // cancelSearchbookPanel
+            // 
+            this.cancelSearchbookPanel.BackColor = System.Drawing.Color.DarkOrange;
+            this.cancelSearchbookPanel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cancelSearchbookPanel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cancelSearchbookPanel.Font = new System.Drawing.Font("Segoe UI", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.cancelSearchbookPanel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.cancelSearchbookPanel.Location = new System.Drawing.Point(402, 233);
+            this.cancelSearchbookPanel.Name = "cancelSearchbookPanel";
+            this.cancelSearchbookPanel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.cancelSearchbookPanel.Size = new System.Drawing.Size(147, 44);
+            this.cancelSearchbookPanel.TabIndex = 12;
+            this.cancelSearchbookPanel.Text = "Cancel";
+            this.cancelSearchbookPanel.UseVisualStyleBackColor = false;
+            this.cancelSearchbookPanel.Click += new System.EventHandler(this.cancelSearchbookPanel_Click);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Impact", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label17.ForeColor = System.Drawing.Color.DarkOrange;
+            this.label17.Location = new System.Drawing.Point(313, 11);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(221, 45);
+            this.label17.TabIndex = 6;
+            this.label17.Text = "Search Book";
+            // 
+            // updateBookPanel
+            // 
+            this.updateBookPanel.BackColor = System.Drawing.Color.LightGray;
+            this.updateBookPanel.Controls.Add(this.bookIDToUpdateBox);
+            this.updateBookPanel.Controls.Add(this.label21);
+            this.updateBookPanel.Controls.Add(this.bookSummaryToUdate);
+            this.updateBookPanel.Controls.Add(this.bookPagesToUpdate);
+            this.updateBookPanel.Controls.Add(this.bookTitleToUpdate);
+            this.updateBookPanel.Controls.Add(this.label20);
+            this.updateBookPanel.Controls.Add(this.label19);
+            this.updateBookPanel.Controls.Add(this.label13);
+            this.updateBookPanel.Controls.Add(this.updateBook);
+            this.updateBookPanel.Controls.Add(this.cancelBookUpdatePanel);
+            this.updateBookPanel.Controls.Add(this.label24);
+            this.updateBookPanel.Location = new System.Drawing.Point(324, 19);
+            this.updateBookPanel.Name = "updateBookPanel";
+            this.updateBookPanel.Size = new System.Drawing.Size(773, 469);
+            this.updateBookPanel.TabIndex = 2;
+            this.updateBookPanel.Visible = false;
+            this.updateBookPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.updateBookPanel_Paint);
+            // 
+            // bookIDToUpdateBox
+            // 
+            this.bookIDToUpdateBox.FormattingEnabled = true;
+            this.bookIDToUpdateBox.Location = new System.Drawing.Point(83, 133);
+            this.bookIDToUpdateBox.Name = "bookIDToUpdateBox";
+            this.bookIDToUpdateBox.Size = new System.Drawing.Size(259, 38);
+            this.bookIDToUpdateBox.TabIndex = 26;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label21.ForeColor = System.Drawing.Color.White;
+            this.label21.Location = new System.Drawing.Point(402, 194);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(105, 30);
+            this.label21.TabIndex = 25;
+            this.label21.Text = "Summary";
+            // 
+            // bookSummaryToUdate
+            // 
+            this.bookSummaryToUdate.Location = new System.Drawing.Point(399, 235);
+            this.bookSummaryToUdate.Name = "bookSummaryToUdate";
+            this.bookSummaryToUdate.Size = new System.Drawing.Size(259, 35);
+            this.bookSummaryToUdate.TabIndex = 24;
+            // 
+            // bookPagesToUpdate
+            // 
+            this.bookPagesToUpdate.Location = new System.Drawing.Point(402, 139);
+            this.bookPagesToUpdate.Name = "bookPagesToUpdate";
+            this.bookPagesToUpdate.Size = new System.Drawing.Size(259, 35);
+            this.bookPagesToUpdate.TabIndex = 23;
+            // 
+            // bookTitleToUpdate
+            // 
+            this.bookTitleToUpdate.Location = new System.Drawing.Point(83, 235);
+            this.bookTitleToUpdate.Name = "bookTitleToUpdate";
+            this.bookTitleToUpdate.Size = new System.Drawing.Size(259, 35);
+            this.bookTitleToUpdate.TabIndex = 22;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label20.ForeColor = System.Drawing.Color.White;
+            this.label20.Location = new System.Drawing.Point(83, 197);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(62, 30);
+            this.label20.TabIndex = 21;
+            this.label20.Text = "Title";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label19.ForeColor = System.Drawing.Color.White;
+            this.label19.Location = new System.Drawing.Point(402, 97);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(193, 30);
+            this.label19.TabIndex = 20;
+            this.label19.Text = "Number Of Pages";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label13.ForeColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(83, 97);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(69, 30);
+            this.label13.TabIndex = 13;
+            this.label13.Text = "ISBN";
+            // 
+            // updateBook
+            // 
+            this.updateBook.BackColor = System.Drawing.Color.DarkOrange;
+            this.updateBook.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.updateBook.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.updateBook.Font = new System.Drawing.Font("Segoe UI", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.updateBook.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.updateBook.Location = new System.Drawing.Point(202, 335);
+            this.updateBook.Name = "updateBook";
+            this.updateBook.Size = new System.Drawing.Size(140, 44);
+            this.updateBook.TabIndex = 11;
+            this.updateBook.Text = "Update";
+            this.updateBook.UseVisualStyleBackColor = false;
+            this.updateBook.Click += new System.EventHandler(this.updateBook_Click);
+            // 
+            // cancelBookUpdatePanel
+            // 
+            this.cancelBookUpdatePanel.BackColor = System.Drawing.Color.DarkOrange;
+            this.cancelBookUpdatePanel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cancelBookUpdatePanel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cancelBookUpdatePanel.Font = new System.Drawing.Font("Segoe UI", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.cancelBookUpdatePanel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.cancelBookUpdatePanel.Location = new System.Drawing.Point(399, 336);
+            this.cancelBookUpdatePanel.Name = "cancelBookUpdatePanel";
+            this.cancelBookUpdatePanel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.cancelBookUpdatePanel.Size = new System.Drawing.Size(147, 44);
+            this.cancelBookUpdatePanel.TabIndex = 12;
+            this.cancelBookUpdatePanel.Text = "Cancel";
+            this.cancelBookUpdatePanel.UseVisualStyleBackColor = false;
+            this.cancelBookUpdatePanel.Click += new System.EventHandler(this.cancelBookUpdatePanel_Click);
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Impact", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label24.ForeColor = System.Drawing.Color.DarkOrange;
+            this.label24.Location = new System.Drawing.Point(242, 17);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(221, 45);
+            this.label24.TabIndex = 6;
+            this.label24.Text = "Update Book";
+            // 
+            // deleteBookPanel
+            // 
+            this.deleteBookPanel.BackColor = System.Drawing.Color.LightGray;
+            this.deleteBookPanel.Controls.Add(this.bookIDToDelete);
+            this.deleteBookPanel.Controls.Add(this.label14);
+            this.deleteBookPanel.Controls.Add(this.deleteBook);
+            this.deleteBookPanel.Controls.Add(this.cencelBookDeletePanel);
+            this.deleteBookPanel.Controls.Add(this.label15);
+            this.deleteBookPanel.Location = new System.Drawing.Point(321, 143);
+            this.deleteBookPanel.Name = "deleteBookPanel";
+            this.deleteBookPanel.Size = new System.Drawing.Size(676, 345);
+            this.deleteBookPanel.TabIndex = 3;
+            this.deleteBookPanel.Visible = false;
+            this.deleteBookPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.deleteBookPanel_Paint);
+            // 
+            // bookIDToDelete
+            // 
+            this.bookIDToDelete.FormattingEnabled = true;
+            this.bookIDToDelete.Location = new System.Drawing.Point(174, 113);
+            this.bookIDToDelete.Name = "bookIDToDelete";
+            this.bookIDToDelete.Size = new System.Drawing.Size(336, 38);
+            this.bookIDToDelete.TabIndex = 24;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label14.ForeColor = System.Drawing.Color.White;
+            this.label14.Location = new System.Drawing.Point(83, 117);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(69, 30);
+            this.label14.TabIndex = 13;
+            this.label14.Text = "ISBN";
+            // 
+            // deleteBook
+            // 
+            this.deleteBook.BackColor = System.Drawing.Color.DarkOrange;
+            this.deleteBook.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.deleteBook.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.deleteBook.Font = new System.Drawing.Font("Segoe UI", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.deleteBook.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.deleteBook.Location = new System.Drawing.Point(174, 252);
+            this.deleteBook.Name = "deleteBook";
+            this.deleteBook.Size = new System.Drawing.Size(140, 44);
+            this.deleteBook.TabIndex = 11;
+            this.deleteBook.Text = "Delete";
+            this.deleteBook.UseVisualStyleBackColor = false;
+            this.deleteBook.Click += new System.EventHandler(this.deleteBook_Click);
+            // 
+            // cencelBookDeletePanel
+            // 
+            this.cencelBookDeletePanel.BackColor = System.Drawing.Color.DarkOrange;
+            this.cencelBookDeletePanel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cencelBookDeletePanel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cencelBookDeletePanel.Font = new System.Drawing.Font("Segoe UI", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.cencelBookDeletePanel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.cencelBookDeletePanel.Location = new System.Drawing.Point(360, 252);
+            this.cencelBookDeletePanel.Name = "cencelBookDeletePanel";
+            this.cencelBookDeletePanel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.cencelBookDeletePanel.Size = new System.Drawing.Size(147, 44);
+            this.cencelBookDeletePanel.TabIndex = 12;
+            this.cencelBookDeletePanel.Text = "Cancel";
+            this.cencelBookDeletePanel.UseVisualStyleBackColor = false;
+            this.cencelBookDeletePanel.Click += new System.EventHandler(this.cencelBookDeletePanel_Click);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Impact", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label15.ForeColor = System.Drawing.Color.DarkOrange;
+            this.label15.Location = new System.Drawing.Point(193, 14);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(212, 45);
+            this.label15.TabIndex = 6;
+            this.label15.Text = "Delete Book";
+            // 
             // retrievePanel
             // 
             this.retrievePanel.BackColor = System.Drawing.Color.LightGray;
-            this.retrievePanel.Controls.Add(this.label27);
             this.retrievePanel.Controls.Add(this.bookIDBox);
+            this.retrievePanel.Controls.Add(this.label27);
             this.retrievePanel.Controls.Add(this.showAuthorsNamesList);
             this.retrievePanel.Controls.Add(showAuthorsNames);
             this.retrievePanel.Controls.Add(this.maxPagesList);
@@ -393,6 +704,14 @@
             this.retrievePanel.TabIndex = 34;
             this.retrievePanel.Visible = false;
             // 
+            // bookIDBox
+            // 
+            this.bookIDBox.FormattingEnabled = true;
+            this.bookIDBox.Location = new System.Drawing.Point(698, 366);
+            this.bookIDBox.Name = "bookIDBox";
+            this.bookIDBox.Size = new System.Drawing.Size(141, 38);
+            this.bookIDBox.TabIndex = 23;
+            // 
             // label27
             // 
             this.label27.AutoSize = true;
@@ -403,13 +722,6 @@
             this.label27.Size = new System.Drawing.Size(124, 30);
             this.label27.TabIndex = 22;
             this.label27.Text = "Book ISBN";
-            // 
-            // bookIDBox
-            // 
-            this.bookIDBox.Location = new System.Drawing.Point(708, 364);
-            this.bookIDBox.Name = "bookIDBox";
-            this.bookIDBox.Size = new System.Drawing.Size(131, 35);
-            this.bookIDBox.TabIndex = 21;
             // 
             // showAuthorsNamesList
             // 
@@ -458,10 +770,104 @@
             this.label29.Size = new System.Drawing.Size(0, 45);
             this.label29.TabIndex = 6;
             // 
+            // bookPanel
+            // 
+            this.bookPanel.BackColor = System.Drawing.Color.White;
+            this.bookPanel.Controls.Add(this.pictureBox1);
+            this.bookPanel.Controls.Add(this.deleteBookBtn);
+            this.bookPanel.Controls.Add(this.updateBookBtn);
+            this.bookPanel.Controls.Add(this.searchBookBtn);
+            this.bookPanel.Controls.Add(this.retrieveBookBtn);
+            this.bookPanel.Controls.Add(this.createBookBtn);
+            this.bookPanel.Location = new System.Drawing.Point(0, 0);
+            this.bookPanel.Name = "bookPanel";
+            this.bookPanel.Size = new System.Drawing.Size(302, 716);
+            this.bookPanel.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::LibraryManagementSystem.Properties.Resources.center;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 347);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(302, 372);
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            // 
+            // deleteBookBtn
+            // 
+            this.deleteBookBtn.BackColor = System.Drawing.Color.Transparent;
+            this.deleteBookBtn.Font = new System.Drawing.Font("Castellar", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.deleteBookBtn.ForeColor = System.Drawing.Color.Black;
+            this.deleteBookBtn.Location = new System.Drawing.Point(0, 303);
+            this.deleteBookBtn.Name = "deleteBookBtn";
+            this.deleteBookBtn.Size = new System.Drawing.Size(302, 47);
+            this.deleteBookBtn.TabIndex = 4;
+            this.deleteBookBtn.Text = "Delete Book";
+            this.deleteBookBtn.UseVisualStyleBackColor = false;
+            this.deleteBookBtn.Click += new System.EventHandler(this.deleteBookBtn_Click);
+            // 
+            // updateBookBtn
+            // 
+            this.updateBookBtn.BackColor = System.Drawing.Color.Transparent;
+            this.updateBookBtn.Font = new System.Drawing.Font("Castellar", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.updateBookBtn.ForeColor = System.Drawing.Color.Black;
+            this.updateBookBtn.Location = new System.Drawing.Point(0, 115);
+            this.updateBookBtn.Name = "updateBookBtn";
+            this.updateBookBtn.Size = new System.Drawing.Size(302, 47);
+            this.updateBookBtn.TabIndex = 3;
+            this.updateBookBtn.Text = "Update Book";
+            this.updateBookBtn.UseVisualStyleBackColor = false;
+            this.updateBookBtn.Click += new System.EventHandler(this.updateBookBtn_Click);
+            // 
+            // searchBookBtn
+            // 
+            this.searchBookBtn.BackColor = System.Drawing.Color.Transparent;
+            this.searchBookBtn.Font = new System.Drawing.Font("Castellar", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.searchBookBtn.ForeColor = System.Drawing.Color.Black;
+            this.searchBookBtn.Location = new System.Drawing.Point(0, 178);
+            this.searchBookBtn.Name = "searchBookBtn";
+            this.searchBookBtn.Size = new System.Drawing.Size(302, 47);
+            this.searchBookBtn.TabIndex = 2;
+            this.searchBookBtn.Text = "Search Book";
+            this.searchBookBtn.UseVisualStyleBackColor = false;
+            this.searchBookBtn.Click += new System.EventHandler(this.searchBookBtn_Click);
+            // 
+            // retrieveBookBtn
+            // 
+            this.retrieveBookBtn.BackColor = System.Drawing.Color.Transparent;
+            this.retrieveBookBtn.Font = new System.Drawing.Font("Castellar", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.retrieveBookBtn.ForeColor = System.Drawing.Color.Black;
+            this.retrieveBookBtn.Location = new System.Drawing.Point(0, 240);
+            this.retrieveBookBtn.Name = "retrieveBookBtn";
+            this.retrieveBookBtn.Size = new System.Drawing.Size(302, 47);
+            this.retrieveBookBtn.TabIndex = 1;
+            this.retrieveBookBtn.Text = "Retrieve Book";
+            this.retrieveBookBtn.UseVisualStyleBackColor = false;
+            this.retrieveBookBtn.Click += new System.EventHandler(this.retrieveBookBtn_Click);
+            // 
+            // createBookBtn
+            // 
+            this.createBookBtn.BackColor = System.Drawing.Color.Transparent;
+            this.createBookBtn.Font = new System.Drawing.Font("Castellar", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.createBookBtn.ForeColor = System.Drawing.Color.Black;
+            this.createBookBtn.Location = new System.Drawing.Point(0, 52);
+            this.createBookBtn.Name = "createBookBtn";
+            this.createBookBtn.Size = new System.Drawing.Size(302, 47);
+            this.createBookBtn.TabIndex = 0;
+            this.createBookBtn.Text = "Create Book";
+            this.createBookBtn.UseVisualStyleBackColor = false;
+            this.createBookBtn.Click += new System.EventHandler(this.createBookBtn_Click);
+            // 
             // createPanel
             // 
             this.createPanel.BackColor = System.Drawing.Color.LightGray;
             this.createPanel.Controls.Add(this.authorPanel);
+            this.createPanel.Controls.Add(this.label43);
+            this.createPanel.Controls.Add(this.authorsBox);
+            this.createPanel.Controls.Add(this.addExistAuthor);
+            this.createPanel.Controls.Add(this.label42);
+            this.createPanel.Controls.Add(this.librarianIDBox);
             this.createPanel.Controls.Add(this.addAuthor);
             this.createPanel.Controls.Add(this.bookSummaryBox);
             this.createPanel.Controls.Add(this.createBook);
@@ -488,7 +894,7 @@
             this.createPanel.Controls.Add(this.label1);
             this.createPanel.Controls.Add(this.label3);
             this.createPanel.Controls.Add(this.label4);
-            this.createPanel.Location = new System.Drawing.Point(311, 18);
+            this.createPanel.Location = new System.Drawing.Point(308, 3);
             this.createPanel.Name = "createPanel";
             this.createPanel.Size = new System.Drawing.Size(922, 697);
             this.createPanel.TabIndex = 1;
@@ -507,9 +913,9 @@
             this.authorPanel.Controls.Add(this.label23);
             this.authorPanel.Controls.Add(this.label26);
             this.authorPanel.Controls.Add(this.label31);
-            this.authorPanel.Location = new System.Drawing.Point(137, 51);
+            this.authorPanel.Location = new System.Drawing.Point(102, 49);
             this.authorPanel.Name = "authorPanel";
-            this.authorPanel.Size = new System.Drawing.Size(687, 416);
+            this.authorPanel.Size = new System.Drawing.Size(652, 384);
             this.authorPanel.TabIndex = 33;
             this.authorPanel.Visible = false;
             this.authorPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.authorPanel_Paint);
@@ -530,9 +936,9 @@
             // 
             // authorBirthDate
             // 
-            this.authorBirthDate.Location = new System.Drawing.Point(85, 243);
+            this.authorBirthDate.Location = new System.Drawing.Point(85, 244);
             this.authorBirthDate.Name = "authorBirthDate";
-            this.authorBirthDate.Size = new System.Drawing.Size(365, 35);
+            this.authorBirthDate.Size = new System.Drawing.Size(375, 35);
             this.authorBirthDate.TabIndex = 24;
             // 
             // label25
@@ -594,6 +1000,65 @@
             this.label31.TabIndex = 6;
             this.label31.Text = "Create Author";
             // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label43.ForeColor = System.Drawing.Color.White;
+            this.label43.Location = new System.Drawing.Point(654, 351);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(117, 30);
+            this.label43.TabIndex = 40;
+            this.label43.Text = "Author ID";
+            // 
+            // authorsBox
+            // 
+            this.authorsBox.FormattingEnabled = true;
+            this.authorsBox.Items.AddRange(new object[] {
+            "True",
+            "False"});
+            this.authorsBox.Location = new System.Drawing.Point(654, 386);
+            this.authorsBox.Name = "authorsBox";
+            this.authorsBox.Size = new System.Drawing.Size(232, 38);
+            this.authorsBox.TabIndex = 39;
+            // 
+            // addExistAuthor
+            // 
+            this.addExistAuthor.BackColor = System.Drawing.Color.DarkOrange;
+            this.addExistAuthor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.addExistAuthor.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.addExistAuthor.Font = new System.Drawing.Font("Segoe UI", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.addExistAuthor.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.addExistAuthor.Location = new System.Drawing.Point(652, 435);
+            this.addExistAuthor.Name = "addExistAuthor";
+            this.addExistAuthor.Size = new System.Drawing.Size(249, 44);
+            this.addExistAuthor.TabIndex = 38;
+            this.addExistAuthor.Text = "Add Existing Author";
+            this.addExistAuthor.UseVisualStyleBackColor = false;
+            this.addExistAuthor.Click += new System.EventHandler(this.addExistAuthor_Click);
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label42.ForeColor = System.Drawing.Color.White;
+            this.label42.Location = new System.Drawing.Point(654, 254);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(139, 30);
+            this.label42.TabIndex = 37;
+            this.label42.Text = "Librarian ID";
+            // 
+            // librarianIDBox
+            // 
+            this.librarianIDBox.FormattingEnabled = true;
+            this.librarianIDBox.Items.AddRange(new object[] {
+            "True",
+            "False"});
+            this.librarianIDBox.Location = new System.Drawing.Point(654, 293);
+            this.librarianIDBox.Name = "librarianIDBox";
+            this.librarianIDBox.Size = new System.Drawing.Size(232, 38);
+            this.librarianIDBox.TabIndex = 36;
+            // 
             // addAuthor
             // 
             this.addAuthor.BackColor = System.Drawing.Color.DarkOrange;
@@ -601,11 +1066,11 @@
             this.addAuthor.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.addAuthor.Font = new System.Drawing.Font("Segoe UI", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.addAuthor.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.addAuthor.Location = new System.Drawing.Point(682, 296);
+            this.addAuthor.Location = new System.Drawing.Point(671, 528);
             this.addAuthor.Name = "addAuthor";
-            this.addAuthor.Size = new System.Drawing.Size(166, 44);
+            this.addAuthor.Size = new System.Drawing.Size(213, 44);
             this.addAuthor.TabIndex = 35;
-            this.addAuthor.Text = "Add Author";
+            this.addAuthor.Text = "Add New Author";
             this.addAuthor.UseVisualStyleBackColor = false;
             this.addAuthor.Click += new System.EventHandler(this.addAuthor_Click_1);
             // 
@@ -862,407 +1327,14 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "Create New Book";
             // 
-            // updateBookPanel
-            // 
-            this.updateBookPanel.BackColor = System.Drawing.Color.LightGray;
-            this.updateBookPanel.Controls.Add(this.label21);
-            this.updateBookPanel.Controls.Add(this.bookSummaryToUdate);
-            this.updateBookPanel.Controls.Add(this.bookPagesToUpdate);
-            this.updateBookPanel.Controls.Add(this.bookTitleToUpdate);
-            this.updateBookPanel.Controls.Add(this.label20);
-            this.updateBookPanel.Controls.Add(this.label19);
-            this.updateBookPanel.Controls.Add(this.bookIDToUpdateBox);
-            this.updateBookPanel.Controls.Add(this.label13);
-            this.updateBookPanel.Controls.Add(this.updateBook);
-            this.updateBookPanel.Controls.Add(this.cancelBookUpdatePanel);
-            this.updateBookPanel.Controls.Add(this.label24);
-            this.updateBookPanel.Location = new System.Drawing.Point(324, 19);
-            this.updateBookPanel.Name = "updateBookPanel";
-            this.updateBookPanel.Size = new System.Drawing.Size(773, 469);
-            this.updateBookPanel.TabIndex = 2;
-            this.updateBookPanel.Visible = false;
-            this.updateBookPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.updateBookPanel_Paint);
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label21.ForeColor = System.Drawing.Color.White;
-            this.label21.Location = new System.Drawing.Point(402, 194);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(105, 30);
-            this.label21.TabIndex = 25;
-            this.label21.Text = "Summary";
-            // 
-            // bookSummaryToUdate
-            // 
-            this.bookSummaryToUdate.Location = new System.Drawing.Point(399, 235);
-            this.bookSummaryToUdate.Name = "bookSummaryToUdate";
-            this.bookSummaryToUdate.Size = new System.Drawing.Size(259, 35);
-            this.bookSummaryToUdate.TabIndex = 24;
-            // 
-            // bookPagesToUpdate
-            // 
-            this.bookPagesToUpdate.Location = new System.Drawing.Point(402, 139);
-            this.bookPagesToUpdate.Name = "bookPagesToUpdate";
-            this.bookPagesToUpdate.Size = new System.Drawing.Size(259, 35);
-            this.bookPagesToUpdate.TabIndex = 23;
-            // 
-            // bookTitleToUpdate
-            // 
-            this.bookTitleToUpdate.Location = new System.Drawing.Point(83, 235);
-            this.bookTitleToUpdate.Name = "bookTitleToUpdate";
-            this.bookTitleToUpdate.Size = new System.Drawing.Size(259, 35);
-            this.bookTitleToUpdate.TabIndex = 22;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label20.ForeColor = System.Drawing.Color.White;
-            this.label20.Location = new System.Drawing.Point(83, 197);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(62, 30);
-            this.label20.TabIndex = 21;
-            this.label20.Text = "Title";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label19.ForeColor = System.Drawing.Color.White;
-            this.label19.Location = new System.Drawing.Point(402, 97);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(193, 30);
-            this.label19.TabIndex = 20;
-            this.label19.Text = "Number Of Pages";
-            // 
-            // bookIDToUpdateBox
-            // 
-            this.bookIDToUpdateBox.Location = new System.Drawing.Point(83, 140);
-            this.bookIDToUpdateBox.Name = "bookIDToUpdateBox";
-            this.bookIDToUpdateBox.Size = new System.Drawing.Size(259, 35);
-            this.bookIDToUpdateBox.TabIndex = 19;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(83, 97);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(39, 30);
-            this.label13.TabIndex = 13;
-            this.label13.Text = "ID";
-            // 
-            // updateBook
-            // 
-            this.updateBook.BackColor = System.Drawing.Color.DarkOrange;
-            this.updateBook.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.updateBook.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.updateBook.Font = new System.Drawing.Font("Segoe UI", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.updateBook.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.updateBook.Location = new System.Drawing.Point(202, 335);
-            this.updateBook.Name = "updateBook";
-            this.updateBook.Size = new System.Drawing.Size(140, 44);
-            this.updateBook.TabIndex = 11;
-            this.updateBook.Text = "Update";
-            this.updateBook.UseVisualStyleBackColor = false;
-            this.updateBook.Click += new System.EventHandler(this.updateBook_Click);
-            // 
-            // cancelBookUpdatePanel
-            // 
-            this.cancelBookUpdatePanel.BackColor = System.Drawing.Color.DarkOrange;
-            this.cancelBookUpdatePanel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cancelBookUpdatePanel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cancelBookUpdatePanel.Font = new System.Drawing.Font("Segoe UI", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.cancelBookUpdatePanel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.cancelBookUpdatePanel.Location = new System.Drawing.Point(399, 336);
-            this.cancelBookUpdatePanel.Name = "cancelBookUpdatePanel";
-            this.cancelBookUpdatePanel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.cancelBookUpdatePanel.Size = new System.Drawing.Size(147, 44);
-            this.cancelBookUpdatePanel.TabIndex = 12;
-            this.cancelBookUpdatePanel.Text = "Cancel";
-            this.cancelBookUpdatePanel.UseVisualStyleBackColor = false;
-            this.cancelBookUpdatePanel.Click += new System.EventHandler(this.cancelBookUpdatePanel_Click);
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Impact", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label24.ForeColor = System.Drawing.Color.DarkOrange;
-            this.label24.Location = new System.Drawing.Point(242, 17);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(221, 45);
-            this.label24.TabIndex = 6;
-            this.label24.Text = "Update Book";
-            // 
-            // serachBookPanel
-            // 
-            this.serachBookPanel.BackColor = System.Drawing.Color.LightGray;
-            this.serachBookPanel.Controls.Add(this.bookTitleSearch);
-            this.serachBookPanel.Controls.Add(this.label18);
-            this.serachBookPanel.Controls.Add(this.bookISBNSearch);
-            this.serachBookPanel.Controls.Add(this.label16);
-            this.serachBookPanel.Controls.Add(this.searchBook);
-            this.serachBookPanel.Controls.Add(this.cancelSearchbookPanel);
-            this.serachBookPanel.Controls.Add(this.label17);
-            this.serachBookPanel.Location = new System.Drawing.Point(321, 169);
-            this.serachBookPanel.Name = "serachBookPanel";
-            this.serachBookPanel.Size = new System.Drawing.Size(740, 332);
-            this.serachBookPanel.TabIndex = 4;
-            this.serachBookPanel.Visible = false;
-            // 
-            // bookTitleSearch
-            // 
-            this.bookTitleSearch.Location = new System.Drawing.Point(529, 117);
-            this.bookTitleSearch.Name = "bookTitleSearch";
-            this.bookTitleSearch.Size = new System.Drawing.Size(146, 35);
-            this.bookTitleSearch.TabIndex = 21;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label18.ForeColor = System.Drawing.Color.White;
-            this.label18.Location = new System.Drawing.Point(435, 120);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(62, 30);
-            this.label18.TabIndex = 20;
-            this.label18.Text = "Title";
-            // 
-            // bookISBNSearch
-            // 
-            this.bookISBNSearch.Location = new System.Drawing.Point(168, 117);
-            this.bookISBNSearch.Name = "bookISBNSearch";
-            this.bookISBNSearch.Size = new System.Drawing.Size(146, 35);
-            this.bookISBNSearch.TabIndex = 19;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(83, 117);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(69, 30);
-            this.label16.TabIndex = 13;
-            this.label16.Text = "ISBN";
-            // 
-            // searchBook
-            // 
-            this.searchBook.BackColor = System.Drawing.Color.DarkOrange;
-            this.searchBook.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.searchBook.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.searchBook.Font = new System.Drawing.Font("Segoe UI", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.searchBook.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.searchBook.Location = new System.Drawing.Point(190, 232);
-            this.searchBook.Name = "searchBook";
-            this.searchBook.Size = new System.Drawing.Size(140, 44);
-            this.searchBook.TabIndex = 11;
-            this.searchBook.Text = "Search";
-            this.searchBook.UseVisualStyleBackColor = false;
-            this.searchBook.Click += new System.EventHandler(this.searchBook_Click);
-            // 
-            // cancelSearchbookPanel
-            // 
-            this.cancelSearchbookPanel.BackColor = System.Drawing.Color.DarkOrange;
-            this.cancelSearchbookPanel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cancelSearchbookPanel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cancelSearchbookPanel.Font = new System.Drawing.Font("Segoe UI", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.cancelSearchbookPanel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.cancelSearchbookPanel.Location = new System.Drawing.Point(402, 233);
-            this.cancelSearchbookPanel.Name = "cancelSearchbookPanel";
-            this.cancelSearchbookPanel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.cancelSearchbookPanel.Size = new System.Drawing.Size(147, 44);
-            this.cancelSearchbookPanel.TabIndex = 12;
-            this.cancelSearchbookPanel.Text = "Cancel";
-            this.cancelSearchbookPanel.UseVisualStyleBackColor = false;
-            this.cancelSearchbookPanel.Click += new System.EventHandler(this.cancelSearchbookPanel_Click);
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Impact", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label17.ForeColor = System.Drawing.Color.DarkOrange;
-            this.label17.Location = new System.Drawing.Point(313, 11);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(221, 45);
-            this.label17.TabIndex = 6;
-            this.label17.Text = "Search Book";
-            // 
-            // deleteBookPanel
-            // 
-            this.deleteBookPanel.BackColor = System.Drawing.Color.LightGray;
-            this.deleteBookPanel.Controls.Add(this.bookIDToDelete);
-            this.deleteBookPanel.Controls.Add(this.label14);
-            this.deleteBookPanel.Controls.Add(this.deleteBook);
-            this.deleteBookPanel.Controls.Add(this.cencelBookDeletePanel);
-            this.deleteBookPanel.Controls.Add(this.label15);
-            this.deleteBookPanel.Location = new System.Drawing.Point(321, 143);
-            this.deleteBookPanel.Name = "deleteBookPanel";
-            this.deleteBookPanel.Size = new System.Drawing.Size(676, 478);
-            this.deleteBookPanel.TabIndex = 3;
-            this.deleteBookPanel.Visible = false;
-            this.deleteBookPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.deleteBookPanel_Paint);
-            // 
-            // bookIDToDelete
-            // 
-            this.bookIDToDelete.Location = new System.Drawing.Point(168, 117);
-            this.bookIDToDelete.Name = "bookIDToDelete";
-            this.bookIDToDelete.Size = new System.Drawing.Size(333, 35);
-            this.bookIDToDelete.TabIndex = 19;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(83, 117);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(39, 30);
-            this.label14.TabIndex = 13;
-            this.label14.Text = "ID";
-            // 
-            // deleteBook
-            // 
-            this.deleteBook.BackColor = System.Drawing.Color.DarkOrange;
-            this.deleteBook.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.deleteBook.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.deleteBook.Font = new System.Drawing.Font("Segoe UI", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.deleteBook.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.deleteBook.Location = new System.Drawing.Point(168, 351);
-            this.deleteBook.Name = "deleteBook";
-            this.deleteBook.Size = new System.Drawing.Size(140, 44);
-            this.deleteBook.TabIndex = 11;
-            this.deleteBook.Text = "Update";
-            this.deleteBook.UseVisualStyleBackColor = false;
-            this.deleteBook.Click += new System.EventHandler(this.deleteBook_Click);
-            // 
-            // cencelBookDeletePanel
-            // 
-            this.cencelBookDeletePanel.BackColor = System.Drawing.Color.DarkOrange;
-            this.cencelBookDeletePanel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cencelBookDeletePanel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cencelBookDeletePanel.Font = new System.Drawing.Font("Segoe UI", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.cencelBookDeletePanel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.cencelBookDeletePanel.Location = new System.Drawing.Point(354, 351);
-            this.cencelBookDeletePanel.Name = "cencelBookDeletePanel";
-            this.cencelBookDeletePanel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.cencelBookDeletePanel.Size = new System.Drawing.Size(147, 44);
-            this.cencelBookDeletePanel.TabIndex = 12;
-            this.cencelBookDeletePanel.Text = "Cancel";
-            this.cencelBookDeletePanel.UseVisualStyleBackColor = false;
-            this.cencelBookDeletePanel.Click += new System.EventHandler(this.cencelBookDeletePanel_Click);
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Impact", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label15.ForeColor = System.Drawing.Color.DarkOrange;
-            this.label15.Location = new System.Drawing.Point(193, 14);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(212, 45);
-            this.label15.TabIndex = 6;
-            this.label15.Text = "Delete Book";
-            // 
-            // bookPanel
-            // 
-            this.bookPanel.BackColor = System.Drawing.Color.White;
-            this.bookPanel.Controls.Add(this.pictureBox1);
-            this.bookPanel.Controls.Add(this.deleteBookBtn);
-            this.bookPanel.Controls.Add(this.updateBookBtn);
-            this.bookPanel.Controls.Add(this.searchBookBtn);
-            this.bookPanel.Controls.Add(this.retrieveBookBtn);
-            this.bookPanel.Controls.Add(this.createBookBtn);
-            this.bookPanel.Location = new System.Drawing.Point(0, 0);
-            this.bookPanel.Name = "bookPanel";
-            this.bookPanel.Size = new System.Drawing.Size(302, 716);
-            this.bookPanel.TabIndex = 0;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::LibraryManagementSystem.Properties.Resources.center;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 347);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(302, 372);
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
-            // 
-            // deleteBookBtn
-            // 
-            this.deleteBookBtn.BackColor = System.Drawing.Color.Transparent;
-            this.deleteBookBtn.Font = new System.Drawing.Font("Castellar", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.deleteBookBtn.ForeColor = System.Drawing.Color.Black;
-            this.deleteBookBtn.Location = new System.Drawing.Point(0, 303);
-            this.deleteBookBtn.Name = "deleteBookBtn";
-            this.deleteBookBtn.Size = new System.Drawing.Size(302, 47);
-            this.deleteBookBtn.TabIndex = 4;
-            this.deleteBookBtn.Text = "Delete Book";
-            this.deleteBookBtn.UseVisualStyleBackColor = false;
-            this.deleteBookBtn.Click += new System.EventHandler(this.deleteBookBtn_Click);
-            // 
-            // updateBookBtn
-            // 
-            this.updateBookBtn.BackColor = System.Drawing.Color.Transparent;
-            this.updateBookBtn.Font = new System.Drawing.Font("Castellar", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.updateBookBtn.ForeColor = System.Drawing.Color.Black;
-            this.updateBookBtn.Location = new System.Drawing.Point(0, 115);
-            this.updateBookBtn.Name = "updateBookBtn";
-            this.updateBookBtn.Size = new System.Drawing.Size(302, 47);
-            this.updateBookBtn.TabIndex = 3;
-            this.updateBookBtn.Text = "Update Book";
-            this.updateBookBtn.UseVisualStyleBackColor = false;
-            this.updateBookBtn.Click += new System.EventHandler(this.updateBookBtn_Click);
-            // 
-            // searchBookBtn
-            // 
-            this.searchBookBtn.BackColor = System.Drawing.Color.Transparent;
-            this.searchBookBtn.Font = new System.Drawing.Font("Castellar", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.searchBookBtn.ForeColor = System.Drawing.Color.Black;
-            this.searchBookBtn.Location = new System.Drawing.Point(0, 178);
-            this.searchBookBtn.Name = "searchBookBtn";
-            this.searchBookBtn.Size = new System.Drawing.Size(302, 47);
-            this.searchBookBtn.TabIndex = 2;
-            this.searchBookBtn.Text = "Search Book";
-            this.searchBookBtn.UseVisualStyleBackColor = false;
-            this.searchBookBtn.Click += new System.EventHandler(this.searchBookBtn_Click);
-            // 
-            // retrieveBookBtn
-            // 
-            this.retrieveBookBtn.BackColor = System.Drawing.Color.Transparent;
-            this.retrieveBookBtn.Font = new System.Drawing.Font("Castellar", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.retrieveBookBtn.ForeColor = System.Drawing.Color.Black;
-            this.retrieveBookBtn.Location = new System.Drawing.Point(0, 240);
-            this.retrieveBookBtn.Name = "retrieveBookBtn";
-            this.retrieveBookBtn.Size = new System.Drawing.Size(302, 47);
-            this.retrieveBookBtn.TabIndex = 1;
-            this.retrieveBookBtn.Text = "Retrieve Book";
-            this.retrieveBookBtn.UseVisualStyleBackColor = false;
-            this.retrieveBookBtn.Click += new System.EventHandler(this.retrieveBookBtn_Click);
-            // 
-            // createBookBtn
-            // 
-            this.createBookBtn.BackColor = System.Drawing.Color.Transparent;
-            this.createBookBtn.Font = new System.Drawing.Font("Castellar", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.createBookBtn.ForeColor = System.Drawing.Color.Black;
-            this.createBookBtn.Location = new System.Drawing.Point(0, 52);
-            this.createBookBtn.Name = "createBookBtn";
-            this.createBookBtn.Size = new System.Drawing.Size(302, 47);
-            this.createBookBtn.TabIndex = 0;
-            this.createBookBtn.Text = "Create Book";
-            this.createBookBtn.UseVisualStyleBackColor = false;
-            this.createBookBtn.Click += new System.EventHandler(this.createBookBtn_Click);
-            // 
             // tabPage2
             // 
             this.tabPage2.BackgroundImage = global::LibraryManagementSystem.Properties.Resources.library;
-            this.tabPage2.Controls.Add(this.retrievePatronPanel);
-            this.tabPage2.Controls.Add(this.updatePatronPanel);
-            this.tabPage2.Controls.Add(this.unborrowPanel);
             this.tabPage2.Controls.Add(this.makeBorrowPanel);
             this.tabPage2.Controls.Add(this.patronPanel);
+            this.tabPage2.Controls.Add(this.retrievePatronPanel);
+            this.tabPage2.Controls.Add(this.unborrowPanel);
+            this.tabPage2.Controls.Add(this.updatePatronPanel);
             this.tabPage2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.tabPage2.Location = new System.Drawing.Point(4, 34);
             this.tabPage2.Name = "tabPage2";
@@ -1272,210 +1344,11 @@
             this.tabPage2.Text = "Patron";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // updatePatronPanel
-            // 
-            this.updatePatronPanel.BackColor = System.Drawing.Color.LightGray;
-            this.updatePatronPanel.Controls.Add(this.libraryIDCombo);
-            this.updatePatronPanel.Controls.Add(this.accountStateCombo);
-            this.updatePatronPanel.Controls.Add(this.label41);
-            this.updatePatronPanel.Controls.Add(this.label36);
-            this.updatePatronPanel.Controls.Add(this.patronAddressToUpdate);
-            this.updatePatronPanel.Controls.Add(this.patronIDToUpdate);
-            this.updatePatronPanel.Controls.Add(this.patronNameToUpdate);
-            this.updatePatronPanel.Controls.Add(this.label28);
-            this.updatePatronPanel.Controls.Add(this.updatePatron);
-            this.updatePatronPanel.Controls.Add(cancelUpdatePanel);
-            this.updatePatronPanel.Controls.Add(this.label30);
-            this.updatePatronPanel.Controls.Add(this.label32);
-            this.updatePatronPanel.Controls.Add(this.label34);
-            this.updatePatronPanel.Location = new System.Drawing.Point(332, 20);
-            this.updatePatronPanel.Name = "updatePatronPanel";
-            this.updatePatronPanel.Size = new System.Drawing.Size(877, 416);
-            this.updatePatronPanel.TabIndex = 35;
-            this.updatePatronPanel.Visible = false;
-            // 
-            // libraryIDCombo
-            // 
-            this.libraryIDCombo.FormattingEnabled = true;
-            this.libraryIDCombo.Location = new System.Drawing.Point(672, 145);
-            this.libraryIDCombo.Name = "libraryIDCombo";
-            this.libraryIDCombo.Size = new System.Drawing.Size(183, 38);
-            this.libraryIDCombo.TabIndex = 31;
-            // 
-            // accountStateCombo
-            // 
-            this.accountStateCombo.FormattingEnabled = true;
-            this.accountStateCombo.Location = new System.Drawing.Point(388, 239);
-            this.accountStateCombo.Name = "accountStateCombo";
-            this.accountStateCombo.Size = new System.Drawing.Size(227, 38);
-            this.accountStateCombo.TabIndex = 30;
-            // 
-            // label41
-            // 
-            this.label41.AutoSize = true;
-            this.label41.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label41.ForeColor = System.Drawing.Color.White;
-            this.label41.Location = new System.Drawing.Point(672, 112);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(122, 30);
-            this.label41.TabIndex = 29;
-            this.label41.Text = "Library ID";
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label36.ForeColor = System.Drawing.Color.White;
-            this.label36.Location = new System.Drawing.Point(388, 205);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(72, 30);
-            this.label36.TabIndex = 28;
-            this.label36.Text = "State";
-            // 
-            // patronAddressToUpdate
-            // 
-            this.patronAddressToUpdate.Location = new System.Drawing.Point(85, 239);
-            this.patronAddressToUpdate.Name = "patronAddressToUpdate";
-            this.patronAddressToUpdate.Size = new System.Drawing.Size(230, 35);
-            this.patronAddressToUpdate.TabIndex = 27;
-            // 
-            // patronIDToUpdate
-            // 
-            this.patronIDToUpdate.Location = new System.Drawing.Point(85, 141);
-            this.patronIDToUpdate.Name = "patronIDToUpdate";
-            this.patronIDToUpdate.Size = new System.Drawing.Size(230, 35);
-            this.patronIDToUpdate.TabIndex = 26;
-            // 
-            // patronNameToUpdate
-            // 
-            this.patronNameToUpdate.Location = new System.Drawing.Point(388, 143);
-            this.patronNameToUpdate.Name = "patronNameToUpdate";
-            this.patronNameToUpdate.Size = new System.Drawing.Size(227, 35);
-            this.patronNameToUpdate.TabIndex = 23;
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label28.ForeColor = System.Drawing.Color.White;
-            this.label28.Location = new System.Drawing.Point(388, 109);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(70, 30);
-            this.label28.TabIndex = 20;
-            this.label28.Text = "Name";
-            // 
-            // updatePatron
-            // 
-            this.updatePatron.BackColor = System.Drawing.Color.DarkOrange;
-            this.updatePatron.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.updatePatron.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.updatePatron.Font = new System.Drawing.Font("Segoe UI", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.updatePatron.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.updatePatron.Location = new System.Drawing.Point(202, 335);
-            this.updatePatron.Name = "updatePatron";
-            this.updatePatron.Size = new System.Drawing.Size(140, 44);
-            this.updatePatron.TabIndex = 11;
-            this.updatePatron.Text = "Update";
-            this.updatePatron.UseVisualStyleBackColor = false;
-            this.updatePatron.Click += new System.EventHandler(this.updatePatron_Click);
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label30.ForeColor = System.Drawing.Color.White;
-            this.label30.Location = new System.Drawing.Point(85, 205);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(94, 30);
-            this.label30.TabIndex = 21;
-            this.label30.Text = "Address";
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label32.ForeColor = System.Drawing.Color.White;
-            this.label32.Location = new System.Drawing.Point(83, 107);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(39, 30);
-            this.label32.TabIndex = 13;
-            this.label32.Text = "ID";
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Font = new System.Drawing.Font("Impact", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label34.ForeColor = System.Drawing.Color.DarkOrange;
-            this.label34.Location = new System.Drawing.Point(161, 24);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(385, 45);
-            this.label34.TabIndex = 6;
-            this.label34.Text = "Update Patron Account";
-            // 
-            // unborrowPanel
-            // 
-            this.unborrowPanel.BackColor = System.Drawing.Color.LightGray;
-            this.unborrowPanel.Controls.Add(this.bookISBNBox);
-            this.unborrowPanel.Controls.Add(this.makeUnBorrow);
-            this.unborrowPanel.Controls.Add(cancelUnBorrow);
-            this.unborrowPanel.Controls.Add(this.label39);
-            this.unborrowPanel.Controls.Add(this.label40);
-            this.unborrowPanel.Location = new System.Drawing.Point(460, 6);
-            this.unborrowPanel.Name = "unborrowPanel";
-            this.unborrowPanel.Size = new System.Drawing.Size(681, 360);
-            this.unborrowPanel.TabIndex = 37;
-            this.unborrowPanel.Visible = false;
-            // 
-            // bookISBNBox
-            // 
-            this.bookISBNBox.FormattingEnabled = true;
-            this.bookISBNBox.Location = new System.Drawing.Point(89, 149);
-            this.bookISBNBox.Name = "bookISBNBox";
-            this.bookISBNBox.Size = new System.Drawing.Size(257, 38);
-            this.bookISBNBox.TabIndex = 14;
-            // 
-            // makeUnBorrow
-            // 
-            this.makeUnBorrow.BackColor = System.Drawing.Color.DarkOrange;
-            this.makeUnBorrow.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.makeUnBorrow.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.makeUnBorrow.Font = new System.Drawing.Font("Segoe UI", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.makeUnBorrow.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.makeUnBorrow.Location = new System.Drawing.Point(85, 228);
-            this.makeUnBorrow.Name = "makeUnBorrow";
-            this.makeUnBorrow.Size = new System.Drawing.Size(262, 44);
-            this.makeUnBorrow.TabIndex = 11;
-            this.makeUnBorrow.Text = "Make An UnBorrow";
-            this.makeUnBorrow.UseVisualStyleBackColor = false;
-            this.makeUnBorrow.Click += new System.EventHandler(this.makeUnBorrow_Click);
-            // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label39.ForeColor = System.Drawing.Color.White;
-            this.label39.Location = new System.Drawing.Point(83, 107);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(124, 30);
-            this.label39.TabIndex = 13;
-            this.label39.Text = "Book ISBN";
-            // 
-            // label40
-            // 
-            this.label40.AutoSize = true;
-            this.label40.Font = new System.Drawing.Font("Impact", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label40.ForeColor = System.Drawing.Color.DarkOrange;
-            this.label40.Location = new System.Drawing.Point(242, 17);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(270, 45);
-            this.label40.TabIndex = 6;
-            this.label40.Text = "Make UnBorrow";
-            // 
             // makeBorrowPanel
             // 
             this.makeBorrowPanel.BackColor = System.Drawing.Color.LightGray;
-            this.makeBorrowPanel.Controls.Add(this.bookTitleBorrow);
             this.makeBorrowPanel.Controls.Add(this.acountIDBorrow);
+            this.makeBorrowPanel.Controls.Add(this.bookISBNBorrowBox);
             this.makeBorrowPanel.Controls.Add(this.label35);
             this.makeBorrowPanel.Controls.Add(this.button2);
             this.makeBorrowPanel.Controls.Add(canelBorrowPanel);
@@ -1487,19 +1360,13 @@
             this.makeBorrowPanel.TabIndex = 36;
             this.makeBorrowPanel.Visible = false;
             // 
-            // bookTitleBorrow
+            // bookISBNBorrowBox
             // 
-            this.bookTitleBorrow.Location = new System.Drawing.Point(85, 141);
-            this.bookTitleBorrow.Name = "bookTitleBorrow";
-            this.bookTitleBorrow.Size = new System.Drawing.Size(230, 35);
-            this.bookTitleBorrow.TabIndex = 26;
-            // 
-            // acountIDBorrow
-            // 
-            this.acountIDBorrow.Location = new System.Drawing.Point(388, 143);
-            this.acountIDBorrow.Name = "acountIDBorrow";
-            this.acountIDBorrow.Size = new System.Drawing.Size(227, 35);
-            this.acountIDBorrow.TabIndex = 23;
+            this.bookISBNBorrowBox.FormattingEnabled = true;
+            this.bookISBNBorrowBox.Location = new System.Drawing.Point(83, 143);
+            this.bookISBNBorrowBox.Name = "bookISBNBorrowBox";
+            this.bookISBNBorrowBox.Size = new System.Drawing.Size(232, 38);
+            this.bookISBNBorrowBox.TabIndex = 33;
             // 
             // label35
             // 
@@ -1534,9 +1401,9 @@
             this.label37.ForeColor = System.Drawing.Color.White;
             this.label37.Location = new System.Drawing.Point(83, 107);
             this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(117, 30);
+            this.label37.Size = new System.Drawing.Size(124, 30);
             this.label37.TabIndex = 13;
-            this.label37.Text = "Book Title";
+            this.label37.Text = "Book ISBN";
             // 
             // label38
             // 
@@ -1548,46 +1415,6 @@
             this.label38.Size = new System.Drawing.Size(229, 45);
             this.label38.TabIndex = 6;
             this.label38.Text = "Make Borrow";
-            // 
-            // retrievePatronPanel
-            // 
-            this.retrievePatronPanel.BackColor = System.Drawing.Color.LightGray;
-            this.retrievePatronPanel.Controls.Add(this.PatronsNamesFrozenAccount);
-            this.retrievePatronPanel.Controls.Add(this.patronsNamesList);
-            this.retrievePatronPanel.Controls.Add(cancelRetrievePatronPanel);
-            this.retrievePatronPanel.Controls.Add(this.button1);
-            this.retrievePatronPanel.Controls.Add(getFrozenAccountsNames);
-            this.retrievePatronPanel.Controls.Add(this.label33);
-            this.retrievePatronPanel.Location = new System.Drawing.Point(345, 61);
-            this.retrievePatronPanel.Name = "retrievePatronPanel";
-            this.retrievePatronPanel.Size = new System.Drawing.Size(716, 416);
-            this.retrievePatronPanel.TabIndex = 34;
-            this.retrievePatronPanel.Visible = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.DarkOrange;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(23, 31);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(302, 44);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Retrieve Patrons Names";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Font = new System.Drawing.Font("Impact", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label33.ForeColor = System.Drawing.Color.DarkOrange;
-            this.label33.Location = new System.Drawing.Point(242, 17);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(0, 45);
-            this.label33.TabIndex = 6;
             // 
             // patronPanel
             // 
@@ -1664,23 +1491,271 @@
             this.retrievePatronBtn.UseVisualStyleBackColor = false;
             this.retrievePatronBtn.Click += new System.EventHandler(this.retrievePatronBtn_Click);
             // 
+            // retrievePatronPanel
+            // 
+            this.retrievePatronPanel.BackColor = System.Drawing.Color.LightGray;
+            this.retrievePatronPanel.Controls.Add(this.patronsNamesList);
+            this.retrievePatronPanel.Controls.Add(this.PatronsNamesFrozenAccount);
+            this.retrievePatronPanel.Controls.Add(cancelRetrievePatronPanel);
+            this.retrievePatronPanel.Controls.Add(this.button1);
+            this.retrievePatronPanel.Controls.Add(getFrozenAccountsNames);
+            this.retrievePatronPanel.Controls.Add(this.label33);
+            this.retrievePatronPanel.Location = new System.Drawing.Point(345, 61);
+            this.retrievePatronPanel.Name = "retrievePatronPanel";
+            this.retrievePatronPanel.Size = new System.Drawing.Size(716, 599);
+            this.retrievePatronPanel.TabIndex = 34;
+            this.retrievePatronPanel.Visible = false;
+            // 
             // patronsNamesList
             // 
-            this.patronsNamesList.Enabled = false;
-            this.patronsNamesList.Location = new System.Drawing.Point(23, 94);
+            this.patronsNamesList.FormattingEnabled = true;
+            this.patronsNamesList.ItemHeight = 30;
+            this.patronsNamesList.Location = new System.Drawing.Point(23, 99);
             this.patronsNamesList.Name = "patronsNamesList";
-            this.patronsNamesList.Size = new System.Drawing.Size(302, 228);
-            this.patronsNamesList.TabIndex = 16;
-            this.patronsNamesList.Text = "";
+            this.patronsNamesList.Size = new System.Drawing.Size(302, 364);
+            this.patronsNamesList.TabIndex = 19;
             // 
             // PatronsNamesFrozenAccount
             // 
-            this.PatronsNamesFrozenAccount.Enabled = false;
-            this.PatronsNamesFrozenAccount.Location = new System.Drawing.Point(374, 94);
+            this.PatronsNamesFrozenAccount.FormattingEnabled = true;
+            this.PatronsNamesFrozenAccount.ItemHeight = 30;
+            this.PatronsNamesFrozenAccount.Location = new System.Drawing.Point(375, 104);
             this.PatronsNamesFrozenAccount.Name = "PatronsNamesFrozenAccount";
-            this.PatronsNamesFrozenAccount.Size = new System.Drawing.Size(302, 228);
-            this.PatronsNamesFrozenAccount.TabIndex = 17;
-            this.PatronsNamesFrozenAccount.Text = "";
+            this.PatronsNamesFrozenAccount.Size = new System.Drawing.Size(297, 364);
+            this.PatronsNamesFrozenAccount.TabIndex = 18;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.DarkOrange;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button1.Location = new System.Drawing.Point(23, 31);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(302, 44);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Retrieve Patrons Names";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Impact", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label33.ForeColor = System.Drawing.Color.DarkOrange;
+            this.label33.Location = new System.Drawing.Point(242, 17);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(0, 45);
+            this.label33.TabIndex = 6;
+            // 
+            // unborrowPanel
+            // 
+            this.unborrowPanel.BackColor = System.Drawing.Color.LightGray;
+            this.unborrowPanel.Controls.Add(this.bookISBNBox);
+            this.unborrowPanel.Controls.Add(this.makeUnBorrow);
+            this.unborrowPanel.Controls.Add(cancelUnBorrow);
+            this.unborrowPanel.Controls.Add(this.label39);
+            this.unborrowPanel.Controls.Add(this.label40);
+            this.unborrowPanel.Location = new System.Drawing.Point(317, 44);
+            this.unborrowPanel.Name = "unborrowPanel";
+            this.unborrowPanel.Size = new System.Drawing.Size(681, 360);
+            this.unborrowPanel.TabIndex = 37;
+            this.unborrowPanel.Visible = false;
+            // 
+            // bookISBNBox
+            // 
+            this.bookISBNBox.FormattingEnabled = true;
+            this.bookISBNBox.Location = new System.Drawing.Point(89, 149);
+            this.bookISBNBox.Name = "bookISBNBox";
+            this.bookISBNBox.Size = new System.Drawing.Size(257, 38);
+            this.bookISBNBox.TabIndex = 14;
+            // 
+            // makeUnBorrow
+            // 
+            this.makeUnBorrow.BackColor = System.Drawing.Color.DarkOrange;
+            this.makeUnBorrow.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.makeUnBorrow.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.makeUnBorrow.Font = new System.Drawing.Font("Segoe UI", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.makeUnBorrow.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.makeUnBorrow.Location = new System.Drawing.Point(85, 228);
+            this.makeUnBorrow.Name = "makeUnBorrow";
+            this.makeUnBorrow.Size = new System.Drawing.Size(262, 44);
+            this.makeUnBorrow.TabIndex = 11;
+            this.makeUnBorrow.Text = "Make An UnBorrow";
+            this.makeUnBorrow.UseVisualStyleBackColor = false;
+            this.makeUnBorrow.Click += new System.EventHandler(this.makeUnBorrow_Click);
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label39.ForeColor = System.Drawing.Color.White;
+            this.label39.Location = new System.Drawing.Point(83, 107);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(124, 30);
+            this.label39.TabIndex = 13;
+            this.label39.Text = "Book ISBN";
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Font = new System.Drawing.Font("Impact", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label40.ForeColor = System.Drawing.Color.DarkOrange;
+            this.label40.Location = new System.Drawing.Point(242, 17);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(270, 45);
+            this.label40.TabIndex = 6;
+            this.label40.Text = "Make UnBorrow";
+            // 
+            // updatePatronPanel
+            // 
+            this.updatePatronPanel.BackColor = System.Drawing.Color.LightGray;
+            this.updatePatronPanel.Controls.Add(this.patronIDToUpdate);
+            this.updatePatronPanel.Controls.Add(this.libraryIDCombo);
+            this.updatePatronPanel.Controls.Add(this.accountStateCombo);
+            this.updatePatronPanel.Controls.Add(this.label41);
+            this.updatePatronPanel.Controls.Add(this.label36);
+            this.updatePatronPanel.Controls.Add(this.patronAddressToUpdate);
+            this.updatePatronPanel.Controls.Add(this.patronNameToUpdate);
+            this.updatePatronPanel.Controls.Add(this.label28);
+            this.updatePatronPanel.Controls.Add(this.updatePatron);
+            this.updatePatronPanel.Controls.Add(cancelUpdatePanel);
+            this.updatePatronPanel.Controls.Add(this.label30);
+            this.updatePatronPanel.Controls.Add(this.label32);
+            this.updatePatronPanel.Controls.Add(this.label34);
+            this.updatePatronPanel.Location = new System.Drawing.Point(332, 20);
+            this.updatePatronPanel.Name = "updatePatronPanel";
+            this.updatePatronPanel.Size = new System.Drawing.Size(877, 416);
+            this.updatePatronPanel.TabIndex = 35;
+            this.updatePatronPanel.Visible = false;
+            // 
+            // patronIDToUpdate
+            // 
+            this.patronIDToUpdate.FormattingEnabled = true;
+            this.patronIDToUpdate.Location = new System.Drawing.Point(83, 141);
+            this.patronIDToUpdate.Name = "patronIDToUpdate";
+            this.patronIDToUpdate.Size = new System.Drawing.Size(232, 38);
+            this.patronIDToUpdate.TabIndex = 32;
+            // 
+            // libraryIDCombo
+            // 
+            this.libraryIDCombo.FormattingEnabled = true;
+            this.libraryIDCombo.Location = new System.Drawing.Point(672, 145);
+            this.libraryIDCombo.Name = "libraryIDCombo";
+            this.libraryIDCombo.Size = new System.Drawing.Size(183, 38);
+            this.libraryIDCombo.TabIndex = 31;
+            // 
+            // accountStateCombo
+            // 
+            this.accountStateCombo.FormattingEnabled = true;
+            this.accountStateCombo.Location = new System.Drawing.Point(388, 239);
+            this.accountStateCombo.Name = "accountStateCombo";
+            this.accountStateCombo.Size = new System.Drawing.Size(227, 38);
+            this.accountStateCombo.TabIndex = 30;
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label41.ForeColor = System.Drawing.Color.White;
+            this.label41.Location = new System.Drawing.Point(672, 112);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(122, 30);
+            this.label41.TabIndex = 29;
+            this.label41.Text = "Library ID";
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label36.ForeColor = System.Drawing.Color.White;
+            this.label36.Location = new System.Drawing.Point(388, 205);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(72, 30);
+            this.label36.TabIndex = 28;
+            this.label36.Text = "State";
+            // 
+            // patronAddressToUpdate
+            // 
+            this.patronAddressToUpdate.Location = new System.Drawing.Point(85, 239);
+            this.patronAddressToUpdate.Name = "patronAddressToUpdate";
+            this.patronAddressToUpdate.Size = new System.Drawing.Size(230, 35);
+            this.patronAddressToUpdate.TabIndex = 27;
+            // 
+            // patronNameToUpdate
+            // 
+            this.patronNameToUpdate.Location = new System.Drawing.Point(388, 143);
+            this.patronNameToUpdate.Name = "patronNameToUpdate";
+            this.patronNameToUpdate.Size = new System.Drawing.Size(227, 35);
+            this.patronNameToUpdate.TabIndex = 23;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label28.ForeColor = System.Drawing.Color.White;
+            this.label28.Location = new System.Drawing.Point(388, 109);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(70, 30);
+            this.label28.TabIndex = 20;
+            this.label28.Text = "Name";
+            // 
+            // updatePatron
+            // 
+            this.updatePatron.BackColor = System.Drawing.Color.DarkOrange;
+            this.updatePatron.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.updatePatron.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.updatePatron.Font = new System.Drawing.Font("Segoe UI", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.updatePatron.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.updatePatron.Location = new System.Drawing.Point(202, 335);
+            this.updatePatron.Name = "updatePatron";
+            this.updatePatron.Size = new System.Drawing.Size(140, 44);
+            this.updatePatron.TabIndex = 11;
+            this.updatePatron.Text = "Update";
+            this.updatePatron.UseVisualStyleBackColor = false;
+            this.updatePatron.Click += new System.EventHandler(this.updatePatron_Click);
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label30.ForeColor = System.Drawing.Color.White;
+            this.label30.Location = new System.Drawing.Point(85, 205);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(94, 30);
+            this.label30.TabIndex = 21;
+            this.label30.Text = "Address";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label32.ForeColor = System.Drawing.Color.White;
+            this.label32.Location = new System.Drawing.Point(83, 107);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(113, 30);
+            this.label32.TabIndex = 13;
+            this.label32.Text = "Patron ID";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Impact", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label34.ForeColor = System.Drawing.Color.DarkOrange;
+            this.label34.Location = new System.Drawing.Point(161, 24);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(385, 45);
+            this.label34.TabIndex = 6;
+            this.label34.Text = "Update Patron Account";
+            // 
+            // acountIDBorrow
+            // 
+            this.acountIDBorrow.FormattingEnabled = true;
+            this.acountIDBorrow.Location = new System.Drawing.Point(388, 143);
+            this.acountIDBorrow.Name = "acountIDBorrow";
+            this.acountIDBorrow.Size = new System.Drawing.Size(232, 38);
+            this.acountIDBorrow.TabIndex = 34;
             // 
             // LibrarianForm
             // 
@@ -1694,31 +1769,31 @@
             this.Text = "Library Management System";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.serachBookPanel.ResumeLayout(false);
+            this.serachBookPanel.PerformLayout();
+            this.updateBookPanel.ResumeLayout(false);
+            this.updateBookPanel.PerformLayout();
+            this.deleteBookPanel.ResumeLayout(false);
+            this.deleteBookPanel.PerformLayout();
             this.retrievePanel.ResumeLayout(false);
             this.retrievePanel.PerformLayout();
+            this.bookPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.createPanel.ResumeLayout(false);
             this.createPanel.PerformLayout();
             this.authorPanel.ResumeLayout(false);
             this.authorPanel.PerformLayout();
-            this.updateBookPanel.ResumeLayout(false);
-            this.updateBookPanel.PerformLayout();
-            this.serachBookPanel.ResumeLayout(false);
-            this.serachBookPanel.PerformLayout();
-            this.deleteBookPanel.ResumeLayout(false);
-            this.deleteBookPanel.PerformLayout();
-            this.bookPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPage2.ResumeLayout(false);
-            this.updatePatronPanel.ResumeLayout(false);
-            this.updatePatronPanel.PerformLayout();
-            this.unborrowPanel.ResumeLayout(false);
-            this.unborrowPanel.PerformLayout();
             this.makeBorrowPanel.ResumeLayout(false);
             this.makeBorrowPanel.PerformLayout();
-            this.retrievePatronPanel.ResumeLayout(false);
-            this.retrievePatronPanel.PerformLayout();
             this.patronPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.retrievePatronPanel.ResumeLayout(false);
+            this.retrievePatronPanel.PerformLayout();
+            this.unborrowPanel.ResumeLayout(false);
+            this.unborrowPanel.PerformLayout();
+            this.updatePatronPanel.ResumeLayout(false);
+            this.updatePatronPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1762,13 +1837,11 @@
         private Button cancelBookPanel;
         private RichTextBox bookSummaryBox;
         private Panel updateBookPanel;
-        private TextBox bookIDToUpdateBox;
         private Label label13;
         private Button updateBook;
         private Button cancelBookUpdatePanel;
         private Label label24;
         private Panel deleteBookPanel;
-        private TextBox bookIDToDelete;
         private Label label14;
         private Button deleteBook;
         private Button cencelBookDeletePanel;
@@ -1776,7 +1849,6 @@
         private Panel serachBookPanel;
         private TextBox bookTitleSearch;
         private Label label18;
-        private TextBox bookISBNSearch;
         private Label label16;
         private Button searchBook;
         private Button cancelSearchbookPanel;
@@ -1803,7 +1875,6 @@
         private RichTextBox maxPagesList;
         private Label label22;
         private Label label27;
-        private TextBox bookIDBox;
         private RichTextBox showAuthorsNamesList;
         private Panel retrievePatronPanel;
         private Button button1;
@@ -1816,7 +1887,6 @@
         private Button retrievePatronBtn;
         private Panel updatePatronPanel;
         private TextBox patronAddressToUpdate;
-        private TextBox patronIDToUpdate;
         private TextBox patronNameToUpdate;
         private Label label28;
         private Button updatePatron;
@@ -1824,8 +1894,6 @@
         private Label label32;
         private Label label34;
         private Panel makeBorrowPanel;
-        private TextBox bookTitleBorrow;
-        private TextBox acountIDBorrow;
         private Label label35;
         private Button button2;
         private Label label37;
@@ -1839,7 +1907,19 @@
         private ComboBox accountStateCombo;
         private Label label41;
         private Label label36;
-        private RichTextBox PatronsNamesFrozenAccount;
-        private RichTextBox patronsNamesList;
+        private Label label42;
+        private ComboBox librarianIDBox;
+        private ComboBox bookIDBox;
+        private ComboBox bookIDToDelete;
+        private Label label43;
+        private ComboBox authorsBox;
+        private Button addExistAuthor;
+        private ComboBox bookIDToUpdateBox;
+        private TextBox bookISBNSearch;
+        private ListBox patronsNamesList;
+        private ListBox PatronsNamesFrozenAccount;
+        private ComboBox patronIDToUpdate;
+        private ComboBox bookISBNBorrowBox;
+        private ComboBox acountIDBorrow;
     }
 }

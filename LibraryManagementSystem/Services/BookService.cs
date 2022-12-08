@@ -15,13 +15,13 @@ namespace LibraryManagementSystem.Services
         {
             _context = new LibraryContext();
         }
-        public void CreateBook(string title, string barcode, string publisher,
+        public BookItem CreateBook(string title, string barcode, string publisher,
             int pages, bool isRef, string langauge, string RFID, DateTime date,
-            string summary, int libraryID, int catalogID, IList<Author> authors)
+            string summary, int libraryID, int catalogID,int librarianID, IList<Author> authors)
         {
+            BookItem bookItem = new BookItem();
             try
             {
-                BookItem bookItem = new BookItem();
                 bookItem.Title = title;
                 bookItem.Barcode = barcode;
                 bookItem.Publisher = publisher;
@@ -33,6 +33,7 @@ namespace LibraryManagementSystem.Services
                 bookItem.IsReferenceOnly = isRef;
                 bookItem.RFID = RFID;
                 bookItem.PublicationDate = date;
+                bookItem.LibrarianID = librarianID;
                 IList<BookAuthor> bookAuthors = new List<BookAuthor>();
                 foreach (Author author in authors)
                 {
@@ -50,6 +51,7 @@ namespace LibraryManagementSystem.Services
             {
                 MessageBox.Show(ex.Message);
             }
+            return bookItem;
         }
         public BookItem SearchBookByID(int bookId)
         {
@@ -197,17 +199,23 @@ namespace LibraryManagementSystem.Services
             return names;
         }
 
-        public void MakeBorrow(int accountID, string bookTitle)
+        public void MakeBorrow(int accountID, int bookISBN)
         {
             try
             {
-                BookItem bookItem = SearchBookByTitle(bookTitle);
-                bookItem.AccountID = accountID;
-                //Account account = _context.Accounts.Where(a => a.AccountID == accountID)
-                //.FirstOrDefault<Account>();
+                BookItem bookItem = SearchBookByID(bookISBN);
+                if(bookItem.AccountID==null)
+                {
+                    bookItem.AccountID = accountID;
+                    //int patron = _context.Accounts.Where(a => a.AccountID == accountID).Select(p => p.PatronID);
+                    //string name = _context.Patrons.Where(p => p.PatronID == patron);
+                    MessageBox.Show("Book Borrowed To Successfully");
+                }
+                else
+                {
+                    MessageBox.Show("Sorry, Book Already Borrowed To Someone Else !");
+                }
                 _context.SaveChanges();
-                //string name = account.Patron.Name;
-                //MessageBox.Show("Book Successfully Borrowed To Patron " + name);
             }
             catch (Exception ex)
             {

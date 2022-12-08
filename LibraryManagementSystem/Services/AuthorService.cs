@@ -43,6 +43,18 @@ namespace LibraryManagementSystem.Services
             }
             return ids;
         }
-
+        public Author GetAuthorByID(int authorID)
+        {
+            Author author=null;
+            try
+            {
+                author = _context.Authors.Where(au => au.AuthorID == authorID).SingleOrDefault<Author>();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return author;
+        }
     }
 }

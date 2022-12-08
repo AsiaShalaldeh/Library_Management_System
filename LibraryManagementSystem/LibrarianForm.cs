@@ -20,29 +20,33 @@ namespace LibraryManagementSystem
         BookService _bookService;
         AuthorService _authorService;
         PatronService _patronService;
+        LibrarianService _librarianService;
         IList<Author> authors;
+        IList<BookItem> books;
         public LibrarianForm()
         {
             InitializeComponent();
             ChangeStyle();
-            //bookPanel.BackColor = Color.FromArgb(100, 0, 0, 70);
-            //patronPanel.BackColor = Color.FromArgb(100, 0, 0, 70);
-            //createPanel.BackColor = Color.FromArgb(100, 0, 0, 70);
-            //updateBookPanel.BackColor = Color.FromArgb(100, 0, 0, 70);
-            //serachBookPanel.BackColor = Color.FromArgb(100, 0, 0, 70);
-            //deleteBookPanel.BackColor = Color.FromArgb(100, 0, 0, 70);
-            //authorPanel.BackColor = Color.FromArgb(100, 0, 0, 70);
-            //retrievePanel.BackColor = Color.FromArgb(100, 0, 0, 70);
-            //retrievePatronPanel.BackColor = Color.FromArgb(100, 0, 0, 70);
-            //updatePatronPanel.BackColor = Color.FromArgb(100, 0, 0, 70);
-            //makeBorrowPanel.BackColor = Color.FromArgb(100, 0, 0, 70);
-            //unborrowPanel.BackColor = Color.FromArgb(100, 0, 0, 70);
+            bookPanel.BackColor = Color.FromArgb(100, 0, 0, 70);
+            patronPanel.BackColor = Color.FromArgb(100, 0, 0, 70);
+            createPanel.BackColor = Color.FromArgb(100, 0, 0, 70);
+            updateBookPanel.BackColor = Color.FromArgb(100, 0, 0, 70);
+            serachBookPanel.BackColor = Color.FromArgb(100, 0, 0, 70);
+            deleteBookPanel.BackColor = Color.FromArgb(100, 0, 0, 70);
+            authorPanel.BackColor = Color.FromArgb(100, 0, 0, 70);
+            retrievePanel.BackColor = Color.FromArgb(100, 0, 0, 70);
+            retrievePatronPanel.BackColor = Color.FromArgb(100, 0, 0, 70);
+            updatePatronPanel.BackColor = Color.FromArgb(100, 0, 0, 70);
+            makeBorrowPanel.BackColor = Color.FromArgb(100, 0, 0, 70);
+            unborrowPanel.BackColor = Color.FromArgb(100, 0, 0, 70);
             _catalogService = new CatalogService();
             _libraryService=new LibraryService();
             _bookService = new BookService();
             _authorService = new AuthorService();
             _patronService = new PatronService();
+            _librarianService=new LibrarianService();
             authors = new List<Author>();
+            books = new List<BookItem>();
             GetDataFromDB();
         }
         public void GetDataFromDB()
@@ -61,16 +65,44 @@ namespace LibraryManagementSystem
             libraryIDCombo.DisplayMember = "LibraryID";
             libraryIDCombo.DataSource = libraryIDList;
 
-            //IList<int> authorIDs = _authorService.GetAuthorIDs();
-            //authorsIDsBox.DataSource = null;
-            //authorsIDsBox.DisplayMember = "AuthorID";
-            //authorsIDsBox.DataSource = authorIDs;
 
+            IList<int> librarianIDList = _librarianService.GetLibrariansIDs();
+            librarianIDBox.DataSource = null;
+            librarianIDBox.DisplayMember = "LibrarianID";
+            librarianIDBox.DataSource = librarianIDList;
+
+            IList<int> authorIDs = _authorService.GetAuthorIDs();
+            authorsBox.DataSource = null;
+            authorsBox.DisplayMember = "AuthorID";
+            authorsBox.DataSource = authorIDs;
+
+            IList<int> patronIDs = _patronService.GetAllPatronsID();
+            patronIDToUpdate.DataSource = null;
+            patronIDToUpdate.DisplayMember = "PatronID";
+            patronIDToUpdate.DataSource = patronIDs;
+
+            //acountIDBorrow
+            IList<int> accountIDs = _patronService.GetAllAccountIDs();
+            acountIDBorrow.DataSource = null;
+            acountIDBorrow.DisplayMember = "AccountID";
+            acountIDBorrow.DataSource = accountIDs;
 
             IList<int> bookIDs = _bookService.GetAllBooksISBN();
             bookISBNBox.DataSource = null;
             bookISBNBox.DisplayMember = "LibraryID";
             bookISBNBox.DataSource = bookIDs;
+            bookIDBox.DataSource = null;
+            bookIDBox.DisplayMember = "ISBN";
+            bookIDBox.DataSource = bookIDs;
+            bookIDToDelete.DataSource = null;
+            bookIDToDelete.DisplayMember = "ISBN";
+            bookIDToDelete.DataSource = bookIDs;
+            bookIDToUpdateBox.DataSource = null;
+            bookIDToUpdateBox.DisplayMember = "ISBN";
+            bookIDToUpdateBox.DataSource = bookIDs;
+            bookISBNBorrowBox.DataSource = null;
+            bookISBNBorrowBox.DisplayMember = "ISBN";
+            bookISBNBorrowBox.DataSource = bookIDs;
 
             accountStateCombo.DataSource = Enum.GetValues(typeof(AccountState));
 
@@ -124,9 +156,10 @@ namespace LibraryManagementSystem
                 string summary = bookSummaryBox.Text;
                 int libraryID = Convert.ToInt32(bookLibraryIDBox.SelectedValue.ToString());
                 int catalogID = Convert.ToInt32(bookCatalogIDBox.SelectedValue.ToString());
-                //int librarianID=Convert.ToInt32()
-                _bookService.CreateBook(title, barcode, publisher, pages,
-                    isRef, langauge, RFID, date, summary, libraryID, catalogID, authors);
+                int librarianID = Convert.ToInt32(librarianIDBox.SelectedValue.ToString());
+                BookItem book=_bookService.CreateBook(title, barcode, publisher, pages,
+                    isRef, langauge, RFID, date, summary, libraryID, catalogID,librarianID, authors);
+                books.Add(book);
                 authors.Clear();
 
                 bookTitleBox.Text = "";
@@ -136,6 +169,9 @@ namespace LibraryManagementSystem
                 bookLanguageBox.Text = "";
                 bookRFIDBox.SelectedText = "";
                 bookSummaryBox.Text = "";
+                bookLibraryIDBox.Text = "";
+                bookCatalogIDBox.Text = "";
+                librarianIDBox.Text = "";
             }
             catch(Exception ex)
             {
@@ -148,7 +184,7 @@ namespace LibraryManagementSystem
         {
             try
             {
-                int id = Convert.ToInt32(bookIDToUpdateBox.Text);
+                int id = Convert.ToInt32(bookIDToUpdateBox.SelectedValue.ToString());
                 int pages = Convert.ToInt32(bookPagesToUpdate.Text);
                 string title = bookTitleToUpdate.Text;
                 string summary = bookSummaryToUdate.Text;
@@ -186,8 +222,16 @@ namespace LibraryManagementSystem
 
         private void deleteBook_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(bookIDToUpdateBox.Text);
-            _bookService.DeleteBook(id);
+            try
+            {
+                int ISBN = Convert.ToInt32(bookIDToDelete.SelectedValue);
+                _bookService.DeleteBook(ISBN);
+                bookIDToDelete.Text = "";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error : " + ex.Message);
+            }
         }
 
         private void searchBookBtn_Click(object sender, EventArgs e)
@@ -207,12 +251,12 @@ namespace LibraryManagementSystem
                 if (bookISBNSearch.Text.Trim() != "" && bookTitleSearch.Text.Trim() != "")
                 {
                     MessageBox.Show("Search By Only One Of Them Not Both !!");
-                    bookISBNSearch.Text = "";
                     bookTitleSearch.Text = "";
+                    bookISBNSearch.Text = "";
                 }
                 else if (bookISBNSearch.Text.Trim()!="")
                 {
-                    int ISBN = Convert.ToInt32(bookISBNSearch.Text);
+                    int ISBN = Convert.ToInt32(bookISBNSearch.Text.ToString());
                     _bookService.SearchBookByID(ISBN);
                     bookISBNSearch.Text = "";
                 }
@@ -275,6 +319,17 @@ namespace LibraryManagementSystem
                 string biography = authorBiographyBox.Text;
                 DateTime birthdate = authorBirthDate.Value;
                 Author author = _authorService.CreateAuthor(name, biography, birthdate);
+                //IList<BookAuthor> bookAuthors = new List<BookAuthor>();
+                //foreach (BookItem bookItem in books)
+                //{
+                //    BookAuthor bookAuthor = new BookAuthor();
+                //    bookAuthor.AuthorID = author.AuthorID;
+                //    bookAuthor.BookID = bookItem.ISBN;
+                //    bookAuthors.Add(bookAuthor);
+                //}
+                //author.Books = bookAuthors;
+                //_context.BookItems.Add(bookItem);
+                //books.Clear();
                 authors.Add(author);
                 authorNameBox.Text = "";
                 authorBiographyBox.Text = "";
@@ -332,13 +387,14 @@ namespace LibraryManagementSystem
         {
             try
             {
-                int bookISBN = Convert.ToInt32(bookIDBox.Text);
+                int bookISBN = Convert.ToInt32(bookIDBox.SelectedValue.ToString());
                 IList<string> names = _bookService.GetAllBookAuthors(bookISBN);
                 showAuthorsNamesList.Text = "";
                 foreach (string name in names)
                 {
                     showAuthorsNamesList.Text += name + "\n";
                 }
+                bookIDBox.Text = "";
             }
             catch(Exception ex)
             {
@@ -365,7 +421,7 @@ namespace LibraryManagementSystem
                 MessageBox.Show(names.Count().ToString());
                 foreach (string name in names)
                 {
-                    patronsNamesList.Text += "\n" + name;
+                    patronsNamesList.Items.Add(name);
                 }
             }
             catch (Exception ex)
@@ -382,7 +438,7 @@ namespace LibraryManagementSystem
                 patronsNamesList.Text = "";
                 foreach (string name in names)
                 {
-                    PatronsNamesFrozenAccount.Text += "\n" + name;
+                    PatronsNamesFrozenAccount.Items.Add(name);
                 }
             }
             catch (Exception ex)
@@ -405,7 +461,7 @@ namespace LibraryManagementSystem
         {
             try
             {
-                int id = Convert.ToInt32(patronIDToUpdate.Text);
+                int id = Convert.ToInt32(patronIDToUpdate.SelectedValue.ToString());
                 string name = patronNameToUpdate.Text;
                 string address = patronAddressToUpdate.Text;
                 int libraryID = Convert.ToInt32(libraryIDCombo.SelectedItem);
@@ -414,6 +470,9 @@ namespace LibraryManagementSystem
                 patronIDToUpdate.Text = "";
                 patronAddressToUpdate.Text = "";
                 patronAddressToUpdate.Text = "";
+                libraryIDCombo.Text = "";
+                accountStateCombo.Text = "";
+                patronIDToUpdate.Text = "";
             }
             catch (Exception ex)
             {
@@ -436,11 +495,11 @@ namespace LibraryManagementSystem
         {
             try
             {
-                int accountID = Convert.ToInt32(acountIDBorrow.Text);
-                string bookTitle = bookTitleBorrow.Text;
-                _bookService.MakeBorrow(accountID, bookTitle);
+                int accountID = Convert.ToInt32(acountIDBorrow.SelectedValue.ToString());
+                int bookISBN = Convert.ToInt32(bookISBNBorrowBox.SelectedValue.ToString());
+                _bookService.MakeBorrow(accountID, bookISBN);
                 acountIDBorrow.Text = "";
-                bookTitleBorrow.Text = "";
+                bookISBNBorrowBox.Text = "";
             }
             catch (Exception ex)
             {
@@ -470,6 +529,13 @@ namespace LibraryManagementSystem
             {
                 MessageBox.Show("Error : " + ex.Message);
             }
+        }
+
+        private void addExistAuthor_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(authorsBox.SelectedValue.ToString());
+            Author author = _authorService.GetAuthorByID(id);
+            authors.Add(author);
         }
     }
 }
