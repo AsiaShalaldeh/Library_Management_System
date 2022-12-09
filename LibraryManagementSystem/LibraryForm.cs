@@ -170,6 +170,7 @@ namespace LibraryManagementSystem
                 librarianAddressBox.Text = "";
                 librarianPassBox.Text = "";
                 librarianPositionBox.Text = "";
+                GetDataFromDB();
             }
             catch(Exception ex)
             {
@@ -217,6 +218,7 @@ namespace LibraryManagementSystem
                 }
                 int patronID = _patronService.CreatePatron(name, address);
                 _patronService.CreateAccount(patronID, opened, state, libraryID, history);
+                GetDataFromDB();
             }
             catch(FormatException ex)
             {
@@ -236,7 +238,7 @@ namespace LibraryManagementSystem
 
         private void goToLoginPage_Click(object sender, EventArgs e)
         {
-            LoginForm loginForm=new LoginForm();
+            LoginForm loginForm = new LoginForm();
             loginForm.Show();
             this.Hide();
         }

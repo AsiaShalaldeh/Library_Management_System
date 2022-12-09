@@ -12,7 +12,7 @@ namespace LibraryManagementSystem
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             LoginForm loginForm = new LoginForm();
-            Application.Run(new LibrarianForm());
+            Application.Run(loginForm);
         }
     }
 }

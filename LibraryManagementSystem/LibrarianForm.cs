@@ -143,13 +143,13 @@ namespace LibraryManagementSystem
 
         private void createBook_Click(object sender, EventArgs e)
         {
-            try
-            {
+            //try
+            //{
                 string title = bookTitleBox.Text;
                 string barcode = bookBarcodeBox.Text;
                 string publisher = bookPublisherBox.Text;
                 int pages = Convert.ToInt32(bookPagesBox.Text);
-                bool isRef = bookRefBox.SelectedText == "True" ? true : false;
+                bool isRef = bookRefBox.SelectedIndex==0 ? true : false;
                 string langauge = bookLanguageBox.Text;
                 string RFID = bookRFIDBox.Text;
                 DateTime date = bookPubDate.Value;
@@ -169,14 +169,11 @@ namespace LibraryManagementSystem
                 bookLanguageBox.Text = "";
                 bookRFIDBox.SelectedText = "";
                 bookSummaryBox.Text = "";
-                bookLibraryIDBox.Text = "";
-                bookCatalogIDBox.Text = "";
-                librarianIDBox.Text = "";
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show("Error : " + ex.Message);
-            }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("Error : " + ex.Message);
+            //}
 
         }
 
@@ -188,7 +185,7 @@ namespace LibraryManagementSystem
                 int pages = Convert.ToInt32(bookPagesToUpdate.Text);
                 string title = bookTitleToUpdate.Text;
                 string summary = bookSummaryToUdate.Text;
-                bookIDToUpdateBox.Text = "";
+                //bookIDToUpdateBox.Text = "";
                 bookPagesToUpdate.Text = "";
                 bookTitleToUpdate.Text = "";
                 bookSummaryToUdate.Text = "";
@@ -224,9 +221,10 @@ namespace LibraryManagementSystem
         {
             try
             {
-                int ISBN = Convert.ToInt32(bookIDToDelete.SelectedValue);
+                int ISBN = Convert.ToInt32(bookIDToDelete.SelectedValue.ToString());
                 _bookService.DeleteBook(ISBN);
                 bookIDToDelete.Text = "";
+                GetDataFromDB();
             }
             catch (Exception ex)
             {
@@ -394,7 +392,7 @@ namespace LibraryManagementSystem
                 {
                     showAuthorsNamesList.Text += name + "\n";
                 }
-                bookIDBox.Text = "";
+                //bookIDBox.Text = "";
             }
             catch(Exception ex)
             {
@@ -467,11 +465,11 @@ namespace LibraryManagementSystem
                 int libraryID = Convert.ToInt32(libraryIDCombo.SelectedItem);
                 AccountState state = (AccountState)accountStateCombo.SelectedValue;
                 _patronService.UpdatePatron(id, name, address, state, libraryID);
-                patronIDToUpdate.Text = "";
+                //patronIDToUpdate.Text = "";
                 patronAddressToUpdate.Text = "";
                 patronAddressToUpdate.Text = "";
-                libraryIDCombo.Text = "";
-                accountStateCombo.Text = "";
+                //libraryIDCombo.Text = "";
+                //accountStateCombo.Text = "";
                 patronIDToUpdate.Text = "";
             }
             catch (Exception ex)
@@ -498,8 +496,8 @@ namespace LibraryManagementSystem
                 int accountID = Convert.ToInt32(acountIDBorrow.SelectedValue.ToString());
                 int bookISBN = Convert.ToInt32(bookISBNBorrowBox.SelectedValue.ToString());
                 _bookService.MakeBorrow(accountID, bookISBN);
-                acountIDBorrow.Text = "";
-                bookISBNBorrowBox.Text = "";
+                //acountIDBorrow.Text = "";
+                //bookISBNBorrowBox.Text = "";
             }
             catch (Exception ex)
             {
@@ -524,6 +522,7 @@ namespace LibraryManagementSystem
             {
                 int ISBN = Convert.ToInt32(bookISBNBox.SelectedItem);
                 _bookService.MakeUnBorrow(ISBN);
+                GetDataFromDB();
             }
             catch (Exception ex)
             {
@@ -536,6 +535,7 @@ namespace LibraryManagementSystem
             int id = Convert.ToInt32(authorsBox.SelectedValue.ToString());
             Author author = _authorService.GetAuthorByID(id);
             authors.Add(author);
+            authorsBox.SelectedText = "";
         }
     }
 }

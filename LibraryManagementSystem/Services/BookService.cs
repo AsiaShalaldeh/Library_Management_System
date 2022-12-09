@@ -17,11 +17,19 @@ namespace LibraryManagementSystem.Services
         }
         public BookItem CreateBook(string title, string barcode, string publisher,
             int pages, bool isRef, string langauge, string RFID, DateTime date,
-            string summary, int libraryID, int catalogID,int librarianID, IList<Author> authors)
+            string summary, int libraryID, int catalogID, int librarianID, IList<Author> authors)
         {
             BookItem bookItem = new BookItem();
-            try
-            {
+            //try
+            //{
+                //if (title == "" || barcode == "" || publisher == "" || pages == null
+                //    || langauge == "" || langauge == "" || RFID == "" || summary == ""
+                //    || librarianID == null || catalogID == null || librarianID == null
+                //    || authors.Count == 0)
+                //{
+                //    MessageBox.Show("You Have To Enter All Information !!");
+                //    return null;
+                //}
                 bookItem.Title = title;
                 bookItem.Barcode = barcode;
                 bookItem.Publisher = publisher;
@@ -42,15 +50,19 @@ namespace LibraryManagementSystem.Services
                     bookAuthor.BookID = bookItem.ISBN;
                     bookAuthors.Add(bookAuthor);
                 }
-                MessageBox.Show(bookAuthors.First().BookID.ToString());
+                //_context.Libraries.Where(l => l.LibraryID == libraryID).Single()
+                //    .bookItems.Add(bookItem);
+                //_context.Catalog.Where(c => c.ID == catalogID).Single()
+                //    .bookItems.Add(bookItem);
                 bookItem.Authors = bookAuthors;
                 _context.BookItems.Add(bookItem);
                 _context.SaveChanges();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+                MessageBox.Show("Book Created Successfully");
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
             return bookItem;
         }
         public BookItem SearchBookByID(int bookId)
@@ -78,18 +90,17 @@ namespace LibraryManagementSystem.Services
         {
             try
             {
+                if (id == null || title.Trim() == "" || summary.Trim() == "" || pages == null)
+                {
+                    MessageBox.Show("You Have To Enter All Information !!");
+                    return;
+                }
                 BookItem bookItem = SearchBookByID(id);
                 if (bookItem != null)
                 {
                     bookItem.Title =title;
                     bookItem.Summary = summary;
-                    //bookItem.Publisher = book.Publisher;
-                    //bookItem.PublicationDate = book.PublicationDate;
                     bookItem.NumberOfPages = pages;
-                    //bookItem.Language = book.Language;
-                    //bookItem.Barcode = book.Barcode;
-                    //bookItem.RFID = book.RFID;
-                    //bookItem.IsReferenceOnly = book.IsReferenceOnly;
                     _context.Update<BookItem>(bookItem);
                     _context.SaveChanges();
                     MessageBox.Show("Book Updated Successfully");
@@ -111,6 +122,16 @@ namespace LibraryManagementSystem.Services
                 BookItem bookItem = SearchBookByID(ISBN);
                 if (bookItem != null)
                 {
+                    var authors = _context.BookAuthors.Where(b => b.BookID == ISBN).Select(a => a.AuthorID).ToList();
+                    foreach (int id in authors)
+                    {
+                        BookAuthor bookAuthor = _context.BookAuthors.Where(b => b.BookID == ISBN)
+                            .Where(a => a.AuthorID == id).FirstOrDefault();
+                        _context.Remove<BookAuthor>(bookAuthor);
+                        var author = _context.Authors.Where(a => a.AuthorID == id).Single();
+                        _context.Authors.Remove(author);
+                    }
+                    _context.SaveChanges();
                     _context.Remove<BookItem>(bookItem);
                     _context.SaveChanges();
                     MessageBox.Show("Book Deleted Successfully");
@@ -207,9 +228,11 @@ namespace LibraryManagementSystem.Services
                 if(bookItem.AccountID==null)
                 {
                     bookItem.AccountID = accountID;
+                    _context.Accounts.Where(a => a.AccountID == accountID)
+                        .Single().BookItems.Add(bookItem);
                     //int patron = _context.Accounts.Where(a => a.AccountID == accountID).Select(p => p.PatronID);
                     //string name = _context.Patrons.Where(p => p.PatronID == patron);
-                    MessageBox.Show("Book Borrowed To Successfully");
+                    MessageBox.Show("Book Borrowed Successfully");
                 }
                 else
                 {
@@ -227,6 +250,9 @@ namespace LibraryManagementSystem.Services
             try
             {
                 BookItem bookItem = SearchBookByID(ISBN);
+                int? accountID = bookItem.AccountID;
+                _context.Accounts.Where(c => c.AccountID == accountID)
+                    .Select(c => c.BookItems).Single().Remove(bookItem);
                 bookItem.AccountID = null;
                 _context.SaveChanges();
                 MessageBox.Show("Book Rtrieved Successfully");

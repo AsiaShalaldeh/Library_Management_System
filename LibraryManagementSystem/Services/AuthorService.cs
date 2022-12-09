@@ -18,12 +18,19 @@ namespace LibraryManagementSystem.Services
         public Author CreateAuthor(string name,string bioraphy,DateTime birthDate)
         {
             Author author = new Author();
-            author.Name=name;
-            author.BirthDate=birthDate;
-            author.Biography=bioraphy;
-            _context.Add<Author>(author);
-            //_context.Authors.Attach(author);
-            _context.SaveChanges();
+            try
+            {
+                author.Name = name;
+                author.BirthDate = birthDate;
+                author.Biography = bioraphy;
+                _context.Add<Author>(author);
+                _context.SaveChanges();
+                MessageBox.Show("Book Updated Successfully");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error : " + ex.Message);
+            }
             return author;
         }
         public IList<int> GetAuthorIDs()

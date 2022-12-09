@@ -16,13 +16,22 @@ namespace LibraryManagementSystem.Services
         }
         public void CreateLibrarian(string name, string password, string position, string address)
         {
-            Librarian librarian = new Librarian();
-            librarian.Name = name;
-            librarian.Password = password;
-            librarian.Position = position;
-            librarian.Address = address;
-            _context.Librarian.Add(librarian);
-            _context.SaveChanges();
+            try
+            {
+                Librarian librarian = new Librarian();
+                librarian.Name = name;
+                librarian.Password = password;
+                librarian.Position = position;
+                librarian.Address = address;
+                _context.Librarian.Add(librarian);
+                _context.SaveChanges();
+                MessageBox.Show("Librarian Created Successfully");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error : " + ex.Message);
+            }
+
         }
         public IList<int> GetLibrariansIDs()
         {

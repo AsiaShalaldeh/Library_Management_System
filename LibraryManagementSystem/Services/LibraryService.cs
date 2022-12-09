@@ -24,6 +24,7 @@ namespace LibraryManagementSystem.Services
                 library.CatalogID = catalogID;
                 _context.Libraries.Add(library);
                 _context.SaveChanges();
+                MessageBox.Show("Library Created Successfully");
             }
             catch (Exception ex)
             {

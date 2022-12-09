@@ -16,10 +16,18 @@ namespace LibraryManagementSystem.Services
         }
         public void CreateCatalog(string catalog)
         {
-            Catalog new_catalog = new Catalog();
-            new_catalog.Name = catalog;
-            _context.Catalog.Add(new_catalog);
-            _context.SaveChanges();
+            try
+            {
+                Catalog new_catalog = new Catalog();
+                new_catalog.Name = catalog;
+                _context.Catalog.Add(new_catalog);
+                _context.SaveChanges();
+                MessageBox.Show("Catalog Created Successfully");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error : " + ex.Message);
+            }
         }
         public IList<int> GetCatalogsIDs()
         {
