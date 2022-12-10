@@ -15,6 +15,5 @@ namespace LibraryManagementSystem.Models
         public Catalog Catalog { get; set; }
         public IList<BookItem> bookItems { get; set; }
         public IList<Account> Accounts { get; set; }
-        //public IList<Catalog> Catalogs { get; set; }
     }
 }

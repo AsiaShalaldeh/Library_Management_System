@@ -62,8 +62,8 @@ namespace LibraryManagementSystem.Services
                 account.History = history;
                 account.LibraryID = libraryID;
                 accounts.Add(account);
-                Library library = _context.Libraries.Where(l => l.LibraryID == libraryID).Single();
-                library.Accounts = accounts;
+                //Library library = _context.Libraries.Where(l => l.LibraryID == libraryID).Single();
+                //library.Accounts = accounts;
                 _context.Add<Account>(account);
                 _context.SaveChanges();
                 MessageBox.Show("Account Created Successfully");
@@ -135,7 +135,7 @@ namespace LibraryManagementSystem.Services
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show("Error : " + ex.Message);
             }
             return frozenPatronsNames;
         }

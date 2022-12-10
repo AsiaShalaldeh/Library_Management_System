@@ -18,7 +18,6 @@ namespace LibraryManagementSystem.Models
         public int NumberOfPages { get; set; }
         public string Language { get; set; }
         public IList<BookAuthor> Authors { get; set; }
-        //public IList<Author> Authors { get; set; }
 
     }
 }

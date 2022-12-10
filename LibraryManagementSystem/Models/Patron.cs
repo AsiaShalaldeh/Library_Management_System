@@ -12,8 +12,6 @@ namespace LibraryManagementSystem.Models
         public int PatronID { get; set; }
         public string Name { get; set; }
         public string Address { get; set; }
-        //public int? AccountID { get; set; }
-
         public Account Account { get; set; }
 
 

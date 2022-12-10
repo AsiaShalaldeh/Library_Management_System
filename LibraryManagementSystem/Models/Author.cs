@@ -13,7 +13,6 @@ namespace LibraryManagementSystem.Models
         public string Biography { get; set; }
         public DateTime BirthDate { get; set; }
         public IList<BookAuthor> Books { get; set; }
-        //public IList<Book> Books { get; set; }
 
 
     }

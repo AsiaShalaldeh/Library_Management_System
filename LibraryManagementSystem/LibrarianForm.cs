@@ -23,6 +23,7 @@ namespace LibraryManagementSystem
         LibrarianService _librarianService;
         IList<Author> authors;
         IList<BookItem> books;
+        public string LibrarianName { get; set; }
         public LibrarianForm()
         {
             InitializeComponent();
@@ -169,7 +170,7 @@ namespace LibraryManagementSystem
                 bookLanguageBox.Text = "";
                 bookRFIDBox.SelectedText = "";
                 bookSummaryBox.Text = "";
-            }
+        }
             catch (Exception ex)
             {
                 MessageBox.Show("Error : " + ex.Message);
@@ -185,7 +186,6 @@ namespace LibraryManagementSystem
                 int pages = Convert.ToInt32(bookPagesToUpdate.Text);
                 string title = bookTitleToUpdate.Text;
                 string summary = bookSummaryToUdate.Text;
-                //bookIDToUpdateBox.Text = "";
                 bookPagesToUpdate.Text = "";
                 bookTitleToUpdate.Text = "";
                 bookSummaryToUdate.Text = "";
@@ -317,17 +317,6 @@ namespace LibraryManagementSystem
                 string biography = authorBiographyBox.Text;
                 DateTime birthdate = authorBirthDate.Value;
                 Author author = _authorService.CreateAuthor(name, biography, birthdate);
-                //IList<BookAuthor> bookAuthors = new List<BookAuthor>();
-                //foreach (BookItem bookItem in books)
-                //{
-                //    BookAuthor bookAuthor = new BookAuthor();
-                //    bookAuthor.AuthorID = author.AuthorID;
-                //    bookAuthor.BookID = bookItem.ISBN;
-                //    bookAuthors.Add(bookAuthor);
-                //}
-                //author.Books = bookAuthors;
-                //_context.BookItems.Add(bookItem);
-                //books.Clear();
                 authors.Add(author);
                 authorNameBox.Text = "";
                 authorBiographyBox.Text = "";
@@ -392,7 +381,6 @@ namespace LibraryManagementSystem
                 {
                     showAuthorsNamesList.Text += name + "\n";
                 }
-                //bookIDBox.Text = "";
             }
             catch(Exception ex)
             {
@@ -416,7 +404,6 @@ namespace LibraryManagementSystem
             {
                 IList<string> names = _patronService.GetPatronsNames();
                 patronsNamesList.Text = "";
-                MessageBox.Show(names.Count().ToString());
                 foreach (string name in names)
                 {
                     patronsNamesList.Items.Add(name);
@@ -465,11 +452,8 @@ namespace LibraryManagementSystem
                 int libraryID = Convert.ToInt32(libraryIDCombo.SelectedItem);
                 AccountState state = (AccountState)accountStateCombo.SelectedValue;
                 _patronService.UpdatePatron(id, name, address, state, libraryID);
-                //patronIDToUpdate.Text = "";
                 patronAddressToUpdate.Text = "";
                 patronAddressToUpdate.Text = "";
-                //libraryIDCombo.Text = "";
-                //accountStateCombo.Text = "";
                 patronIDToUpdate.Text = "";
             }
             catch (Exception ex)
@@ -496,8 +480,6 @@ namespace LibraryManagementSystem
                 int accountID = Convert.ToInt32(acountIDBorrow.SelectedValue.ToString());
                 int bookISBN = Convert.ToInt32(bookISBNBorrowBox.SelectedValue.ToString());
                 _bookService.MakeBorrow(accountID, bookISBN);
-                //acountIDBorrow.Text = "";
-                //bookISBNBorrowBox.Text = "";
             }
             catch (Exception ex)
             {
@@ -548,6 +530,12 @@ namespace LibraryManagementSystem
             LoginForm loginForm = new LoginForm();
             loginForm.Show();
             this.Hide();
+        }
+
+        private void LibrarianForm_Load(object sender, EventArgs e)
+        {
+            librarianName.Text = "Librarian : " + LibrarianName;
+            librarianName2.Text = "Librarian : " + LibrarianName;
         }
     }
 }

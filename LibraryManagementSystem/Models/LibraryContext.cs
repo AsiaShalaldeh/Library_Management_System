@@ -45,18 +45,6 @@ namespace LibraryManagementSystem.Models
                 .WithMany(t => t.Books)
                 .HasForeignKey(pt => pt.AuthorID);
 
-            //modelBuilder.Entity<Patron>()
-            //.HasOne<Account>(p => p.Account)
-            //.WithOne(a => a.Patron)
-            //.HasForeignKey<Account>(a => a.PatronID);
-
-            //modelBuilder.Entity<Account>().HasMany(t => t.ReservedBook)
-            //.WithOne(g => g.ReservedAccount)
-            //.HasForeignKey(g => g.ReservedAccountID);
-            //modelBuilder.Entity<Account>().HasMany(t => t.BorrowedBook)
-            //.WithOne(g => g.BorrowedAccount)
-            //.HasForeignKey(g => g.BorrowedAccountID);
-
         }
 
     }

@@ -49,16 +49,18 @@ namespace LibraryManagementSystem
                     var librarians = _librarianService.GetAllLibrarians();
                     foreach (var lib in librarians)
                     {
-                        if (userName.Equals(lib.userName.Trim().ToLower()) && password.Equals(lib.password.Trim().ToLower()))
+                        if (userName.Equals(lib.userName.Trim().ToLower()) 
+                            && password.Equals(lib.password.Trim().ToLower()))
                         {
                             LibrarianForm librarianForm = new LibrarianForm();
+                            librarianForm.LibrarianName = lib.userName;
                             librarianForm.Show();
                             this.Hide();
                             isFound = true;
                         }
                     }
                     if (!isFound)
-                        MessageBox.Show("Wrong UserName And Password");
+                        MessageBox.Show("Try Again, Wrong User Name And Password");
                 }
                 userNameBox.Text = "";
                 passwordBox.Text = "";

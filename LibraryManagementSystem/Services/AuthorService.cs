@@ -25,7 +25,7 @@ namespace LibraryManagementSystem.Services
                 author.Biography = bioraphy;
                 _context.Add<Author>(author);
                 _context.SaveChanges();
-                MessageBox.Show("Book Updated Successfully");
+                MessageBox.Show("Author Created Successfully");
             }
             catch (Exception ex)
             {
