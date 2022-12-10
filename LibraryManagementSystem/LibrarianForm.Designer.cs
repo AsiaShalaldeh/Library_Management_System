@@ -41,14 +41,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LibrarianForm));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.serachBookPanel = new System.Windows.Forms.Panel();
-            this.bookISBNSearch = new System.Windows.Forms.TextBox();
-            this.bookTitleSearch = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.searchBook = new System.Windows.Forms.Button();
-            this.cancelSearchbookPanel = new System.Windows.Forms.Button();
-            this.label17 = new System.Windows.Forms.Label();
             this.updateBookPanel = new System.Windows.Forms.Panel();
             this.bookIDToUpdateBox = new System.Windows.Forms.ComboBox();
             this.label21 = new System.Windows.Forms.Label();
@@ -76,6 +68,16 @@
             this.showFrenchBooks = new System.Windows.Forms.RichTextBox();
             this.label29 = new System.Windows.Forms.Label();
             this.bookPanel = new System.Windows.Forms.Panel();
+            this.serachBookPanel = new System.Windows.Forms.Panel();
+            this.bookISBNSearch = new System.Windows.Forms.TextBox();
+            this.bookTitleSearch = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.searchBook = new System.Windows.Forms.Button();
+            this.cancelSearchbookPanel = new System.Windows.Forms.Button();
+            this.label17 = new System.Windows.Forms.Label();
+            this.goToLoginPage1 = new System.Windows.Forms.Button();
+            this.exitLibrarianPage = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.deleteBookBtn = new System.Windows.Forms.Button();
             this.updateBookBtn = new System.Windows.Forms.Button();
@@ -125,6 +127,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.makeBorrowPanel = new System.Windows.Forms.Panel();
+            this.acountIDBorrow = new System.Windows.Forms.ComboBox();
             this.bookISBNBorrowBox = new System.Windows.Forms.ComboBox();
             this.label35 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
@@ -159,7 +162,6 @@
             this.label30 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
-            this.acountIDBorrow = new System.Windows.Forms.ComboBox();
             cancelAuthorPanel = new System.Windows.Forms.Button();
             cancelRtrievePanel = new System.Windows.Forms.Button();
             frenchBooksBtn = new System.Windows.Forms.Button();
@@ -172,11 +174,11 @@
             cancelUnBorrow = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.serachBookPanel.SuspendLayout();
             this.updateBookPanel.SuspendLayout();
             this.deleteBookPanel.SuspendLayout();
             this.retrievePanel.SuspendLayout();
             this.bookPanel.SuspendLayout();
+            this.serachBookPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.createPanel.SuspendLayout();
             this.authorPanel.SuspendLayout();
@@ -363,12 +365,11 @@
             // tabPage1
             // 
             this.tabPage1.BackgroundImage = global::LibraryManagementSystem.Properties.Resources.library;
-            this.tabPage1.Controls.Add(this.serachBookPanel);
+            this.tabPage1.Controls.Add(this.bookPanel);
+            this.tabPage1.Controls.Add(this.createPanel);
             this.tabPage1.Controls.Add(this.updateBookPanel);
             this.tabPage1.Controls.Add(this.deleteBookPanel);
             this.tabPage1.Controls.Add(this.retrievePanel);
-            this.tabPage1.Controls.Add(this.bookPanel);
-            this.tabPage1.Controls.Add(this.createPanel);
             this.tabPage1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.tabPage1.Location = new System.Drawing.Point(4, 34);
             this.tabPage1.Name = "tabPage1";
@@ -377,100 +378,6 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Book";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // serachBookPanel
-            // 
-            this.serachBookPanel.BackColor = System.Drawing.Color.LightGray;
-            this.serachBookPanel.Controls.Add(this.bookISBNSearch);
-            this.serachBookPanel.Controls.Add(this.bookTitleSearch);
-            this.serachBookPanel.Controls.Add(this.label18);
-            this.serachBookPanel.Controls.Add(this.label16);
-            this.serachBookPanel.Controls.Add(this.searchBook);
-            this.serachBookPanel.Controls.Add(this.cancelSearchbookPanel);
-            this.serachBookPanel.Controls.Add(this.label17);
-            this.serachBookPanel.Location = new System.Drawing.Point(321, 169);
-            this.serachBookPanel.Name = "serachBookPanel";
-            this.serachBookPanel.Size = new System.Drawing.Size(740, 332);
-            this.serachBookPanel.TabIndex = 4;
-            this.serachBookPanel.Visible = false;
-            // 
-            // bookISBNSearch
-            // 
-            this.bookISBNSearch.Location = new System.Drawing.Point(168, 117);
-            this.bookISBNSearch.Name = "bookISBNSearch";
-            this.bookISBNSearch.Size = new System.Drawing.Size(146, 35);
-            this.bookISBNSearch.TabIndex = 28;
-            // 
-            // bookTitleSearch
-            // 
-            this.bookTitleSearch.Location = new System.Drawing.Point(529, 117);
-            this.bookTitleSearch.Name = "bookTitleSearch";
-            this.bookTitleSearch.Size = new System.Drawing.Size(146, 35);
-            this.bookTitleSearch.TabIndex = 21;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label18.ForeColor = System.Drawing.Color.White;
-            this.label18.Location = new System.Drawing.Point(435, 120);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(62, 30);
-            this.label18.TabIndex = 20;
-            this.label18.Text = "Title";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(83, 117);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(69, 30);
-            this.label16.TabIndex = 13;
-            this.label16.Text = "ISBN";
-            // 
-            // searchBook
-            // 
-            this.searchBook.BackColor = System.Drawing.Color.DarkOrange;
-            this.searchBook.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.searchBook.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.searchBook.Font = new System.Drawing.Font("Segoe UI", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.searchBook.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.searchBook.Location = new System.Drawing.Point(190, 232);
-            this.searchBook.Name = "searchBook";
-            this.searchBook.Size = new System.Drawing.Size(140, 44);
-            this.searchBook.TabIndex = 11;
-            this.searchBook.Text = "Search";
-            this.searchBook.UseVisualStyleBackColor = false;
-            this.searchBook.Click += new System.EventHandler(this.searchBook_Click);
-            // 
-            // cancelSearchbookPanel
-            // 
-            this.cancelSearchbookPanel.BackColor = System.Drawing.Color.DarkOrange;
-            this.cancelSearchbookPanel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cancelSearchbookPanel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cancelSearchbookPanel.Font = new System.Drawing.Font("Segoe UI", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.cancelSearchbookPanel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.cancelSearchbookPanel.Location = new System.Drawing.Point(402, 233);
-            this.cancelSearchbookPanel.Name = "cancelSearchbookPanel";
-            this.cancelSearchbookPanel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.cancelSearchbookPanel.Size = new System.Drawing.Size(147, 44);
-            this.cancelSearchbookPanel.TabIndex = 12;
-            this.cancelSearchbookPanel.Text = "Cancel";
-            this.cancelSearchbookPanel.UseVisualStyleBackColor = false;
-            this.cancelSearchbookPanel.Click += new System.EventHandler(this.cancelSearchbookPanel_Click);
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Impact", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label17.ForeColor = System.Drawing.Color.DarkOrange;
-            this.label17.Location = new System.Drawing.Point(313, 11);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(221, 45);
-            this.label17.TabIndex = 6;
-            this.label17.Text = "Search Book";
             // 
             // updateBookPanel
             // 
@@ -486,9 +393,9 @@
             this.updateBookPanel.Controls.Add(this.updateBook);
             this.updateBookPanel.Controls.Add(this.cancelBookUpdatePanel);
             this.updateBookPanel.Controls.Add(this.label24);
-            this.updateBookPanel.Location = new System.Drawing.Point(324, 19);
+            this.updateBookPanel.Location = new System.Drawing.Point(324, 52);
             this.updateBookPanel.Name = "updateBookPanel";
-            this.updateBookPanel.Size = new System.Drawing.Size(773, 469);
+            this.updateBookPanel.Size = new System.Drawing.Size(773, 436);
             this.updateBookPanel.TabIndex = 2;
             this.updateBookPanel.Visible = false;
             this.updateBookPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.updateBookPanel_Paint);
@@ -773,6 +680,8 @@
             // bookPanel
             // 
             this.bookPanel.BackColor = System.Drawing.Color.White;
+            this.bookPanel.Controls.Add(this.goToLoginPage1);
+            this.bookPanel.Controls.Add(this.exitLibrarianPage);
             this.bookPanel.Controls.Add(this.pictureBox1);
             this.bookPanel.Controls.Add(this.deleteBookBtn);
             this.bookPanel.Controls.Add(this.updateBookBtn);
@@ -784,13 +693,137 @@
             this.bookPanel.Size = new System.Drawing.Size(302, 716);
             this.bookPanel.TabIndex = 0;
             // 
+            // serachBookPanel
+            // 
+            this.serachBookPanel.BackColor = System.Drawing.Color.LightGray;
+            this.serachBookPanel.Controls.Add(this.bookISBNSearch);
+            this.serachBookPanel.Controls.Add(this.bookTitleSearch);
+            this.serachBookPanel.Controls.Add(this.label18);
+            this.serachBookPanel.Controls.Add(this.label16);
+            this.serachBookPanel.Controls.Add(this.searchBook);
+            this.serachBookPanel.Controls.Add(this.cancelSearchbookPanel);
+            this.serachBookPanel.Controls.Add(this.label17);
+            this.serachBookPanel.Location = new System.Drawing.Point(49, 120);
+            this.serachBookPanel.Name = "serachBookPanel";
+            this.serachBookPanel.Size = new System.Drawing.Size(861, 303);
+            this.serachBookPanel.TabIndex = 4;
+            this.serachBookPanel.Visible = false;
+            // 
+            // bookISBNSearch
+            // 
+            this.bookISBNSearch.Location = new System.Drawing.Point(168, 117);
+            this.bookISBNSearch.Name = "bookISBNSearch";
+            this.bookISBNSearch.Size = new System.Drawing.Size(146, 35);
+            this.bookISBNSearch.TabIndex = 28;
+            // 
+            // bookTitleSearch
+            // 
+            this.bookTitleSearch.Location = new System.Drawing.Point(529, 117);
+            this.bookTitleSearch.Name = "bookTitleSearch";
+            this.bookTitleSearch.Size = new System.Drawing.Size(146, 35);
+            this.bookTitleSearch.TabIndex = 21;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label18.ForeColor = System.Drawing.Color.White;
+            this.label18.Location = new System.Drawing.Point(435, 120);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(62, 30);
+            this.label18.TabIndex = 20;
+            this.label18.Text = "Title";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label16.ForeColor = System.Drawing.Color.White;
+            this.label16.Location = new System.Drawing.Point(83, 117);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(69, 30);
+            this.label16.TabIndex = 13;
+            this.label16.Text = "ISBN";
+            // 
+            // searchBook
+            // 
+            this.searchBook.BackColor = System.Drawing.Color.DarkOrange;
+            this.searchBook.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.searchBook.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.searchBook.Font = new System.Drawing.Font("Segoe UI", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.searchBook.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.searchBook.Location = new System.Drawing.Point(190, 232);
+            this.searchBook.Name = "searchBook";
+            this.searchBook.Size = new System.Drawing.Size(140, 44);
+            this.searchBook.TabIndex = 11;
+            this.searchBook.Text = "Search";
+            this.searchBook.UseVisualStyleBackColor = false;
+            this.searchBook.Click += new System.EventHandler(this.searchBook_Click);
+            // 
+            // cancelSearchbookPanel
+            // 
+            this.cancelSearchbookPanel.BackColor = System.Drawing.Color.DarkOrange;
+            this.cancelSearchbookPanel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cancelSearchbookPanel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cancelSearchbookPanel.Font = new System.Drawing.Font("Segoe UI", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.cancelSearchbookPanel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.cancelSearchbookPanel.Location = new System.Drawing.Point(402, 233);
+            this.cancelSearchbookPanel.Name = "cancelSearchbookPanel";
+            this.cancelSearchbookPanel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.cancelSearchbookPanel.Size = new System.Drawing.Size(147, 44);
+            this.cancelSearchbookPanel.TabIndex = 12;
+            this.cancelSearchbookPanel.Text = "Cancel";
+            this.cancelSearchbookPanel.UseVisualStyleBackColor = false;
+            this.cancelSearchbookPanel.Click += new System.EventHandler(this.cancelSearchbookPanel_Click);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Impact", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label17.ForeColor = System.Drawing.Color.DarkOrange;
+            this.label17.Location = new System.Drawing.Point(311, 26);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(221, 45);
+            this.label17.TabIndex = 6;
+            this.label17.Text = "Search Book";
+            // 
+            // goToLoginPage1
+            // 
+            this.goToLoginPage1.BackColor = System.Drawing.Color.DarkOrange;
+            this.goToLoginPage1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.goToLoginPage1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.goToLoginPage1.Font = new System.Drawing.Font("Segoe UI", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.goToLoginPage1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.goToLoginPage1.Location = new System.Drawing.Point(0, 641);
+            this.goToLoginPage1.Name = "goToLoginPage1";
+            this.goToLoginPage1.Size = new System.Drawing.Size(302, 42);
+            this.goToLoginPage1.TabIndex = 22;
+            this.goToLoginPage1.Text = "Go To Login Page";
+            this.goToLoginPage1.UseVisualStyleBackColor = false;
+            this.goToLoginPage1.Click += new System.EventHandler(this.goToLoginPage1_Click);
+            // 
+            // exitLibrarianPage
+            // 
+            this.exitLibrarianPage.BackColor = System.Drawing.Color.DarkOrange;
+            this.exitLibrarianPage.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.exitLibrarianPage.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.exitLibrarianPage.Font = new System.Drawing.Font("Segoe UI", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.exitLibrarianPage.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.exitLibrarianPage.Location = new System.Drawing.Point(0, 594);
+            this.exitLibrarianPage.Name = "exitLibrarianPage";
+            this.exitLibrarianPage.Size = new System.Drawing.Size(302, 41);
+            this.exitLibrarianPage.TabIndex = 21;
+            this.exitLibrarianPage.Text = "Exit";
+            this.exitLibrarianPage.UseVisualStyleBackColor = false;
+            this.exitLibrarianPage.Click += new System.EventHandler(this.exitLibrarianPage_Click);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = global::LibraryManagementSystem.Properties.Resources.center;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBox1.Location = new System.Drawing.Point(0, 347);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(302, 372);
+            this.pictureBox1.Size = new System.Drawing.Size(302, 241);
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
@@ -862,6 +895,7 @@
             // createPanel
             // 
             this.createPanel.BackColor = System.Drawing.Color.LightGray;
+            this.createPanel.Controls.Add(this.serachBookPanel);
             this.createPanel.Controls.Add(this.authorPanel);
             this.createPanel.Controls.Add(this.label43);
             this.createPanel.Controls.Add(this.authorsBox);
@@ -896,7 +930,7 @@
             this.createPanel.Controls.Add(this.label4);
             this.createPanel.Location = new System.Drawing.Point(308, 3);
             this.createPanel.Name = "createPanel";
-            this.createPanel.Size = new System.Drawing.Size(922, 697);
+            this.createPanel.Size = new System.Drawing.Size(922, 700);
             this.createPanel.TabIndex = 1;
             this.createPanel.Visible = false;
             this.createPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.createPanel_Paint);
@@ -1360,6 +1394,14 @@
             this.makeBorrowPanel.TabIndex = 36;
             this.makeBorrowPanel.Visible = false;
             // 
+            // acountIDBorrow
+            // 
+            this.acountIDBorrow.FormattingEnabled = true;
+            this.acountIDBorrow.Location = new System.Drawing.Point(388, 143);
+            this.acountIDBorrow.Name = "acountIDBorrow";
+            this.acountIDBorrow.Size = new System.Drawing.Size(232, 38);
+            this.acountIDBorrow.TabIndex = 34;
+            // 
             // bookISBNBorrowBox
             // 
             this.bookISBNBorrowBox.FormattingEnabled = true;
@@ -1749,14 +1791,6 @@
             this.label34.TabIndex = 6;
             this.label34.Text = "Update Patron Account";
             // 
-            // acountIDBorrow
-            // 
-            this.acountIDBorrow.FormattingEnabled = true;
-            this.acountIDBorrow.Location = new System.Drawing.Point(388, 143);
-            this.acountIDBorrow.Name = "acountIDBorrow";
-            this.acountIDBorrow.Size = new System.Drawing.Size(232, 38);
-            this.acountIDBorrow.TabIndex = 34;
-            // 
             // LibrarianForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1769,8 +1803,6 @@
             this.Text = "Library Management System";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.serachBookPanel.ResumeLayout(false);
-            this.serachBookPanel.PerformLayout();
             this.updateBookPanel.ResumeLayout(false);
             this.updateBookPanel.PerformLayout();
             this.deleteBookPanel.ResumeLayout(false);
@@ -1778,6 +1810,8 @@
             this.retrievePanel.ResumeLayout(false);
             this.retrievePanel.PerformLayout();
             this.bookPanel.ResumeLayout(false);
+            this.serachBookPanel.ResumeLayout(false);
+            this.serachBookPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.createPanel.ResumeLayout(false);
             this.createPanel.PerformLayout();
@@ -1921,5 +1955,7 @@
         private ComboBox patronIDToUpdate;
         private ComboBox bookISBNBorrowBox;
         private ComboBox acountIDBorrow;
+        private Button exitLibrarianPage;
+        private Button goToLoginPage1;
     }
 }

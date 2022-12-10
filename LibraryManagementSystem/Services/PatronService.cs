@@ -10,9 +10,11 @@ namespace LibraryManagementSystem.Services
     public class PatronService
     {
         private LibraryContext _context;
+        private IList<Account> accounts;
         public PatronService()
         {
             _context = new LibraryContext();
+            accounts = new List<Account>();
         }
         public int CreatePatron(string name,string address)
         {
@@ -23,7 +25,7 @@ namespace LibraryManagementSystem.Services
                 patron.Address = address;
                 _context.Add<Patron>(patron);
                 _context.SaveChanges();
-                MessageBox.Show("Librarian Created Successfully");
+                MessageBox.Show("Patron Created Successfully");
             }
             catch (Exception ex)
             {
@@ -59,15 +61,16 @@ namespace LibraryManagementSystem.Services
                 account.State = state;
                 account.History = history;
                 account.LibraryID = libraryID;
-                _context.Libraries.Where(l => l.LibraryID == libraryID).Single()
-                    .Accounts.Add(account);
+                accounts.Add(account);
+                Library library = _context.Libraries.Where(l => l.LibraryID == libraryID).Single();
+                library.Accounts = accounts;
                 _context.Add<Account>(account);
                 _context.SaveChanges();
                 MessageBox.Show("Account Created Successfully");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error : "+ex.Message);
+                MessageBox.Show("Error : " + ex.Message);
             }
         }
         public IList<int> GetAllAccountIDs()

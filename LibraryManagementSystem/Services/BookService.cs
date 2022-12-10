@@ -11,9 +11,11 @@ namespace LibraryManagementSystem.Services
     public class BookService
     {
         private LibraryContext _context;
+        private IList<BookItem> bookItems;
         public BookService()
         {
             _context = new LibraryContext();
+            bookItems = new List<BookItem>();
         }
         public BookItem CreateBook(string title, string barcode, string publisher,
             int pages, bool isRef, string langauge, string RFID, DateTime date,
@@ -50,13 +52,17 @@ namespace LibraryManagementSystem.Services
                     bookAuthor.BookID = bookItem.ISBN;
                     bookAuthors.Add(bookAuthor);
                 }
-                //_context.Libraries.Where(l => l.LibraryID == libraryID).Single()
-                //    .bookItems.Add(bookItem);
-                //_context.Catalog.Where(c => c.ID == catalogID).Single()
-                //    .bookItems.Add(bookItem);
+
                 bookItem.Authors = bookAuthors;
+            bookItems.Add(bookItem);
                 _context.BookItems.Add(bookItem);
-                _context.SaveChanges();
+            Library library = _context.Libraries.Where(l => l.LibraryID == libraryID).Single();
+            Catalog catalog = _context.Catalog.Where(c => c.ID == catalogID).Single();
+            Librarian librarian = _context.Librarian.Where(l => l.LibrarianID == librarianID).Single();
+            librarian.BookItems = bookItems;
+            library.bookItems = bookItems;
+            catalog.bookItems = bookItems;
+            _context.SaveChanges();
                 MessageBox.Show("Book Created Successfully");
             //}
             //catch (Exception ex)

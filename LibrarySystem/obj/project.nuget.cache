@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "dgSpecHash": "pIghL2P3MTjyWeU/skITBq15Uhzm3rThmk0vC8Nhxt4lHwNDqMHah1K5nAFtRU18AF/YVxbToe4ppPq+bOL8vQ==",
+  "success": false,
+  "projectFilePath": "C:\\Users\\Done\\Desktop\\Programming\\CSharp\\VisualProgrammingProject\\LibrarySystem\\LibrarySystemTest.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project LibraryManagementSystem is not compatible with net6.0 (.NETCoreApp,Version=v6.0). Project LibraryManagementSystem supports: net6.0-windows7.0 (.NETCoreApp,Version=v6.0)",
+      "libraryId": "LibraryManagementSystem",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
+}

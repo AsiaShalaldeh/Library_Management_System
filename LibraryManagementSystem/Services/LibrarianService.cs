@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace LibraryManagementSystem.Services
 {
-    public class LibrarianService
+    public class LibrarianService: ISearchService, IManageService
     {
         private LibraryContext _context;
         public LibrarianService()

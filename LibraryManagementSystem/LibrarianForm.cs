@@ -143,13 +143,13 @@ namespace LibraryManagementSystem
 
         private void createBook_Click(object sender, EventArgs e)
         {
-            //try
-            //{
+            try
+            {
                 string title = bookTitleBox.Text;
                 string barcode = bookBarcodeBox.Text;
                 string publisher = bookPublisherBox.Text;
                 int pages = Convert.ToInt32(bookPagesBox.Text);
-                bool isRef = bookRefBox.SelectedIndex==0 ? true : false;
+                bool isRef = bookRefBox.SelectedIndex == 0 ? true : false;
                 string langauge = bookLanguageBox.Text;
                 string RFID = bookRFIDBox.Text;
                 DateTime date = bookPubDate.Value;
@@ -157,8 +157,8 @@ namespace LibraryManagementSystem
                 int libraryID = Convert.ToInt32(bookLibraryIDBox.SelectedValue.ToString());
                 int catalogID = Convert.ToInt32(bookCatalogIDBox.SelectedValue.ToString());
                 int librarianID = Convert.ToInt32(librarianIDBox.SelectedValue.ToString());
-                BookItem book=_bookService.CreateBook(title, barcode, publisher, pages,
-                    isRef, langauge, RFID, date, summary, libraryID, catalogID,librarianID, authors);
+                BookItem book = _bookService.CreateBook(title, barcode, publisher, pages,
+                    isRef, langauge, RFID, date, summary, libraryID, catalogID, librarianID, authors);
                 books.Add(book);
                 authors.Clear();
 
@@ -169,13 +169,13 @@ namespace LibraryManagementSystem
                 bookLanguageBox.Text = "";
                 bookRFIDBox.SelectedText = "";
                 bookSummaryBox.Text = "";
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show("Error : " + ex.Message);
-            //}
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error : " + ex.Message);
+            }
 
-        }
+}
 
         private void updateBook_Click(object sender, EventArgs e)
         {
@@ -536,6 +536,18 @@ namespace LibraryManagementSystem
             Author author = _authorService.GetAuthorByID(id);
             authors.Add(author);
             authorsBox.SelectedText = "";
+        }
+
+        private void exitLibrarianPage_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void goToLoginPage1_Click(object sender, EventArgs e)
+        {
+            LoginForm loginForm = new LoginForm();
+            loginForm.Show();
+            this.Hide();
         }
     }
 }
